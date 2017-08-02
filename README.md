@@ -3,7 +3,7 @@
 Code, Examples, and Resources for the Network Programmability Basics Video Course
 
 ## Table of Contents 
-* [Module: Programming Fundamentals](#module:_programming_fundamentals)
+* [Module: Programming Fundamentals](#module_programming_fundamentals)
     * Data Formats: Understanding and using JSON, XML and YAML
     * APIs are Everywhere... but what are they? 
     * Python Part 1: Python Language and Script Basics
