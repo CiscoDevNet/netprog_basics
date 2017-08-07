@@ -1,0 +1,949 @@
+<head><title> ietf-interfaces 
+</title>
+<style type="text/css" media="all">
+
+body, h1, h2, h3, h4, h5, h6, p, td, table td, input, select {
+        font-family: Verdana, Helvetica, Arial, sans-serif;
+        font-size: 10pt;
+}
+
+body, ol, li, h2 {padding:0; margin: 0;}
+
+ol#root  {padding-left: 5px; margin-top: 2px; margin-bottom: 1px;
+          list-style: none;}
+
+#root ol {padding-left: 5px; margin-top: 2px; margin-bottom: 1px;
+          list-style: none;}
+
+#root li {margin-bottom: 1px; padding-left: 5px;  margin-top: 2px;
+          font-size: x-small;}
+
+.panel   {border-bottom: 1px solid #999; margin-bottom: 2px; margin-top: 2px;
+          background: #eee;}
+
+#root ul {margin-bottom: 1px; margin-top: 2px; list-style-position: inside;}
+
+#root a {text-decoration: none;}
+
+.folder {
+   
+background:url(data:image/gif;base64,R0lGODlhGgAOALMLAJmZmYuLi3p6ev///+zs7MzMzGZmZqqqqrS0tLq6uuHh4f///wAAAAAAAAAAAAAAACH5BAEAAAsALAAAAAAaAA4AAASJcMlJq714qgROKUtxAABBgJkUFMQwFEhyFoFAKini7idSHwGDQXAYYAADxQdBOjiBQqGgYKx4AomCYoYAHqLRVVUCKCBdSthhCgYDKIDuTpnoGgptgxged3FHBgpgU2MTASsmdCM1gkNFGDVaHx91QQQ3KZGSZocHBCEpEgIrCYdxn6EVAnoIGREAOw==)  no-repeat; float: left; padding-right: 30px;margin-left: 3px;
+          
+}
+
+.doc {
+   
+background:url(data:image/gif;base64,R0lGODlhDAAOALMJAMzMzODg4P///+np6a+vr+7u7jMzM5mZmYmJif///wAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAkALAAAAAAMAA4AAARFEEhyCAEjackPCESwBRxwCKD4BSSACCgxrKyJ3B42sK2FSINgsAa4AApI4W5yFCCTywts+txJp9TC4IrFcruwi2FMLgMiADs=)
+no-repeat; float: left; padding-right: 10px; margin-left: 3px;
+cursor: pointer;
+          
+}
+
+.leaf {
+   
+background:url(data:image/gif;base64,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)
+no-repeat; float: left; padding-right: 10px;margin-left: 3px;
+          
+}
+
+.leaf-list {
+   
+background:url(data:image/gif;base64,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)
+no-repeat; float: left; padding-right: 10px; margin-left: 3px;
+          
+}
+
+.action {
+   
+background:url(data:image/gif;base64,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)
+no-repeat; float: left; height: 14px; width: 12px; padding-right: 10px; margin-left: 3px;
+          
+}
+
+.tier1  {margin-left: 0;     }
+.tier2  {margin-left: 1.5em; }
+.tier3  {margin-left: 3em;   }
+.tier4  {margin-left: 4.5em; }
+.tier5  {margin-left: 6em;   }
+.tier6  {margin-left: 7.5em; }
+.tier7  {margin-left: 9em;   }
+.tier8  {margin-left: 10.5em;}
+.tier9  {margin-left: 12em;  }
+.tier10 {margin-left: 13.5em;}
+.tier11 {margin-left: 15em;  }
+.tier12 {margin-left: 16.5em;}
+
+.level1 {padding-left: 0;    }
+.level2 {padding-left: 1em;  }
+.level3 {padding-left: 2em;  }
+.level4 {padding-left: 3em;  }
+</style>
+
+<script language="javascript1.2">
+function toggleRows(elm) {
+ var rows = document.getElementsByTagName("TR");
+ elm.style.backgroundImage = "url(data:image/gif;base64,R0lGODlhGgAOALMLAJmZmYuLi3p6ev///+zs7MzMzGZmZqqqqrS0tLq6uuHh4f///wAAAAAAAAAAAAAAACH5BAEAAAsALAAAAAAaAA4AAASJcMlJq714qgROKUtxAABBgJkUFMQwFEhyFoFAKini7idSHwGDQXAYYAADxQdBOjiBQqGgYKx4AomCYoYAHqLRVVUCKCBdSthhCgYDKIDuTpnoGgptgxged3FHBgpgU2MTASsmdCM1gkNFGDVaHx91QQQ3KZGSZocHBCEpEgIrCYdxn6EVAnoIGREAOw==)";
+ var newDisplay = "none";
+ var thisID = elm.parentNode.parentNode.parentNode.id + "-";
+ // Are we expanding or contracting? If the first child is hidden, we expand
+  for (var i = 0; i < rows.length; i++) {
+   var r = rows[i];
+   if (matchStart(r.id, thisID, true)) {
+    if (r.style.display == "none") {
+     if (document.all) newDisplay = "block"; //IE4+ specific code
+     else newDisplay = "table-row"; //Netscape and Mozilla
+     elm.style.backgroundImage = "url(data:image/gif;base64,R0lGODlhGgAOALMLAJmZmYqKiv///+zs7MzMzGZmZrOzs7q6uqqqqnZ2duHh4f///wAAAAAAAAAAAAAAACH5BAEAAAsALAAAAAAaAA4AAASScMlJq714qgMMIQuBAMAwZBRADIJAGMfwBQE6GW0uGzRS2wuAQPHhABAIAyBAABSe0IJKgiAEDgSF7OVDBKNQwEQlbBG5CZAiAA4oxsoc8WBAFEALe9SQ6rS2dU5vCwJsTwECKUwmcyMBCYMhUHgTj1kfRTwFJxKFBYgVlpdNNCUVBHcWCUwHpQacFgJCqp98GBEAOw==)";
+    }
+    break;
+   }
+ }
+
+ // When expanding, only expand one level.  Collapse all desendants.
+ var matchDirectChildrenOnly = (newDisplay != "none");
+
+ for (var j = 0; j < rows.length; j++) {
+   var s = rows[j];
+   if (matchStart(s.id, thisID, matchDirectChildrenOnly)) {
+     s.style.display = newDisplay;
+     var cell = s.getElementsByTagName("TD")[0];
+     var tier = cell.getElementsByTagName("DIV")[0];
+     var folder = tier.getElementsByTagName("A")[0];
+     if (folder.getAttribute("onclick") != null) {
+     folder.style.backgroundImage = "url(data:image/gif;base64,R0lGODlhGgAOALMLAJmZmYuLi3p6ev///+zs7MzMzGZmZqqqqrS0tLq6uuHh4f///wAAAAAAAAAAAAAAACH5BAEAAAsALAAAAAAaAA4AAASJcMlJq714qgROKUtxAABBgJkUFMQwFEhyFoFAKini7idSHwGDQXAYYAADxQdBOjiBQqGgYKx4AomCYoYAHqLRVVUCKCBdSthhCgYDKIDuTpnoGgptgxged3FHBgpgU2MTASsmdCM1gkNFGDVaHx91QQQ3KZGSZocHBCEpEgIrCYdxn6EVAnoIGREAOw==)";
+     }
+   }
+ }
+}
+
+function matchStart(target, pattern, matchDirectChildrenOnly) {
+ var pos = target.indexOf(pattern);
+ if (pos != 0)
+    return false;
+ if (!matchDirectChildrenOnly)
+    return true;
+ if (target.slice(pos + pattern.length, target.length).indexOf("-") >= 0)
+    return false;
+ return true;
+}
+
+function collapseAllRows() {
+ var rows = document.getElementsByTagName("TR");
+ for (var i = 0; i < rows.length; i++) {
+   var r = rows[i];
+   if (r.id.indexOf("-") >= 0) {
+     r.style.display = "none";
+   }
+ }
+}
+
+function expandAllRows() {
+  var rows = document.getElementsByTagName("TR");
+  for (var i = 0; i < rows.length; i ++) {
+    var r = rows[i];
+    if (r.id.indexOf("-") >= 0) {
+      r.style.display = "table-row";
+    }
+  }
+}
+</script>
+
+<body onload="collapseAllRows();">
+<a href="http://www.tail-f.com">
+   <img src= "data:image/gif;base64,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"  />
+</a>
+<div class="app">
+<div style="background: #eee; border: dashed 1px #000;">
+<h1> Module: <font color=blue>ietf-interfaces</font>, Namespace:
+                    <font color=blue>urn:ietf:params:xml:ns:yang:ietf-interfaces</font>, Prefix:
+                    <font color=blue>if</font></h1> 
+
+ <table width="100%">
+
+ <tr>
+  <!-- specifing one or more widths keeps columns
+       constant despite changes in visible content -->
+  <th align=left>
+     Element
+     <a href='#' onclick='expandAllRows();'>[+]Expand all</a>
+     <a href='#' onclick='collapseAllRows();'>[-]Collapse all</a>
+  </th>
+  <th align=left>Schema</th>
+  <th align=left>Type</th>
+  <th align=left>Flags</th>
+  <th align=left>Opts</th>
+  <th align=left>Status</th>
+  <th align=left>Path</th>
+</tr>
+<tr id="1" class="a">
+                         <td id="p1">
+                            <div id="p2" class="tier1">
+                               <a href="#" id="p3"
+                                  onclick="toggleRows(this);return false;"
+                                  class="folder">&nbsp;
+                               </a>
+                               <font color=blue>ietf-interfaces</font>
+                            </div>
+                         </td> 
+<td>module</td><td></td><td></td><td></td><td>
+                        </td></tr>
+<tr id="1-1" class="a">
+                       <td nowrap id="p4000">
+                          <div id="p5000" class="tier2">
+                             <a href="#" id="p6000"
+                                onclick="toggleRows(this);return false"
+                                class="folder">&nbsp;
+                             </a>
+                             <abbr title="Interface configuration parameters.">interfaces</abbr>
+                          </div>
+                       </td> 
+<td nowrap>container</td>
+                    <td nowrap></td>
+                    <td nowrap>config</td>
+                    <td></td>
+                    <td>current</td>
+                    <td nowrap>/if:interfaces</td>
+                    </tr> 
+<tr id="1-1-1" class="a">
+                       <td nowrap id="p4000">
+                          <div id="p5000" class="tier3">
+                             <a href="#" id="p6000"
+                                onclick="toggleRows(this);return false"
+                                class="folder">&nbsp;
+                             </a>
+                             <abbr title="The list of configured interfaces on the device.
+
+The operational state of an interface is available in the
+/interfaces-state/interface list.  If the configuration of a
+system-controlled interface cannot be used by the system
+(e.g., the interface hardware present does not match the
+interface type), then the configuration is not applied to
+the system-controlled interface shown in the
+/interfaces-state/interface list.  If the configuration
+of a user-controlled interface cannot be used by the system,
+the configured interface is not instantiated in the
+/interfaces-state/interface list.">interface[name]</abbr>
+                          </div>
+                       </td> 
+<td nowrap>list</td>
+                    <td nowrap></td>
+                    <td nowrap>config</td>
+                    <td></td>
+                    <td>current</td>
+                    <td nowrap>/if:interfaces/if:interface</td>
+                    </tr> 
+<tr id="1-1-1-1" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The name of the interface.
+
+A device MAY restrict the allowed values for this leaf,
+possibly depending on the type of the interface.
+For system-controlled interfaces, this leaf is the
+device-specific name of the interface.  The 'config false'
+list /interfaces-state/interface contains the currently
+existing interfaces on the device.
+
+If a client tries to create configuration for a
+system-controlled interface that is not present in the
+/interfaces-state/interface list, the server MAY reject
+the request if the implementation does not support
+pre-provisioning of interfaces or if the name refers to
+an interface that can never exist in the system.  A
+NETCONF server MUST reply with an rpc-error with the
+error-tag 'invalid-value' in this case.
+
+If the device supports pre-provisioning of interface
+configuration, the 'pre-provisioning' feature is
+advertised.
+
+If the device allows arbitrarily named user-controlled
+interfaces, the 'arbitrary-names' feature is advertised.
+
+When a configured user-controlled interface is created by
+the system, it is instantiated with the same name in the
+/interface-state/interface list.">  name </abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="string
+">string</abbr></td>
+                       <td nowrap>config</td>
+                       <td></td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces/if:interface/if:name</td</tr> 
+<tr id="1-1-1-2" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="A textual description of the interface.
+
+A server implementation MAY map this leaf to the ifAlias
+MIB object.  Such an implementation needs to use some
+mechanism to handle the differences in size and characters
+allowed between this leaf and ifAlias.  The definition of
+such a mechanism is outside the scope of this document.
+
+Since ifAlias is defined to be stored in non-volatile
+storage, the MIB implementation MUST map ifAlias to the
+value of 'description' in the persistently stored
+datastore.
+
+Specifically, if the device supports ':startup', when
+ifAlias is read the device MUST return the value of
+'description' in the 'startup' datastore, and when it is
+written, it MUST be written to the 'running' and 'startup'
+datastores.  Note that it is up to the implementation to
+
+decide whether to modify this single leaf in 'startup' or
+perform an implicit copy-config from 'running' to
+'startup'.
+
+If the device does not support ':startup', ifAlias MUST
+be mapped to the 'description' leaf in the 'running'
+datastore."> <em> description </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="string
+">string</abbr></td>
+                       <td nowrap>config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces/if:interface/if:description</td</tr> 
+<tr id="1-1-1-3" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The type of the interface.
+
+When an interface entry is created, a server MAY
+initialize the type leaf with a valid value, e.g., if it
+is possible to derive the type from the name of the
+interface.
+
+If a client tries to set the type of an interface to a
+value that can never be used by the system, e.g., if the
+type is not supported or if the type does not match the
+name of the interface, the server MUST reject the request.
+A NETCONF server MUST reply with an rpc-error with the
+error-tag 'invalid-value' in this case.">  type </abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="identityref
+ {interface-type}">identityref</abbr></td>
+                       <td nowrap>config</td>
+                       <td></td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces/if:interface/if:type</td</tr> 
+<tr id="1-1-1-4" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="This leaf contains the configured, desired state of the
+interface.
+
+Systems that implement the IF-MIB use the value of this
+leaf in the 'running' datastore to set
+IF-MIB.ifAdminStatus to 'up' or 'down' after an ifEntry
+has been initialized, as described in RFC 2863.
+
+
+
+Changes in this leaf in the 'running' datastore are
+reflected in ifAdminStatus, but if ifAdminStatus is
+changed over SNMP, this leaf is not affected."> <em> enabled </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="boolean
+">boolean</abbr></td>
+                       <td nowrap>config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces/if:interface/if:enabled</td</tr> 
+<tr id="1-1-1-5" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="Controls whether linkUp/linkDown SNMP notifications
+should be generated for this interface.
+
+If this node is not configured, the value 'enabled' is
+operationally used by the server for interfaces that do
+not operate on top of any other interface (i.e., there are
+no 'lower-layer-if' entries), and 'disabled' otherwise."> <em> link-up-down-trap-enable </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="enumeration
+ : {enabled,disabled,}">enumeration</abbr></td>
+                       <td nowrap>config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces/if:interface/if:link-up-down-trap-enable</td</tr> 
+<tr id="1-2" class="a">
+                       <td nowrap id="p4000">
+                          <div id="p5000" class="tier2">
+                             <a href="#" id="p6000"
+                                onclick="toggleRows(this);return false"
+                                class="folder">&nbsp;
+                             </a>
+                             <abbr title="Data nodes for the operational state of interfaces.">interfaces-state</abbr>
+                          </div>
+                       </td> 
+<td nowrap>container</td>
+                    <td nowrap></td>
+                    <td nowrap>no config</td>
+                    <td></td>
+                    <td>current</td>
+                    <td nowrap>/if:interfaces-state</td>
+                    </tr> 
+<tr id="1-2-2" class="a">
+                       <td nowrap id="p4000">
+                          <div id="p5000" class="tier3">
+                             <a href="#" id="p6000"
+                                onclick="toggleRows(this);return false"
+                                class="folder">&nbsp;
+                             </a>
+                             <abbr title="The list of interfaces on the device.
+
+System-controlled interfaces created by the system are
+always present in this list, whether they are configured or
+not.">interface[name]</abbr>
+                          </div>
+                       </td> 
+<td nowrap>list</td>
+                    <td nowrap></td>
+                    <td nowrap>no config</td>
+                    <td></td>
+                    <td>current</td>
+                    <td nowrap>/if:interfaces-state/if:interface</td>
+                    </tr> 
+<tr id="1-2-2-6" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The name of the interface.
+
+A server implementation MAY map this leaf to the ifName
+MIB object.  Such an implementation needs to use some
+mechanism to handle the differences in size and characters
+allowed between this leaf and ifName.  The definition of
+such a mechanism is outside the scope of this document.">  name </abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="string
+">string</abbr></td>
+                       <td nowrap>no config</td>
+                       <td></td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:name</td</tr> 
+<tr id="1-2-2-7" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The type of the interface.">  type </abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="identityref
+ {interface-type}">identityref</abbr></td>
+                       <td nowrap>no config</td>
+                       <td></td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:type</td</tr> 
+<tr id="1-2-2-8" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The desired state of the interface.
+
+This leaf has the same read semantics as ifAdminStatus.">  admin-status </abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="enumeration
+ : {up,down,testing,}">enumeration</abbr></td>
+                       <td nowrap>no config</td>
+                       <td></td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:admin-status</td</tr> 
+<tr id="1-2-2-9" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The current operational state of the interface.
+
+This leaf has the same semantics as ifOperStatus.">  oper-status </abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="enumeration
+ : {up,down,testing,unknown,dormant,not-present,lower-layer-down,}">enumeration</abbr></td>
+                       <td nowrap>no config</td>
+                       <td></td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:oper-status</td</tr> 
+<tr id="1-2-2-10" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The time the interface entered its current operational
+state.  If the current state was entered prior to the
+last re-initialization of the local network management
+subsystem, then this node is not present."> <em> last-change </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:date-and-time
+string
+ {pattern = \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})}">yang:date-and-time</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:last-change</td</tr> 
+<tr id="1-2-2-11" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The ifIndex value for the ifEntry represented by this
+interface.">  if-index </abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="int32
+ [1..2147483647]">int32</abbr></td>
+                       <td nowrap>no config</td>
+                       <td></td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:if-index</td</tr> 
+<tr id="1-2-2-12" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The interface's address at its protocol sub-layer.  For
+example, for an 802.x interface, this object normally
+contains a Media Access Control (MAC) address.  The
+interface's media-specific modules must define the bit
+
+
+and byte ordering and the format of the value of this
+object.  For interfaces that do not have such an address
+(e.g., a serial line), this node is not present."> <em> phys-address </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:phys-address
+string
+ {pattern = ([0-9a-fA-F]{2}(:[0-9a-fA-F]{2})*)?}">yang:phys-address</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:phys-address</td</tr> 
+<tr id="1-2-2-13" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf-list">&nbsp;</a>
+                             <abbr title="A list of references to interfaces layered on top of this
+interface.">  higher-layer-if </abbr>
+                          </div>
+                       </td>
+                       <td>leaf-list</td>
+                       <td nowrap><abbr title="interface-state-ref
+leafref
+ : /if:interfaces-state/if:interface/if:name">interface-state-ref</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>*</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:higher-layer-if</td</tr> 
+<tr id="1-2-2-14" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf-list">&nbsp;</a>
+                             <abbr title="A list of references to interfaces layered underneath this
+interface.">  lower-layer-if </abbr>
+                          </div>
+                       </td>
+                       <td>leaf-list</td>
+                       <td nowrap><abbr title="interface-state-ref
+leafref
+ : /if:interfaces-state/if:interface/if:name">interface-state-ref</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>*</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:lower-layer-if</td</tr> 
+<tr id="1-2-2-15" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier4>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="An estimate of the interface's current bandwidth in bits
+per second.  For interfaces that do not vary in
+bandwidth or for those where no accurate estimation can
+be made, this node should contain the nominal bandwidth.
+For interfaces that have no concept of bandwidth, this
+node is not present."> <em> speed </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:gauge64
+uint64
+">yang:gauge64</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:speed</td</tr> 
+<tr id="1-2-2-16" class="a">
+                       <td nowrap id="p4000">
+                          <div id="p5000" class="tier4">
+                             <a href="#" id="p6000"
+                                onclick="toggleRows(this);return false"
+                                class="folder">&nbsp;
+                             </a>
+                             <abbr title="A collection of interface-related statistics objects.">statistics</abbr>
+                          </div>
+                       </td> 
+<td nowrap>container</td>
+                    <td nowrap></td>
+                    <td nowrap>no config</td>
+                    <td></td>
+                    <td>current</td>
+                    <td nowrap>/if:interfaces-state/if:interface/if:statistics</td>
+                    </tr> 
+<tr id="1-2-2-16-1" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The time on the most recent occasion at which any one or
+more of this interface's counters suffered a
+discontinuity.  If no such discontinuities have occurred
+since the last re-initialization of the local management
+subsystem, then this node contains the time the local
+management subsystem re-initialized itself.">  discontinuity-time </abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:date-and-time
+string
+ {pattern = \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})}">yang:date-and-time</abbr></td>
+                       <td nowrap>no config</td>
+                       <td></td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:discontinuity-time</td</tr> 
+<tr id="1-2-2-16-2" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The total number of octets received on the interface,
+including framing characters.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> in-octets </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter64
+uint64
+">yang:counter64</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:in-octets</td</tr> 
+<tr id="1-2-2-16-3" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The number of packets, delivered by this sub-layer to a
+higher (sub-)layer, that were not addressed to a
+multicast or broadcast address at this sub-layer.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> in-unicast-pkts </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter64
+uint64
+">yang:counter64</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:in-unicast-pkts</td</tr> 
+<tr id="1-2-2-16-4" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The number of packets, delivered by this sub-layer to a
+higher (sub-)layer, that were addressed to a broadcast
+address at this sub-layer.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> in-broadcast-pkts </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter64
+uint64
+">yang:counter64</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:in-broadcast-pkts</td</tr> 
+<tr id="1-2-2-16-5" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The number of packets, delivered by this sub-layer to a
+higher (sub-)layer, that were addressed to a multicast
+address at this sub-layer.  For a MAC-layer protocol,
+this includes both Group and Functional addresses.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> in-multicast-pkts </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter64
+uint64
+">yang:counter64</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:in-multicast-pkts</td</tr> 
+<tr id="1-2-2-16-6" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The number of inbound packets that were chosen to be
+discarded even though no errors had been detected to
+prevent their being deliverable to a higher-layer
+protocol.  One possible reason for discarding such a
+packet could be to free up buffer space.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> in-discards </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter32
+uint32
+">yang:counter32</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:in-discards</td</tr> 
+<tr id="1-2-2-16-7" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="For packet-oriented interfaces, the number of inbound
+packets that contained errors preventing them from being
+deliverable to a higher-layer protocol.  For character-
+oriented or fixed-length interfaces, the number of
+inbound transmission units that contained errors
+preventing them from being deliverable to a higher-layer
+protocol.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> in-errors </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter32
+uint32
+">yang:counter32</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:in-errors</td</tr> 
+<tr id="1-2-2-16-8" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="For packet-oriented interfaces, the number of packets
+received via the interface that were discarded because
+of an unknown or unsupported protocol.  For
+character-oriented or fixed-length interfaces that
+support protocol multiplexing, the number of
+transmission units received via the interface that were
+discarded because of an unknown or unsupported protocol.
+For any interface that does not support protocol
+multiplexing, this counter is not present.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> in-unknown-protos </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter32
+uint32
+">yang:counter32</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:in-unknown-protos</td</tr> 
+<tr id="1-2-2-16-9" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The total number of octets transmitted out of the
+interface, including framing characters.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> out-octets </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter64
+uint64
+">yang:counter64</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:out-octets</td</tr> 
+<tr id="1-2-2-16-10" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The total number of packets that higher-level protocols
+requested be transmitted, and that were not addressed
+to a multicast or broadcast address at this sub-layer,
+including those that were discarded or not sent.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> out-unicast-pkts </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter64
+uint64
+">yang:counter64</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:out-unicast-pkts</td</tr> 
+<tr id="1-2-2-16-11" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The total number of packets that higher-level protocols
+requested be transmitted, and that were addressed to a
+broadcast address at this sub-layer, including those
+that were discarded or not sent.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> out-broadcast-pkts </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter64
+uint64
+">yang:counter64</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:out-broadcast-pkts</td</tr> 
+<tr id="1-2-2-16-12" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The total number of packets that higher-level protocols
+requested be transmitted, and that were addressed to a
+multicast address at this sub-layer, including those
+that were discarded or not sent.  For a MAC-layer
+protocol, this includes both Group and Functional
+addresses.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> out-multicast-pkts </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter64
+uint64
+">yang:counter64</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:out-multicast-pkts</td</tr> 
+<tr id="1-2-2-16-13" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="The number of outbound packets that were chosen to be
+discarded even though no errors had been detected to
+prevent their being transmitted.  One possible reason
+for discarding such a packet could be to free up buffer
+space.
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> out-discards </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter32
+uint32
+">yang:counter32</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:out-discards</td</tr> 
+<tr id="1-2-2-16-14" class="a">
+                       <td nowrap>
+                          <div id=9999 class=tier5>
+                             <a class="leaf">&nbsp;</a>
+                             <abbr title="For packet-oriented interfaces, the number of outbound
+packets that could not be transmitted because of errors.
+For character-oriented or fixed-length interfaces, the
+number of outbound transmission units that could not be
+transmitted because of errors.
+
+
+
+
+Discontinuities in the value of this counter can occur
+at re-initialization of the management system, and at
+other times as indicated by the value of
+'discontinuity-time'."> <em> out-errors </em></abbr>
+                          </div>
+                       </td>
+                       <td>leaf</td>
+                       <td nowrap><abbr title="yang:counter32
+uint32
+">yang:counter32</abbr></td>
+                       <td nowrap>no config</td>
+                       <td>?</td>
+                       <td>current</td>
+                       <td nowrap>/if:interfaces-state/if:interface/if:statistics/if:out-errors</td</tr> 
+
+</table>
+</div>
+</body>
+</html>
+
