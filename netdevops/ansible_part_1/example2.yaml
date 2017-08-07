@@ -1,0 +1,24 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Ansible Part 1: What you need to Get Started
+# Author: Hank Preston <hapresto@cisco.com>
+# 
+# example2.yaml
+# Illustrate the following concepts:
+# - Using vars_files in playbooks
+##############################################################
+---
+- name: Illustrate Variables
+  hosts: servers
+  gather_facts: false
+  vars_files: 
+    - example2_vars.yaml
+    
+  tasks: 
+    - name: "Print Company Name from Variable"
+      debug: msg="Hello {{company_name}}"
+      
+    - name: "Loop over a List"
+      with_items: "{{quotes}}"
+      debug: msg="{{item}}"

@@ -1,0 +1,18 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Ansible Part 1: What you need to Get Started
+# Author: Hank Preston <hapresto@cisco.com>
+# 
+# example2_vars.yaml
+# Illustrate the following concepts:
+# - Using vars_files in playbooks
+##############################################################
+---
+company_name: "DevNet"
+quotes: 
+  - "DevNet Rocks!"
+  - "Programmability is amazing"
+  - "Ansible is easy to use"
+  - "Lists are fun!"
+

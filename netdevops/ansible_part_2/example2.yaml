@@ -1,0 +1,34 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Ansible Part 2: Using Ansible for Network Configuration
+# Author: Hank Preston <hapresto@cisco.com>
+# 
+# example2.yaml
+# Illustrate the following concepts:
+# - Configuring NX-OS network interfaces with Ansible
+##############################################################
+---
+- name: Configure Loopback Networks on Each Switch
+  hosts: switches
+  connection: local
+  
+  tasks: 
+    - name: Create Loopback Interface
+      with_items: "{{ local_loopbacks }}"
+      nxos_interface: 
+        host: "{{ inventory_hostname }}"
+        interface: "{{ item.name }}"
+        mode: layer3
+        description: "{{ item.desc }}"
+        admin_state: up
+
+    - name: Configure IPv4 Address on Interface
+      with_items: "{{ local_loopbacks }}"
+      nxos_ip_interface:
+        host: "{{ inventory_hostname }}"
+        state: present
+        interface: "{{ item.name }}"
+        version: v4
+        addr: "{{ item.ip_address }}"
+        mask: "{{ item.prefix }}"  
