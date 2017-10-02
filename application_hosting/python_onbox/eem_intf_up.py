@@ -25,7 +25,7 @@ parser.add_argument("interface", help = "Interface to bring up")
 args = parser.parse_args()
 
 # List of commands to run
-commands = ["interface ".format(args.interface),
+commands = ["interface {}".format(args.interface),
             "no shut"
            ]
 
