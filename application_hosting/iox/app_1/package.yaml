@@ -1,0 +1,33 @@
+# Learning Series: Network Programmability Basics
+# Module: Application Hosting
+# Lesson: Package, Deploy and Run Applications in the Network with IOx
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# package.yaml
+# Illustrate the following concepts:
+# - Deploy an IOx application using Docker tooling
+
+descriptor-schema-version: "2.2"
+
+info:
+  name: iox_docker_python_ll
+  description: "IOx Docker Python Web Learning Lab Application"
+  version: "1.0"
+  author-link: "http://www.cisco.com"
+  author-name: "Cisco Systems"
+
+app:
+  cpuarch: "x86_64"
+  type: docker
+  resources:
+    profile: c1.small
+    network:
+      -
+        interface-name: eth0
+        ports:
+          tcp:
+            - 8000
+
+  startup:
+    rootfs: rootfs.tar
+    target: ["python3 main.py"]
