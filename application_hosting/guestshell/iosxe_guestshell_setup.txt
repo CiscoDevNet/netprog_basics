@@ -1,0 +1,47 @@
+! To be entered onto IOS XE Device
+
+! ***** Step 1 *********
+! Enable IOX
+conf t
+iox
+exit
+
+! Verify IOX
+sh iox-service
+
+! ***** Step 2 *********
+! Create and Configure Virtual Port Group
+conf t
+
+interface VirtualPortGroup 0
+  ip add 192.168.35.1 255.255.255.0
+  no shut
+  exit
+
+! ***** Step 3 *********
+! Configure NAT
+conf t
+
+interface VirtualPortGroup0
+  ip nat inside
+  exit
+
+! Interface connected to local network
+interface GigabitEthernet1
+  ip nat outside
+  exit
+
+ip access-list standard NAT_ACL
+  permit 192.168.0.0 0.0.255.255
+  exit
+
+ip nat inside source list NAT_ACL \*  interface GigabitEthernet1 overload
+
+! ***** Step 4 *********
+! Enable Guest Shell
+! Entered from Enable Mode (not config)
+! All entered on single line
+guestshell enable VirtualPortGroup 0 guest-ip 192.168.35.2name-server 208.67.222.222
+
+! Verify Guest Shell Running
+show app-hosting list
