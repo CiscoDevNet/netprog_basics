@@ -1,0 +1,2431 @@
+{
+	"info": {
+		"name": "Network Programmability Basics",
+		"_postman_id": "f951e5b3-ce16-78cf-f92c-763d3d53ce05",
+		"description": "A collection of REST API calls used as part of the [Network Programmability Video Course](https://github.com/CiscoDevNet/netprog_basics).  ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ACI",
+			"description": "",
+			"item": [
+				{
+					"name": "APIC Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"aaaUser\": {\n        \"attributes\": {\n            \"name\": \"{{username}}\",\n            \"pwd\": \"{{password}}\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic}}/api/aaaLogin.json",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"aaaLogin.json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Tenant Class Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/node/class/fvTenant.json",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"fvTenant.json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Specific Tenant Class Query ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/node/class/fvTenant.json?query-target-filter=and(eq(fvTenant.name,\"Heroes\"))",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"fvTenant.json"
+							],
+							"query": [
+								{
+									"key": "query-target-filter",
+									"value": "and(eq(fvTenant.name,\"Heroes\"))",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Non-Default Tenant Class Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://198.18.133.200/api/node/class/fvTenant.json?query-target-filter=and(ne(fvTenant.name,\"common\"),ne(fvTenant.name,\"infra\"),ne(fvTenant.name,\"mgmt\"))",
+							"protocol": "https",
+							"host": [
+								"198",
+								"18",
+								"133",
+								"200"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"fvTenant.json"
+							],
+							"query": [
+								{
+									"key": "query-target-filter",
+									"value": "and(ne(fvTenant.name,\"common\"),ne(fvTenant.name,\"infra\"),ne(fvTenant.name,\"mgmt\"))"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Tenant Query Full Tree",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://198.18.133.200/api/class/fvTenant.json?query-target-filter=eq(fvTenant.name,\"Heroes\")&rsp-subtree=full&rsp-prop-include=config-only",
+							"protocol": "https",
+							"host": [
+								"198",
+								"18",
+								"133",
+								"200"
+							],
+							"path": [
+								"api",
+								"class",
+								"fvTenant.json"
+							],
+							"query": [
+								{
+									"key": "query-target-filter",
+									"value": "eq(fvTenant.name,\"Heroes\")"
+								},
+								{
+									"key": "rsp-subtree",
+									"value": "full"
+								},
+								{
+									"key": "rsp-prop-include",
+									"value": "config-only"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Create Tenant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fvTenant\": {\n    \"attributes\": {\n      \"dn\": \"uni/tn-API_Test\", \n      \"name\": \"API_Test\", \n      \"rn\": \"tn-API_Test\", \n      \"status\": \"created\"\n    }, \n    \"children\": []\n  }\n}\n"
+						},
+						"url": {
+							"raw": "https://{{apic}}/api/node/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni.json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Contract Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n  \"fvTenant\": {\n    \"attributes\": {\n      \"name\": \"Villains\"\n    }, \n    \"children\": [\n\n{\n  \"vzFilter\": {\n    \"attributes\": {\n      \"name\": \"DNS_ZoneTransfer\", \n      \"status\": \"created,modified\"\n    }, \n    \"children\": [\n      {\n        \"vzEntry\": {\n          \"attributes\": {\n            \"dFromPort\": \"53\", \n            \"dToPort\": \"53\", \n            \"etherT\": \"ip\", \n            \"name\": \"tcp-53\", \n            \"prot\": \"tcp\", \n            \"status\": \"created,modified\"\n          }, \n          \"children\": []\n        }\n      }\n    ]\n  }\n},\n{\n  \"vzBrCP\": {\n    \"attributes\": {\n      \"name\": \"DNS\", \n      \"status\": \"modified\"\n    }, \n    \"children\": [\n      {\n        \"vzSubj\": {\n          \"attributes\": {\n            \"name\": \"DNS_ZoneTransfer\", \n            \"status\": \"created\"\n          }, \n          \"children\": [\n            {\n              \"vzRsSubjFiltAtt\": {\n                \"attributes\": {\n                  \"status\": \"created,modified\", \n                  \"tnVzFilterName\": \"DNS_ZoneTransfer\"\n                }, \n                \"children\": []\n              }\n            }\n          ]\n        }\n      }\n    ]\n  }\n}\n\n\n      \n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "https://198.18.133.200/api/node/mo/uni/tn-Villains.json",
+							"protocol": "https",
+							"host": [
+								"198",
+								"18",
+								"133",
+								"200"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"tn-Villains.json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC WebSocket Subscribe Heroes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://198.18.133.200/api/mo/uni/tn-Heroes.json?subscription=yes",
+							"protocol": "https",
+							"host": [
+								"198",
+								"18",
+								"133",
+								"200"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"tn-Heroes.json"
+							],
+							"query": [
+								{
+									"key": "subscription",
+									"value": "yes"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC WebSocket Subscribe Refresh",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://198.18.133.200/api/subscriptionRefresh.json?id=72057662774444034",
+							"protocol": "https",
+							"host": [
+								"198",
+								"18",
+								"133",
+								"200"
+							],
+							"path": [
+								"api",
+								"subscriptionRefresh.json"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "72057662774444034"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC End Point Class Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/node/class/fvCEp.json",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"fvCEp.json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Fabric Node Class Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/node/class/fabricNode.json",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"fabricNode.json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Tenant Common Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/mo/uni/tn-common.json",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"tn-common.json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Fabric Node Object Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/mo/topology/pod-1/node-1.json",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"topology",
+								"pod-1",
+								"node-1.json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Application Profile Description Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fvAp\": {\n        \"attributes\": {\n            \"descr\": \"Configured with REST API\", \n            \"dn\": \"uni/tn-Heroes/ap-Save_The_Planet\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic}}/api/node/mo/uni/tn-Heroes/ap-Save_The_Planet.json",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"tn-Heroes",
+								"ap-Save_The_Planet.json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "APIC-EM",
+			"description": "",
+			"item": [
+				{
+					"name": "APIC-EM Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", ",
+									"                               jsonData.response.serviceTicket);",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{username}}\", \n  \"password\": \"{{password}}\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/ticket",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ticket"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Interface List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"network_device_id\", jsonData.response[0].id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/interface",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"interface"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Network Device List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"network_device_id\", jsonData.response[0].id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/network-device",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"network-device"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Network Device Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/network-device/{{network_device_id}}",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"network-device",
+								"{{network_device_id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Network Device by IP Address",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/network-device/ip-address/165.10.1.39",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"network-device",
+								"ip-address",
+								"165.10.1.39"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Network Device by Serial",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/network-device/serial-number/FOC1637Y3FJ",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"network-device",
+								"serial-number",
+								"FOC1637Y3FJ"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Network Devices at a Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/network-device/location/e0c8c8c6-05ae-445f-80d8-f8cc225cbbd2",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"network-device",
+								"location",
+								"e0c8c8c6-05ae-445f-80d8-f8cc225cbbd2"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Interface List by Device ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"network_device_id\", jsonData.response[0].id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/interface/network-device/8dbd8068-1091-4cde-8cf5-d1b58dc5c9c7",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"interface",
+								"network-device",
+								"8dbd8068-1091-4cde-8cf5-d1b58dc5c9c7"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Interface List by Device ID and Port Name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/interface/network-device/8dbd8068-1091-4cde-8cf5-d1b58dc5c9c7/interface-name?name=FastEthernet0/2",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"interface",
+								"network-device",
+								"8dbd8068-1091-4cde-8cf5-d1b58dc5c9c7",
+								"interface-name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "FastEthernet0/2",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Hosts List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"host_id\", jsonData.response[0].id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/host",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"host"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Hosts Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/host/{{host_id}}",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"host",
+								"{{host_id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Hosts by IP Address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"host_id\", jsonData.response[0].id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/host?hostIP=10.1.15.117",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"host"
+							],
+							"query": [
+								{
+									"key": "hostIP",
+									"value": "10.1.15.117",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Begin New Flow Analysis",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"flowAnalysisId\", jsonData.response.flowAnalysisId);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"destIP\": \"10.1.15.117\", \n\t\"sourceIP\": \"10.2.1.22\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/flow-analysis",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"flow-analysis"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flow Analysis Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"destIP\": \"10.1.15.117\", \n\t\"sourceIP\": \"10.2.1.22\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/flow-analysis/{{flowAnalysisId}}",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"flow-analysis",
+								"{{flowAnalysisId}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Flow Analysis",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"destIP\": \"10.1.15.117\", \n\t\"sourceIP\": \"10.2.1.22\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apic}}/api/v1/flow-analysis/{{flowAnalysisId}}",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"flow-analysis",
+								"{{flowAnalysisId}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NX-API CLI",
+			"description": "",
+			"item": [
+				{
+					"name": "JSON-RPC show vlans bri",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json-rpc"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46Y2lzY28xMjM="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"cli\",\n    \"params\": {\n      \"cmd\": \"show vlan bri\",\n      \"version\": 1\n    },\n    \"id\": 1\n  }\n]"
+						},
+						"url": {
+							"raw": "http://{{host}}/ins",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ins"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "INS-API XML show vlans bri",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46Y2lzY28xMjM="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\"?>\n<ins_api>\n  <version>1.0</version>\n  <type>cli_show</type>\n  <chunk>0</chunk>\n  <sid>sid</sid>\n  <input>show vlan bri</input>\n  <output_format>xml</output_format>\n</ins_api>"
+						},
+						"url": {
+							"raw": "http://{{host}}/ins",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ins"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "INS-API JSON show vlans bri",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46Y2lzY28xMjM="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ins_api\": {\n    \"version\": \"1.0\",\n    \"type\": \"cli_show\",\n    \"chunk\": \"0\",\n    \"sid\": \"1\",\n    \"input\": \"show vlan bri\",\n    \"output_format\": \"json\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}/ins",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ins"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NX-API REST",
+			"description": "",
+			"item": [
+				{
+					"name": "Login Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"aaaUser\": {\n    \"attributes\": {\n      \"name\": \"{{username}}\",\n      \"pwd\": \"{{password}}\"\n    }\n  }\n}"
+						},
+						"url": {
+							"raw": "https://{{host}}/api/aaaLogin.json",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"aaaLogin.json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET SNMP Instances",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/node/mo/sys/snmp.xml?query-target=subtree",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"snmp.xml"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "subtree",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Configure SNMP Plus Example",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<topSystem>\n<snmpEntity>\n<snmpInst>\n<snmpCommSecP commAcess=\"unspecified\" grpName=\"network-operator\" name=\"NXAPI2\">\n<snmpAcl useAclName=\"gnoc_ro\" useIpv4AclName=\"\" useIpv6AclName=\"\"/>\n</snmpCommSecP>\n<snmpTraps>\n<snmpTfeaturecontrol>\n<snmpFeatureOpStatusChange trapstatus=\"enable\"/>\n</snmpTfeaturecontrol>\n<snmpTstpx>\n<snmpLoopInconsistency trapstatus=\"enable\"/>\n<snmpInconsistency trapstatus=\"enable\"/>\n<snmpRootInconsistency trapstatus=\"enable\"/>\n</snmpTstpx>\n<snmpTsysmgr>\n<snmpCseFailSwCoreNotifyExtended trapstatus=\"enable\"/>\n</snmpTsysmgr>\n<snmpTlink>\n<snmpCiscoXcvrMonStatusChange trapstatus=\"enable\"/>\n</snmpTlink>\n<snmpTbridge>\n<snmpNewRoot trapstatus=\"enable\"/>\n<snmpTopologyChange trapstatus=\"enable\"/>\n</snmpTbridge>\n<snmpTconfig>\n<snmpCLIRunningConfigChange trapstatus=\"enable\"/>\n</snmpTconfig>\n</snmpTraps>\n<snmpHost commName=\"NXAPI2\" hostName=\"192.168.0.101\" notifType=\"traps\" secLevel=\"unspecified\" udpPortID=\"162\" version=\"v2c\"/>\n<snmpHost commName=\"NXAPI2\" hostName=\"192.168.0.102\" notifType=\"traps\" secLevel=\"unspecified\" udpPortID=\"162\" version=\"v2c\"/>\n</snmpInst>\n</snmpEntity>\n<datetimeClkPol>\n<datetimeNtpSrcIf srcIf=\"mgmt0\"/>\n<datetimeNtpProvider name=\"NXAPITIME\" preferred=\"yes\" provT=\"server\"/>\n<datetimeNtpProvider name=\"NXAPITIME2\" provT=\"server\"/>\n</datetimeClkPol>\n<aclEntity>\n<ipv4aclAF>\n<ipv4aclACL name=\"gnoc_ro\">\n<ipv4aclACE action=\"permit\" dstPrefix=\"0.0.0.0\" protocol=\"ip\" seqNum=\"60\" srcPrefix=\"192.168.0.101\" srcPrefixLength=\"32\" userSetBit=\"1\"/>\n<ipv4aclACE action=\"permit\" dstPrefix=\"0.0.0.0\" protocol=\"ip\" seqNum=\"50\" srcPrefix=\"192.168.0.101\" srcPrefixLength=\"32\" userSetBit=\"1\"/>\n<ipv4aclACE action=\"permit\" dstPrefix=\"0.0.0.0\" protocol=\"ip\" seqNum=\"30\" srcPrefix=\"192.168.0.101\" srcPrefixLength=\"32\" userSetBit=\"1\"/>\n<ipv4aclACE action=\"permit\" dstPrefix=\"0.0.0.0\" protocol=\"ip\" seqNum=\"10\" srcPrefix=\"192.168.0.101\" srcPrefixLength=\"24\" userSetBit=\"1\"/>\n<ipv4aclACE action=\"permit\" dstPrefix=\"0.0.0.0\" protocol=\"ip\" seqNum=\"20\" srcPrefix=\"192.168.0.101\" srcPrefixLength=\"26\" userSetBit=\"1\"/>\n<ipv4aclACE action=\"permit\" dstPrefix=\"0.0.0.0\" protocol=\"ip\" seqNum=\"40\" srcPrefix=\"192.168.0.101\" srcPrefixLength=\"32\" userSetBit=\"1\"/>\n</ipv4aclACL>\n</ipv4aclAF>\n</aclEntity>\n<syslogSyslog>\n<syslogRemoteDest host=\"192.168.0.101\" severity=\"information\" vrfName=\"default\"/>\n</syslogSyslog>\n</topSystem>"
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/node/mo/sys.xml",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys.xml"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Interface Eth1/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/1].json",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"intf",
+								"phys-[eth1",
+								"1].json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Interface Eth1/1 - Desc",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"l1PhysIf\": {\n        \"attributes\": {\n            \"descr\": \"Configured with NX-API REST\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/1].json",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"intf",
+								"phys-[eth1",
+								"1].json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Class Query - VLANS other than 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}/api/node/class/l2BD.json?query-target-filter=and(ne(l2BD.id,\"1\"))",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"l2BD.json"
+							],
+							"query": [
+								{
+									"key": "query-target-filter",
+									"value": "and(ne(l2BD.id,\"1\"))",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET VLAN 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}/api/node/mo/sys/bd/bd-[vlan-1].json",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"bd",
+								"bd-[vlan-1].json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT VLAN 501",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}/api/node/mo/sys/bd/bd-[vlan-1].json",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"bd",
+								"bd-[vlan-1].json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST VLAN 501",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"l2BD\": {\n        \"attributes\": {\n            \"fabEncap\": \"vlan-501\",\n            \"name\": \"NX-API-REST1\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{host}}/api/node/mo/sys/bd/bd-[vlan-501].json",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"bd",
+								"bd-[vlan-501].json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE VLAN 501",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"l2BD\": {\n        \"attributes\": {\n            \"fabEncap\": \"vlan-501\",\n            \"name\": \"NX-API-REST1\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{host}}/api/node/mo/sys/bd/bd-[vlan-501].json",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"bd",
+								"bd-[vlan-501].json"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Full Object Tree Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}/api/node/mo/sys.json?query-target=subtree",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys.json"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "subtree",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RESTCONF",
+			"description": "",
+			"item": [
+				{
+					"name": "Read the top level REST resource",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dmFncmFudDp2YWdyYW50"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/.well-known/host-meta",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								".well-known",
+								"host-meta"
+							]
+						},
+						"description": "/api is the top level REST resource.\nReading this resource shows what datastores\nare available and what operations are available.\n\nOperations are executed by sending a GET command\nto the URL identified for the operation."
+					},
+					"response": []
+				},
+				{
+					"name": "Read models implemented by the device",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Body matches string\"] = responseBody.has(\"interface\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dmFncmFudDp2YWdyYW50"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/restconf/data/netconf-state/capabilities",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"netconf-state",
+								"capabilities"
+							]
+						},
+						"description": "This command reads a subset of the information available\nin the ietf-netconf-monitoring model.  The information returned\nis the list of all models, revisions, deviations on this device.\n\nUsing this command is the definitive way to determine the exact\nimplementation and versions on the device.  This information can\nbe used by an intelligent management client to make decisions\non how to use the RESTCONF interface.\n\nThis example for the ietf-interfaces model identifies the \nrevision data as 5.8.2014 and lists specific feature options\nsupported and also the name of the module applying deviations \nthat change the information exposed by the model.\n\n      \"urn:ietf:params:xml:ns:yang:\n      ietf-interfaces?module=ietf-interfaces&\n      revision=2014-05-08&features=pre-provisioning,if-mib,\n      arbitrary-names&deviations=ietf-ip-devs\",\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Read ietf-yang-library",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Body matches string\"] = responseBody.has(\"interface\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dmFncmFudDp2YWdyYW50"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/restconf/data/ietf-yang-library:modules-state",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"ietf-yang-library:modules-state"
+							]
+						},
+						"description": "This command reads a subset of the information available\nin the ietf-netconf-monitoring model.  The information returned\nis the list of all models, revisions, deviations on this device.\n\nUsing this command is the definitive way to determine the exact\nimplementation and versions on the device.  This information can\nbe used by an intelligent management client to make decisions\non how to use the RESTCONF interface.\n\nThis example for the ietf-interfaces model identifies the \nrevision data as 5.8.2014 and lists specific feature options\nsupported and also the name of the module applying deviations \nthat change the information exposed by the model.\n\n      \"urn:ietf:params:xml:ns:yang:\n      ietf-interfaces?module=ietf-interfaces&\n      revision=2014-05-08&features=pre-provisioning,if-mib,\n      arbitrary-names&deviations=ietf-ip-devs\",\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Read ietf-interfaces list of interface names",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dmFncmFudDp2YWdyYW50"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/restconf/data/ietf-interfaces:interfaces",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"ietf-interfaces:interfaces"
+							]
+						},
+						"description": "This message uses the ietf-interface model to read\na list of the names of each interface managed using\nthe model.  The model mapping infrastructure converts\nthe native model configuration into the form defined\nby the ietf-interfaces common model\n\n{\n  \"ietf-interfaces:interfaces\": {\n    \"interface\": [\n      {\n        \"name\": \"FastEthernet0/0/0\"\n      },\n      {\n        \"name\": \"FastEthernet0/0/1\"\n      },\n      {\n        \"name\": \"FastEthernet0/0/2\"\n      },"
+					},
+					"response": []
+				},
+				{
+					"name": "Read ietf-interfaces single interface",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dmFncmFudDp2YWdyYW50"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet1",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"ietf-interfaces:interfaces",
+								"interface=GigabitEthernet1"
+							]
+						},
+						"description": "This reads a single interface from the IOS XE box which already has been configured as a 802.1Q subinterface"
+					},
+					"response": []
+				},
+				{
+					"name": "Configure ietf-interfaces single interface",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic cm9vdDpjaXNjbzEyMw=="
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ietf-interfaces:interface\": {\n        \"name\": \"GigabitEthernet2\",\n        \"description\": \"Configured by RESTCONF\",\n        \"type\": \"iana-if-type:ethernetCsmacd\",\n        \"enabled\": true,\n        \"ietf-ip:ipv4\": {\n            \"address\": [\n                {\n                    \"ip\": \"10.255.255.1\",\n                    \"netmask\": \"255.255.255.0\"\n                }\n            ]\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"ietf-interfaces:interfaces",
+								"interface=GigabitEthernet2"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read native device single interface",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dmFncmFudDp2YWdyYW50"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/restconf/data/Cisco-IOS-XE-native:native/interface/GigabitEthernet=2",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"Cisco-IOS-XE-native:native",
+								"interface",
+								"GigabitEthernet=2"
+							]
+						},
+						"description": "This reads a single interface from the IOS XE box which already has been configured as a 802.1Q subinterface\nIt uses the native device model (e.g. NED, network element driver)"
+					},
+					"response": []
+				},
+				{
+					"name": "Operational State interfaces",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dmFncmFudDp2YWdyYW50"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/restconf/data/ietf-interfaces:interfaces-state/",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"ietf-interfaces:interfaces-state",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read native hostname",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic cm9vdDpjaXNjbzEyMw=="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/yang-data+json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/yang-data+json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/restconf/data/Cisco-IOS-XE-native:native/hostname",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"restconf",
+								"data",
+								"Cisco-IOS-XE-native:native",
+								"hostname"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meraki",
+			"description": "",
+			"item": [
+				{
+					"name": "GET Organizations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Store the Organization Id as Environment Variable ",
+									"// Requires the name of the organization to already be ",
+									"// set as an environment variable",
+									"var jsonData = JSON.parse(responseBody);",
+									"var orgName = pm.environment.get(\"Organization Name\");",
+									"for (var i in jsonData) {",
+									"    if (jsonData[i].name === orgName) {",
+									"        postman.setEnvironmentVariable(\"organizationId\", ",
+									"                               jsonData[i].id);",
+									"    }",
+									"}",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "{{X-Cisco-Meraki-API-Key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/organizations",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"organizations"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Inventory",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Store the Serial and Network ID of the first returned ",
+									"// device as environment variables ",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"networkId\", jsonData[0].networkId);",
+									"postman.setEnvironmentVariable(\"serial\", jsonData[0].serial);",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "{{X-Cisco-Meraki-API-Key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/organizations/{{organizationId}}/inventory",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"organizations",
+								"{{organizationId}}",
+								"inventory"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Network Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "{{X-Cisco-Meraki-API-Key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/networks/{{networkId}}",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"networks",
+								"{{networkId}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET SSIDs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "{{X-Cisco-Meraki-API-Key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/networks/{{networkId}}/ssids",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"networks",
+								"{{networkId}}",
+								"ssids"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Device Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "{{X-Cisco-Meraki-API-Key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/networks/{{networkId}}/devices/{{serial}}",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"networks",
+								"{{networkId}}",
+								"devices",
+								"{{serial}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Device Clients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "{{X-Cisco-Meraki-API-Key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/devices/{{serial}}/clients?timespan=86400",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"devices",
+								"{{serial}}",
+								"clients"
+							],
+							"query": [
+								{
+									"key": "timespan",
+									"value": "86400",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Networks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Store the Network Id as Environment Variable ",
+									"// Requires the name of the Network to already be ",
+									"// set as an environment variable",
+									"var jsonData = JSON.parse(responseBody);",
+									"var netName = pm.environment.get(\"Network Name\");",
+									"for (var i in jsonData) {",
+									"    if (jsonData[i].name === netName) {",
+									"        postman.setEnvironmentVariable(\"networkId\", ",
+									"                               jsonData[i].id);",
+									"    }",
+									"}",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "{{X-Cisco-Meraki-API-Key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/organizations/{{organizationId}}/networks",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"organizations",
+								"{{organizationId}}",
+								"networks"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

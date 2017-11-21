@@ -103,3 +103,7 @@ venv*/
 
 # Other Dev Stuff
 .vagrant/
+.package.metadata
+package.tar
+*.retry
+ioxclient
