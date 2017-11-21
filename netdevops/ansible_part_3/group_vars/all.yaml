@@ -1,0 +1,13 @@
+vlans:
+  - id: 100
+    name: Management
+    gateway: 172.20.100.1
+  - id: 101
+    name: Private
+    gateway: 172.20.101.1
+  - id: 102
+    name: Guest
+    gateway: 172.20.102.1
+  - id: 103
+    name: Security
+    gateway: 172.20.103.1

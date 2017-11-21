@@ -1,0 +1,54 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Ansible Part 3: Your Network as Code
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# Illustrate the following concepts:
+# -
+##############################################################
+---
+- name: Enable Features
+  tags: [api, nxapi, vpc, vlan, trunks]
+  with_items:
+    - vpc
+    - lacp
+  nxos_feature:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    feature: "{{ item }}"
+    state: enabled
+
+- name: Create Port Channels for Access Switches
+  tags: [api, nxapi, vpc, vlan, trunks]
+  with_items: "{{ trunks }}"
+  nxos_portchannel:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    group: "{{ item.port_channel_id }}"
+    members: "{{ item.members }}"
+    force: true
+    mode: on
+    state: present
+
+- name: Configure Access Switch Port Channels as Trunk
+  tags: [api, nxapi, vpc, vlan, trunks]
+  with_items: "{{ trunks }}"
+  nxos_switchport:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    interface: "po{{ item.port_channel_id }}"
+    mode: trunk
+
+- name: Configure VPC for Trunks
+  tags: [api, nxapi, vpc, vlan, trunks]
+  with_items: "{{ trunks }}"
+  nxos_vpc_interface:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    portchannel: "{{ item.port_channel_id }}"
+    vpc: "{{ item.port_channel_id }}"

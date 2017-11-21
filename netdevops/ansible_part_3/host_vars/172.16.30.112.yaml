@@ -1,0 +1,35 @@
+l3_interfaces:
+  - interface_type: GigabitEthernet
+    interface_id: 2
+    description: L3 Link to nx-osv9000-2
+    ip_address: 172.16.0.13
+    subnet_mask: 255.255.255.252
+  - interface_type: GigabitEthernet
+    interface_id: 3
+    description: L3 Link to nx-osv9000-1
+    ip_address: 172.16.0.9
+    subnet_mask: 255.255.255.252
+  - interface_type: GigabitEthernet
+    interface_id: 4
+    description: L3 Link to ios-xev-1
+    ip_address: 172.16.0.18
+    subnet_mask: 255.255.255.252
+  - interface_type: Loopback
+    interface_id: 0
+    description: Default Loopback
+    ip_address: 192.168.1.2
+    subnet_mask: 255.255.255.255
+ospf_router_id: 192.168.1.2
+ospf_networks:
+    - network: 172.16.0.12
+      mask: 0.0.0.3
+      area: 0
+    - network: 172.16.0.8
+      mask: 0.0.0.3
+      area: 0
+    - network: 172.16.0.16
+      mask: 0.0.0.3
+      area: 0
+    - network: 192.168.1.2
+      mask: 0.0.0.0
+      area: 0

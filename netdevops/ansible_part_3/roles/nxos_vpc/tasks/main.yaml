@@ -1,0 +1,64 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Ansible Part 3: Your Network as Code
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# Illustrate the following concepts:
+# -
+##############################################################
+---
+- name: Enable Features
+  tags: [api, nxapi, vpc]
+  with_items:
+    - vpc
+    - lacp
+  nxos_feature:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    feature: "{{ item }}"
+    state: enabled
+
+- name: Configure VPC
+  tags: [api, nxapi, vpc]
+  nxos_vpc:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    domain: "{{ vpc.domain }}"
+    pkl_src: "{{ vpc_pkl_src }}"
+    pkl_dest: "{{ vpc_pkl_dest }}"
+    pkl_vrf: "{{ vpc.pkl_vrf }}"
+    peer_gw: true
+    auto_recovery: true
+
+- name: Create Port Channel for VPC
+  tags: [api, nxapi, vpc]
+  nxos_portchannel:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    group: "{{ vpc.port_channel.id }}"
+    members: "{{ vpc.port_channel.members }}"
+    force: true
+    mode: on
+    state: present
+
+- name: Configure VPC Port Channel Trunk
+  tags: [api, nxapi, vpc]
+  nxos_switchport:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    interface: "po{{ vpc.port_channel.id }}"
+    mode: trunk
+
+- name: Enable VPC Peer Link on port_channel
+  tags: [api, nxapi, vpc]
+  nxos_vpc_interface:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    portchannel: "{{ vpc.port_channel.id }}"
+    peer_link: true
