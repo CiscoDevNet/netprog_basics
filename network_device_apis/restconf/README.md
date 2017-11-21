@@ -52,3 +52,8 @@ pip install -r requirements.txt
 
 ## DevNet Sandbox
 This lesson leverages the [Always On: NETCONF/YANG & RESTCONF on IOS XE](https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
+
+***Note: In the video, a different DevNet Sandbox is used*** 
+
+Use host address of `ios-xe-mgmt.cisco.com` and port `9443` for all RESTCONF API connections rather than the address of `10.10.20.21` and port `443` that is used in the videos.
+
