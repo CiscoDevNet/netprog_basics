@@ -56,3 +56,12 @@ pip install -r requirements.txt
 This lesson leverages the [Open NX-OS with Nexus 9K Standalone](https://devnetsandbox.cisco.com/RM/Diagram/Index/0e22761d-f813-415d-a557-24fa0e17ab50?diagramType=Topology) Sandbox.  
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
+
+### Post Reservation Setup
+Before beginning this lesson run the `sbx_setup.py` script to add the baseline configuration to the switch.  
+
+***Note: Run from the `netprog_basics/network_device_apis/nxapi` directory.***
+
+```bash
+python sbx_setup.py
+```
