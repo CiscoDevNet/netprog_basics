@@ -1,0 +1,25 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Ansible Part 3: Your Network as Code
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# Illustrate the following concepts:
+# -
+##############################################################
+---
+- name: Configure NETCONF
+  tags: [api, netconf]
+  ios_config:
+    provider:
+      host: "{{inventory_hostname}}"
+    lines:
+      - netconf-yang
+      - netconf-yang cisco-odm polling-enable
+      # - restconf
+      # - ip http server
+      # - ip http secure-server
+
+- name: Pause for NETCONF to start
+  pause:
+    seconds: 45

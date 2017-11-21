@@ -1,0 +1,5 @@
+uplinks:
+  - port_channel_id: 11
+    members:
+      - Ethernet1/1
+      - Ethernet1/2

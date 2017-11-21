@@ -1,0 +1,19 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Ansible Part 3: Your Network as Code
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# Illustrate the following concepts:
+# -
+##############################################################
+---
+- name: Configure VLANs
+  tags: [api, nxapi, vlan]
+  with_items: "{{ vlans }}"
+  nxos_vlan:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    vlan_id: "{{ item.id }}"
+    name: "{{ item.name }}"

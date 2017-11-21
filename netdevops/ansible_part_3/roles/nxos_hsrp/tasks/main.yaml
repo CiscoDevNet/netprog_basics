@@ -1,0 +1,31 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Ansible Part 3: Your Network as Code
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# Illustrate the following concepts:
+# -
+##############################################################
+---
+- name: Enable Features
+  tags: [api, nxapi, hsrp]
+  with_items:
+    - hsrp
+  nxos_feature:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    feature: "{{ item }}"
+    state: enabled
+
+- name: Configure HSRP
+  tags: [api, nxapi, hsrp]
+  with_items: "{{ hsrp_interfaces }}"
+  nxos_hsrp:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    group: "{{ item.group }}"
+    vip: "{{ item.vip }}"
+    interface: "{{ item.interface }}"

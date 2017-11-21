@@ -1,0 +1,40 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Ansible Part 3: Your Network as Code
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# Illustrate the following concepts:
+# -
+##############################################################
+---
+- name: Enable Features
+  tags: [api, nxapi, ospf]
+  with_items:
+    - ospf
+  nxos_feature:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    feature: "{{ item }}"
+    state: enabled
+
+- name: Configure OSPF
+  tags: [api, nxapi, ospf]
+  nxos_ospf:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    ospf: "{{ ospf.process_id }}"
+    state: present
+
+- name: Configure OSPF Interfaces
+  tags: [api, nxapi, ospf]
+  with_items: "{{ ospf.networks }}"
+  nxos_interface_ospf:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    interface: "{{ item.interface }}"
+    ospf: "{{ ospf.process_id }}"
+    area: "{{ item.area }}"

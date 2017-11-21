@@ -1,0 +1,43 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Ansible Part 3: Your Network as Code
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# Illustrate the following concepts:
+# -
+##############################################################
+---
+- name: Enable Features
+  tags: [api, nxapi, trunk, vlan]
+  with_items:
+    - lacp
+  nxos_feature:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    feature: "{{ item }}"
+    state: enabled
+
+- name: Create Uplink Port Channel to Distribution
+  tags: [api, nxapi, trunk, vlan]
+  with_items: "{{ uplinks }}"
+  nxos_portchannel:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    group: "{{ item.port_channel_id }}"
+    members: "{{ item.members }}"
+    force: true
+    mode: on
+    state: present
+
+- name: Configure Uplink Port Channels as Trunk
+  tags: [api, nxapi, trunk, vlan]
+  with_items: "{{ uplinks }}"
+  nxos_switchport:
+    provider:
+      host: "{{inventory_hostname}}"
+      transport: nxapi
+    interface: "po{{ item.port_channel_id }}"
+    mode: trunk
