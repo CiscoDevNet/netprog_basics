@@ -9,7 +9,7 @@ cd netprog_basics/network_device_apis/restconf
 ```
 
 ## Local Workstation Setup
-Be sure to complete the [General Workstation Setup](https://github.com/CiscoDevNet/netprog_basics/readme_resources/workstation_setup.md) instructions before beginning this lesson.  
+Be sure to complete the [General Workstation Setup](https://github.com/CiscoDevNet/netprog_basics/blob/master/readme_resources/workstation_setup.md) instructions before beginning this lesson.  
 
 ### Postman Setup 
 During this lesson the Postman client for making REST API calls is used.  For convenience we have included a `postmane_collection.json` file that contains all the REST API calls leveraged in the different lessons, and `postman_environment.json` files for each of the DevNet Sandboxes leveraged across the lessons.  These files are all located in the [postman_config](https://github.com/CiscoDevNet/netprog_basics/postman_config) directory in the code repository.  

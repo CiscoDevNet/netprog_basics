@@ -9,7 +9,7 @@ cd netprog_basics/programming_fundamentals/rest_part_1
 ```
 
 ## Local Workstation Setup
-Be sure to complete the [General Workstation Setup](https://github.com/CiscoDevNet/netprog_basics/readme_resources/workstation_setup.md) instructions before beginning this lesson.  
+Be sure to complete the [General Workstation Setup](https://github.com/CiscoDevNet/netprog_basics/blob/master/readme_resources/workstation_setup.md) instructions before beginning this lesson.  
 
 ### curl on Windows
 In this lesson the Linux utility `curl` is used to send basic REST API requests.  On Linux and OS X, `curl` is available and installed by default.  

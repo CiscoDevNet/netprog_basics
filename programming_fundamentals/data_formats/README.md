@@ -9,7 +9,7 @@ cd netprog_basics/programming_fundamentals/data_formats
 ```
 
 ## Local Workstation Setup
-Be sure to complete the [General Workstation Setup](https://github.com/CiscoDevNet/netprog_basics/readme_resources/workstation_setup.md) instructions before beginning this lesson.  
+Be sure to complete the [General Workstation Setup](https://github.com/CiscoDevNet/netprog_basics/blob/master/readme_resources/workstation_setup.md) instructions before beginning this lesson.  
 
 ## DevNet Sandbox
 No Sandbox is required for this lesson.
