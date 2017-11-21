@@ -107,3 +107,9 @@ venv*/
 package.tar
 *.retry
 ioxclient
+netdevops/ansible_part_3/configs
+netdevops/ansible_part_1/example3.conf
+config_sample.xml
+scratch*
+to-do*
+Vagrantfile
