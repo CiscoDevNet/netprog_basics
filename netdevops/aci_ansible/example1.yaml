@@ -1,0 +1,35 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Application Centric Infrastructure and Ansible
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# Illustrate the following concepts:
+# - Managing Tenants with Ansible
+# - aci_tenant module
+##############################################################
+---
+- name: Example 1 - Managing Tenants
+  hosts: apic
+  connection: local
+  gather_facts: False
+  vars_prompt:
+    - name: "prefix"
+      prompt: "What are your initials?"
+      private: no
+  vars:
+    tenants:
+      - "{{ prefix }}_Tenant1"
+      - "{{ prefix }}_Tenant2"
+
+  tasks:
+    - name: Create Tenants
+      aci_tenant:
+        host: "{{ ansible_host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "present"
+        validate_certs: False
+        tenant: "{{ item }}"
+        description: "Tenant Created Using Ansible"
+      with_items: "{{ tenants }}"
