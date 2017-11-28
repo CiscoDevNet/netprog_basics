@@ -1,5 +1,5 @@
 [servers]
-10.10.20.20 ansible_python_interpreter="/usr/bin/env python"
+localhost ansible_python_interpreter="/usr/bin/env python"
 
 [switches]
 172.16.30.101 ansible_python_interpreter="/usr/bin/env python"

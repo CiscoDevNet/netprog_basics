@@ -1,8 +1,5 @@
 [servers]
-10.10.20.20 ansible_python_interpreter="/usr/bin/env python"
+localhost ansible_python_interpreter="/usr/bin/env python"
 
 [switches]
-172.16.30.101 ansible_python_interpreter="/usr/bin/env python"
-172.16.30.102 ansible_python_interpreter="/usr/bin/env python"
-172.16.30.103 ansible_python_interpreter="/usr/bin/env python"
-172.16.30.104 ansible_python_interpreter="/usr/bin/env python"
+127.0.0.1 ansible_python_interpreter="/usr/bin/env python" http_port=2224

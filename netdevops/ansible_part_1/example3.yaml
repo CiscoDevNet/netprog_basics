@@ -3,7 +3,7 @@
 # Module: NetDevOps
 # Lesson: Ansible Part 1: What you need to Get Started
 # Author: Hank Preston <hapresto@cisco.com>
-# 
+#
 # example3.yaml
 # Illustrate the following concepts:
 # - Using Jinja templates
@@ -11,15 +11,15 @@
 ---
 - name: Generate Configuration from Template
   hosts: localhost
+  connection: local
   gather_facts: false
-  vars: 
+  vars:
     feature: bgp
     asn: 65001
     router_id: 10.10.10.1
-    
-  tasks: 
+
+  tasks:
     - name: "Generate config"
-      template: 
+      template:
         src: "example3.j2"
         dest: "./example3.conf"
-
