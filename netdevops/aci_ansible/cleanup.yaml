@@ -26,7 +26,7 @@
       - "{{ prefix }}_Tenant4"
 
   tasks:
-    - name: Create Tenants
+    - name: Delete Tenants
       aci_tenant:
         host: "{{ ansible_host }}"
         username: "{{ username }}"
