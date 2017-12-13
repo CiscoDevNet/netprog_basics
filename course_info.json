@@ -3,17 +3,21 @@
     "module": "intro",
     "name": "Introduction",
     "description": "Learn what the Network Programmability Video Course is all about.",
-    "readme": "https://github.com/CiscoDevNet/programming_fundamentals/README.md",
+    "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/intro/intro/README.md",
+    "image": "",
     "lessons": [
       {
         "lesson": "intro",
         "name": "How to be a Network Engineer in a Programmable Age",
         "description": "Explore how the network has evolved from the early \"Stone Age\" to today and what it means to you as a Network Engineer.",
-        "readme": "https://github.com/CiscoDevNet/intro/intro/README.md",
-        "sandbox": false,
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/intro/intro/README.md",
+        "sandbox": null,
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       }
     ]
   },
@@ -21,77 +25,107 @@
     "module": "programming_fundamentals",
     "name": "Programming Fundamentals",
     "description": "Jumpstart your journey into Network Programmability with this quick introduction to the core programming fundamental topics you'll explore.",
-    "readme": "https://github.com/CiscoDevNet/programming_fundamentals/README.md",
+    "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/programming_fundamentals/README.md",
+    "image": "",
     "lessons": [
       {
         "lesson": "data_formats",
         "name": "Data Formats: Understanding and using JSON, XML and YAML",
         "description": "Become familiar with the three most common data formats in network programmability.",
-        "readme": "https://github.com/CiscoDevNet/programming_fundamentals/data_formats/README.md",
-        "sandbox": false,
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/programming_fundamentals/data_formats/README.md",
+        "sandbox": null,
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "apis",
         "name": "APIs are Everywhere... but what are they?",
         "description": "Demystify the term \"API\" and learn about the most common types you'll need to know.",
-        "readme": "https://github.com/CiscoDevNet/programming_fundamentals/apis/README.md",
-        "sandbox": false,
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/programming_fundamentals/apis/README.md",
+        "sandbox": null,
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "rest_part_1",
         "name": "REST APIs Part 1: HTTP is for more than Web Browsing",
         "description": "Learn what makes up a REST API and how to get started using them.",
-        "readme": "https://github.com/CiscoDevNet/programming_fundamentals/rest_part_1/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology",
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/programming_fundamentals/rest_part_1/README.md",
+        "sandbox": {
+          "description": "The \"NETCONF/YANG and RESTCONF on IOS XE\" Always On Sandbox provides an environment to developers and network engineers to test their applications or scripts that use model driven programmability using the new standard device interfaces for network configuration and operations.  ",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology",
+          "name": "NETCONF-YANG and RESTCONF AO"
+        },
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "rest_part_2",
         "name": "REST APIs Part 2: Making REST API Calls with Postman",
         "description": "Become a REST API Pro with the Postman Application.",
-        "readme": "https://github.com/CiscoDevNet/programming_fundamentals/rest_part_2/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology",
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/programming_fundamentals/rest_part_2/README.md",
+        "sandbox": {
+          "description": "This Lab is running the GA Release of APIC-EM which provides the developer the ability to design, develop and test utilizing the APIC-EM development platform with a sample simulated sandbox Lab Topology and Hello World application.",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology",
+          "name": "APIC-EM Always-On"
+        },
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "python_part_1",
         "name": "Python Part 1: Python Language and Script Basics",
         "description": "Python is all the rage for network programmability but why?  And how can you get started?",
-        "readme": "https://github.com/CiscoDevNet/programming_fundamentals/python_part_1/README.md",
-        "sandbox": false,
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/programming_fundamentals/python_part_1/README.md",
+        "sandbox": null,
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "python_part_2",
         "name": "Python Part 2: Working with Libraries and Virtual Environments",
         "description": "Continue your journey with Python with Libraries and Virtual Environments.",
-        "readme": "https://github.com/CiscoDevNet/programming_fundamentals/python_part_2/README.md",
-        "sandbox": false,
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/programming_fundamentals/python_part_2/README.md",
+        "sandbox": null,
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "python_part_3",
         "name": "Python Part 3: Useful Python Libraries for Network Engineers",
         "description": "Jump into Python for Networking in this lesson where you'll learn some of the most useful libraries.",
-        "readme": "https://github.com/CiscoDevNet/programming_fundamentals/python_part_3/README.md",
-        "sandbox": false,
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/programming_fundamentals/python_part_3/README.md",
+        "sandbox": null,
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       }
     ]
   },
@@ -99,58 +133,128 @@
     "module": "network_device_apis",
     "name": "Network Device APIs",
     "description": "Network programmability is more than sending CLI with Python.  Learn about the latest in programmatic device interfaces in this module.",
-    "readme": "https://github.com/CiscoDevNet/network_device_apis/README.md",
+    "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_device_apis/README.md",
+    "image": "",
     "lessons": [
       {
         "lesson": "yang",
-        "name": "Getting the “YANG” of it with Standard Data Models",
+        "name": "Getting the \"YANG\" of it with Standard Data Models",
         "description": "Do you keep hearing the word \"YANG\", but not sure what it's all about?  Learn it all in this lesson.",
-        "readme": "https://github.com/CiscoDevNet/network_device_apis/yang/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_device_apis/yang/README.md",
+        "sandbox": {
+          "description": "The \"NETCONF/YANG and RESTCONF on IOS XE\" Always On Sandbox provides an environment to developers and network engineers to test their applications or scripts that use model driven programmability using the new standard device interfaces for network configuration and operations.  ",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology",
+          "name": "NETCONF-YANG and RESTCONF AO"
+        },
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/intro-device-level-interfaces/02-introducing-yang-data-modeling/step/1"
-        ]
+          {
+            "description": "Understand what a Data Model is and what YANG provides for Network Management.",
+            "link": "https://learninglabs.cisco.com/modules/intro-device-level-interfaces/02-introducing-yang-data-modeling/step/1",
+            "name": "Introduction to YANG Data Modeling"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "netconf",
         "name": "Goodbye SNMP <hello> NETCONF!",
         "description": "Put those new YANG skills to work with NETCONF in this lesson.",
-        "readme": "https://github.com/CiscoDevNet/network_device_apis/netconf/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_device_apis/netconf/README.md",
+        "sandbox": {
+          "description": "The \"NETCONF/YANG and RESTCONF on IOS XE\" Always On Sandbox provides an environment to developers and network engineers to test their applications or scripts that use model driven programmability using the new standard device interfaces for network configuration and operations.  ",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology",
+          "name": "NETCONF-YANG and RESTCONF AO"
+        },
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/intro-device-level-interfaces/03-introducing-the-netconf-protocol/step/1"
-        ]
+          {
+            "description": "Explore the key elements of the NETCONF Protocol and how to use it.",
+            "link": "https://learninglabs.cisco.com/modules/intro-device-level-interfaces/03-introducing-the-netconf-protocol/step/1",
+            "name": "Introduction to the NETCONF Protocol"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "restconf",
         "name": "Learn to CRUD with GET, POST and DELETE using RESTCONF",
         "description": "Get started with the standard REST API for the network, RESTCONF",
-        "readme": "https://github.com/CiscoDevNet/network_device_apis/restconf/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_device_apis/restconf/README.md",
+        "sandbox": {
+          "description": "The \"NETCONF/YANG and RESTCONF on IOS XE\" Always On Sandbox provides an environment to developers and network engineers to test their applications or scripts that use model driven programmability using the new standard device interfaces for network configuration and operations.  ",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology",
+          "name": "NETCONF-YANG and RESTCONF AO"
+        },
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/intro-device-level-interfaces/04-introducing-the-restconf-protocol/step/1"
-        ]
+          {
+            "description": "Explore the key elements of the RESTCONF Protocol and how to use it.",
+            "link": "https://learninglabs.cisco.com/modules/intro-device-level-interfaces/04-introducing-the-restconf-protocol/step/1",
+            "name": "Introduction to the RESTCONF Protocol"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "nxapi_part_1",
         "name": "NX-API Part 1: Get Started with APIs and Nexus",
         "description": "Explore NX-API CLI for quickly getting started programming Open NX-OS with your CLI skills.",
-        "readme": "https://github.com/CiscoDevNet/network_device_apis/nx-api/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/0e22761d-f813-415d-a557-24fa0e17ab50?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_device_apis/nx-api/README.md",
+        "sandbox": {
+          "description": "The Open NX-OS Sandbox provides a developer with an environment to design, develop and test applications in the NX-OS switch software. Using the Open NX-API enables the developer to create management and control plane applications for NX-OS based switch devices. ",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/0e22761d-f813-415d-a557-24fa0e17ab50?diagramType=Topology",
+          "name": "Open NX-OS with Nexus 9K"
+        },
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/sdx-intro-nxos/nxos-intro-01_overview/step/1",
-          "https://learninglabs.cisco.com/modules/sdx-intro-nxos/nxos-intro-03_nxapi-rest/step/1"
-        ]
+          {
+            "description": "Learn about NX-OS's programmability and automation capabilities.",
+            "link": "https://learninglabs.cisco.com/modules/sdx-intro-nxos/nxos-intro-01_overview/step/1",
+            "name": "Nexus OS Programmability and Automation Overview"
+          },
+          {
+            "description": "Explore the robust API capabilities available with Open NX-OS.",
+            "link": "https://learninglabs.cisco.com/modules/sdx-intro-nxos/nxos-intro-03_nxapi-rest/step/1",
+            "name": "Introduction to NX-API"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "nxapi_part_2",
         "name": "NX-API Part 2: Dive into the Nexus Object Model",
         "description": "Move beyond the CLI with NX-API REST and explore the native data model for Open NX-OS",
-        "readme": "https://github.com/CiscoDevNet/network_device_apis/nx-api/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/0e22761d-f813-415d-a557-24fa0e17ab50?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_device_apis/nx-api/README.md",
+        "sandbox": {
+          "description": "The Open NX-OS Sandbox provides a developer with an environment to design, develop and test applications in the NX-OS switch software. Using the Open NX-API enables the developer to create management and control plane applications for NX-OS based switch devices. ",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/0e22761d-f813-415d-a557-24fa0e17ab50?diagramType=Topology",
+          "name": "Open NX-OS with Nexus 9K"
+        },
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/sdx-intermediate-nxos/nxos-intermediate-04_devbox-and-visore/step/1"
-        ]
+          {
+            "description": "Take a deeper look at JSON-RPC, JSON, XML, and NX-API REST interfaces included with NX-API",
+            "link": "https://learninglabs.cisco.com/modules/sdx-intermediate-nxos/nxos-intermediate-04_devbox-and-visore/step/1",
+            "name": "Investigate NX-API Options and the NX-OS Object Model"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       }
     ]
   },
@@ -158,78 +262,163 @@
     "module": "network_controllers",
     "name": "Network Controllers",
     "description": "Explore what network controllers offer to Software Defined Networking.",
-    "readme": "https://github.com/CiscoDevNet/network_controllers/README.md",
+    "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_controllers/README.md",
+    "image": "",
     "lessons": [
       {
         "lesson": "apicem_intro",
         "name": "Program your own DNA with APIC-EM APIs",
         "description": "See how quickly you can get started with Digital Network Architecture and APIC-EM Programmabilty.",
-        "readme": "https://github.com/CiscoDevNet/network_controllers/apicem/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_controllers/apicem/README.md",
+        "sandbox": {
+          "description": "This Lab is running the GA Release of APIC-EM which provides the developer the ability to design, develop and test utilizing the APIC-EM development platform with a sample simulated sandbox Lab Topology and Hello World application.",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology",
+          "name": "APIC-EM Always-On"
+        },
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/net-controllers/apic-em-basic/step/1",
-          "https://learninglabs.cisco.com/modules/net-controllers/apic-em-path-trace/step/1"
-        ]
+          {
+            "description": "The purpose of this learning lab is to understand the basics of the APIC-EM Northbound REST API. APIC-EM allows you to develop your own custom controller or add dynamic SDN functionality directly into your own applications.",
+            "link": "https://learninglabs.cisco.com/modules/net-controllers/apic-em-basic/step/1",
+            "name": "APIC-EM APIs with Python: Part 1 - The Basics"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "aci_intro",
         "name": "Got SDN? Understanding the ACI Programmability Options",
         "description": "Application Centric Infrastructure is the SDN solution for the Data Center born with programmability in mind.  Checkout all the options available in this lesson.",
-        "readme": "https://github.com/CiscoDevNet/network_controllers/aci/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/5a229a7c-95d5-4cfd-a651-5ee9bc1b30e2?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_controllers/aci/README.md",
+        "sandbox": {
+          "description": "The ACI Sandbox provides a developer with an environment to design, develop and test using the ACI RESTful APIs over http/https with XML and JSON encodings. ",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/5a229a7c-95d5-4cfd-a651-5ee9bc1b30e2?diagramType=Topology",
+          "name": "ACI Simulator AlwaysOn"
+        },
         "learning_labs": [
-          false
-        ]
+          {
+            "description": "Learn the basics of the APIC controller and interfaces, and issue basic commands using the API.",
+            "link": "https://learninglabs.cisco.com/modules/intro-to-aci/sbx-intro-aci-02_programmability-options/step/1",
+            "name": "ACI Programmability Options"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "meraki_intro",
         "name": "Network Control in the Cloud - Developing with Cisco Meraki",
         "description": "With Meraki, your network is controlled by the clouds, and it's fully programmable.  In this lesson see what APIs and options are available.",
-        "readme": "https://github.com/CiscoDevNet/meraki/aci/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/a9487767-deef-4855-b3e3-880e7f39eadc?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_controllers/meraki/README.md",
+        "sandbox": {
+          "description": "The Meraki DevNet Sandbox provides a developer environment to experiment with the Cisco Meraki products, manage and monitor network devices using Meraki's Cloud based Management. All of Meraki's integration points are accessible allowing one to try using the Dashboard APIs, setting up a Captive Portal/Splash Page, and leveraging Meraki's Location Scanning in their application",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/a9487767-deef-4855-b3e3-880e7f39eadc?diagramType=Topology",
+          "name": "Meraki Always On"
+        },
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/getting-started-with-meraki/meraki-dashboard-api/step/1"
-        ]
+          {
+            "description": "Getting started with the Meraki Dashboard API",
+            "link": "https://learninglabs.cisco.com/modules/getting-started-with-meraki/meraki-dashboard-api/step/1",
+            "name": "Meraki Dashboard API"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "apicem_part_1",
         "name": "DNA APIs Part 1: Exploring APIC-EM Apps via API",
         "description": "Dive into the APIs for exploring your network inventory and traffic paths in this lesson on APIC-EM Application APIs.",
-        "readme": "https://github.com/CiscoDevNet/network_controllers/apicem/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_controllers/apicem/README.md",
+        "sandbox": {
+          "description": "This Lab is running the GA Release of APIC-EM which provides the developer the ability to design, develop and test utilizing the APIC-EM development platform with a sample simulated sandbox Lab Topology and Hello World application.",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology",
+          "name": "APIC-EM Always-On"
+        },
         "learning_labs": [
-          false
-        ]
+          {
+            "description": "Learn about the APIC-EM Path Trace APIs and REST Fundamentals using Python",
+            "link": "https://learninglabs.cisco.com/modules/net-controllers/apic-em-path-trace/step/1",
+            "name": "APIC-EM APIs with Python: Part 2 - Path Trace"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "apicem_part_2",
         "name": "DNA APIs Part 2: Troubleshooting with APIC-EM Programmability",
         "description": "Put your API skills to work making troubleshooting simpler by crafting a Python script to do the heavy discovery work for you.",
-        "readme": "https://github.com/CiscoDevNet/network_controllers/apicem/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology",
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_controllers/apicem/README.md",
+        "sandbox": {
+          "description": "This Lab is running the GA Release of APIC-EM which provides the developer the ability to design, develop and test utilizing the APIC-EM development platform with a sample simulated sandbox Lab Topology and Hello World application.",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology",
+          "name": "APIC-EM Always-On"
+        },
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "aci_part_1",
         "name": "ACI Programmability Part 1: The ACI Object Model",
         "description": "Learn how the ACI Object Model is at the root of all programmatic interactions with ACI and explore it using built-in tools in this lesson.",
-        "readme": "https://github.com/CiscoDevNet/network_controllers/aci/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/5a229a7c-95d5-4cfd-a651-5ee9bc1b30e2?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_controllers/aci/README.md",
+        "sandbox": {
+          "description": "The ACI Sandbox provides a developer with an environment to design, develop and test using the ACI RESTful APIs over http/https with XML and JSON encodings. ",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/5a229a7c-95d5-4cfd-a651-5ee9bc1b30e2?diagramType=Topology",
+          "name": "ACI Simulator AlwaysOn"
+        },
         "learning_labs": [
-          false
-        ]
+          {
+            "description": "Investigate the ACI REST API and the tools available to easily use it.",
+            "link": "https://learninglabs.cisco.com/modules/intermediate-aci-prog/sbx-intermediate-aci-01_aci-api/step/1",
+            "name": "Peeling back the ACI API"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "aci_part_2",
         "name": "ACI Programmability Part 2: Using the ACI Toolkit",
         "description": "See how the ACI Toolkit makes programming APIC with Python simple and straightforward.",
-        "readme": "https://github.com/CiscoDevNet/network_controllers/aci/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/5a229a7c-95d5-4cfd-a651-5ee9bc1b30e2?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_controllers/aci/README.md",
+        "sandbox": {
+          "description": "The ACI Sandbox provides a developer with an environment to design, develop and test using the ACI RESTful APIs over http/https with XML and JSON encodings. ",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/5a229a7c-95d5-4cfd-a651-5ee9bc1b30e2?diagramType=Topology",
+          "name": "ACI Simulator AlwaysOn"
+        },
         "learning_labs": [
-          false
-        ]
+          {
+            "description": "Introduction to the ACI Toolkit, a set of Python utilities for interfacing with the APIC.",
+            "link": "https://learninglabs.cisco.com/modules/intro-to-aci/sbx-intro-aci-03_aci-toolkit/step/1",
+            "name": "Introduction to ACI Toolkit"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       }
     ]
   },
@@ -237,48 +426,83 @@
     "module": "application_hosting",
     "name": "Application Hosting and the Network",
     "description": "The switches and routers in your network can do much more than just pass packets these days.  Edge or Fog computing is the next big thing, and in this module learn how Linux, Python and Containers can all be hosted at the edge.",
-    "readme": "https://github.com/CiscoDevNet/application_hosting/README.md",
+    "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/application_hosting/README.md",
+    "image": "",
     "lessons": [
       {
         "lesson": "intro",
-        "name": "Cloud to Fog… Why Host Apps in the Network",
+        "name": "Cloud to Fogâ€¦ Why Host Apps in the Network",
         "description": "Trying to understand why you might want to run code and applications on the network devices?  This lesson breaks it down.",
-        "readme": "https://github.com/CiscoDevNet/application_hosting/intro/README.md",
-        "sandbox": false,
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/application_hosting/intro/README.md",
+        "sandbox": null,
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "guestshell",
         "name": "Linux at the Edge: Introduction to Guest Shell",
         "description": "Learn how Guest Shell provides a Linux environment on switches and routers where you can run applications, utilities, and scripts securely.",
-        "readme": "https://github.com/CiscoDevNet/application_hosting/guestshell/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/7fd27b24-7034-477d-9ad2-e2c8096dd1a5?diagramType=Topology",
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/application_hosting/guestshell/README.md",
+        "sandbox": {
+          "description": "The \"IOS XE Programmability\" Sandbox provides an environment where developers and network engineers can explore the programmability options available within IOS XE",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/7fd27b24-7034-477d-9ad2-e2c8096dd1a5?diagramType=Topology",
+          "name": "IOS XE Programmability"
+        },
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "python_onbox",
         "name": "Python at the Edge: Super Charged Network Event Management",
         "description": "Building on Guest Shell, Python is now available on your network devices enabling all sorts of possiblities.  Check them out in this lesson!",
-        "readme": "https://github.com/CiscoDevNet/application_hosting/python_onbox/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/7fd27b24-7034-477d-9ad2-e2c8096dd1a5?diagramType=Topology",
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/application_hosting/python_onbox/README.md",
+        "sandbox": {
+          "description": "The \"IOS XE Programmability\" Sandbox provides an environment where developers and network engineers can explore the programmability options available within IOS XE",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/7fd27b24-7034-477d-9ad2-e2c8096dd1a5?diagramType=Topology",
+          "name": "IOS XE Programmability"
+        },
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "iox",
         "name": "Package, Deploy and Run Applications in the Network with IOx",
         "description": "Embrace Fog Computing for the Internet of Things and run business applications at the edge with Cisco IOx.",
-        "readme": "https://github.com/CiscoDevNet/application_hosting/iox/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/864622c2-24bd-47ca-867d-015dbe44e185?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/application_hosting/iox/README.md",
+        "sandbox": {
+          "description": "The IOx Fog Director reservation based Lab provides a developer with an environment to deploy IOx applications on a simulated environment for Cisco IOx.",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/864622c2-24bd-47ca-867d-015dbe44e185?diagramType=Topology",
+          "name": "IOx v1.4"
+        },
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/iox-basic/iot-iox-app/step/1",
-          "https://learninglabs.cisco.com/modules/iox-basic/iot-iox-app-docker/step/1"
-        ]
+          {
+            "description": "Learn to build an IOx Application using the DevNet Sandbox.",
+            "link": "https://learninglabs.cisco.com/modules/iox-basic/iot-iox-app/step/1",
+            "name": "Building an IOx Application"
+          },
+          {
+            "description": "Learn to build an IOx Application with Docker using the DevNet Sandbox.",
+            "link": "https://learninglabs.cisco.com/modules/iox-basic/iot-iox-app-docker/step/1",
+            "name": "Building an IOx Application with Docker"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       }
     ]
   },
@@ -286,47 +510,90 @@
     "module": "netdevops",
     "name": "NetDevOps",
     "description": "NetDevOps is about bringing the culture, tools, and best practices from DevOps to networking.  Get started with configuration management for the network in this module.",
-    "readme": "https://github.com/CiscoDevNet/netdevops/README.md",
+    "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/netdevops/README.md",
+    "image": "",
     "lessons": [
       {
         "lesson": "intro",
         "name": "Configuration Management and the Network",
         "description": "Not sure what configuration management is, or how it relatest to the network?  No worries, we break it down in this lesson.",
-        "readme": "https://github.com/CiscoDevNet/netdevops/intro/README.md",
-        "sandbox": false,
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/netdevops/intro/README.md",
+        "sandbox": null,
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/sdx-ansible-intro/ansible-01_config-mgmt-intro/step/1"
-        ]
+          {
+            "description": "Overview of the configuration management solution space",
+            "link": "https://learninglabs.cisco.com/modules/sdx-ansible-intro/ansible-01_config-mgmt-intro/step/1",
+            "name": "Introduction to Configuration Management"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "ansible_part_1",
         "name": "Ansible Part 1: What you need to Get Started",
         "description": "Go from zero to your first playbook in this quickstart to Ansible.",
-        "readme": "https://github.com/CiscoDevNet/netdevops/ansible_part_1/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/1e9b57ff-9e64-4c68-93e5-f0f0a8c6f22c?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/netdevops/ansible_part_1/README.md",
+        "sandbox": {
+          "description": "The Open NX-OS Sandbox provides a developer with an environment to design, develop and test applications with Open NX-OS switch software.",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/1e9b57ff-9e64-4c68-93e5-f0f0a8c6f22c?diagramType=Topology",
+          "name": "Open NX-OS with Nexus 9Kv"
+        },
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/sdx-ansible-intro/ansible-02_ansible-intro/step/1"
-        ]
+          {
+            "description": "Start your automation journey by learning the Ansible tool",
+            "link": "https://learninglabs.cisco.com/modules/sdx-ansible-intro/ansible-02_ansible-intro/step/1",
+            "name": "Introduction to Ansible"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "ansible_part_2",
         "name": "Ansible Part 2: Using Ansible for Network Configuration",
         "description": "With the basics of Ansible and server management under your belt, it's time to move to the network and see how moderinize network configuration management.",
-        "readme": "https://github.com/CiscoDevNet/netdevops/ansible_part_2/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/1e9b57ff-9e64-4c68-93e5-f0f0a8c6f22c?diagramType=Topology",
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/netdevops/ansible_part_2/README.md",
+        "sandbox": {
+          "description": "The Open NX-OS Sandbox provides a developer with an environment to design, develop and test applications with Open NX-OS switch software.",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/1e9b57ff-9e64-4c68-93e5-f0f0a8c6f22c?diagramType=Topology",
+          "name": "Open NX-OS with Nexus 9Kv"
+        },
         "learning_labs": [
-          "https://learninglabs.cisco.com/modules/sdx-intro-nxos/nxos-intro-06_ansible-nxapi/step/1"
-        ]
+          {
+            "description": "Learn how to automate tasks using Ansible playbooks.",
+            "link": "https://learninglabs.cisco.com/modules/sdx-intro-nxos/nxos-intro-06_ansible-nxapi/step/1",
+            "name": "Using Ansible with NX-OS Devices"
+          }
+        ],
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       },
       {
         "lesson": "ansible_part_3",
         "name": "Ansible Part 3: Your Network As Code",
         "description": "See what is possible when you embrace NetDevOps and treat your \"Network as Code\" in this lesson.",
-        "readme": "https://github.com/CiscoDevNet/netdevops/ansible_part_3/README.md",
-        "sandbox": "https://devnetsandbox.cisco.com/RM/Diagram/Index/1e9b57ff-9e64-4c68-93e5-f0f0a8c6f22c?diagramType=Topology",
-        "learning_labs": [
-          false
-        ]
+        "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/netdevops/ansible_part_3/README.md",
+        "sandbox": {
+          "description": "The Open NX-OS Sandbox provides a developer with an environment to design, develop and test applications with Open NX-OS switch software.",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/1e9b57ff-9e64-4c68-93e5-f0f0a8c6f22c?diagramType=Topology",
+          "name": "Open NX-OS with Nexus 9Kv"
+        },
+        "learning_labs": null,
+        "link": "",
+        "protected": false,
+        "completedPercentage": 0,
+        "viewed": false,
+        "duration": ""
       }
     ]
   }
