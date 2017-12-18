@@ -449,7 +449,7 @@
         "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/application_hosting/guestshell/README.md",
         "sandbox": {
           "description": "The \"IOS XE Programmability\" Sandbox provides an environment where developers and network engineers can explore the programmability options available within IOS XE",
-          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/7fd27b24-7034-477d-9ad2-e2c8096dd1a5?diagramType=Topology",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/1b83c4bf-f63e-4e4b-9119-9b385751f1b6?diagramType=Topology",
           "name": "IOS XE Programmability"
         },
         "learning_labs": null,
@@ -466,7 +466,7 @@
         "readme": "https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/application_hosting/python_onbox/README.md",
         "sandbox": {
           "description": "The \"IOS XE Programmability\" Sandbox provides an environment where developers and network engineers can explore the programmability options available within IOS XE",
-          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/7fd27b24-7034-477d-9ad2-e2c8096dd1a5?diagramType=Topology",
+          "link": "https://devnetsandbox.cisco.com/RM/Diagram/Index/1b83c4bf-f63e-4e4b-9119-9b385751f1b6?diagramType=Topology",
           "name": "IOS XE Programmability"
         },
         "learning_labs": null,
