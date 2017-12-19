@@ -6,7 +6,7 @@
 # - Provide details about the modules and lessons in the course
 ##############################################################
 ---
-- module: intro
+- module: 00-intro
   name: Introduction
   description: Learn what the Network Programmability Video Course is all about.
   readme: https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/intro/intro/README.md
@@ -24,7 +24,7 @@
     completedPercentage: 0
     viewed: false
     duration: ''
-- module: programming_fundamentals
+- module: 01-programming_fundamentals
   name: Programming Fundamentals
   description: Jumpstart your journey into Network Programmability with this quick
     introduction to the core programming fundamental topics you'll explore.
@@ -118,7 +118,7 @@
     completedPercentage: 0
     viewed: false
     duration: ''
-- module: network_device_apis
+- module: 02-network_device_apis
   name: Network Device APIs
   description: Network programmability is more than sending CLI with Python.  Learn
     about the latest in programmatic device interfaces in this module.
@@ -215,7 +215,7 @@
     completedPercentage: 0
     viewed: false
     duration: ''
-- module: network_controllers
+- module: 03-network_controllers
   name: Network Controllers
   description: Explore what network controllers offer to Software Defined Networking.
   readme: https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/network_controllers/README.md
@@ -345,7 +345,7 @@
     completedPercentage: 0
     viewed: false
     duration: ''
-- module: application_hosting
+- module: 04-application_hosting
   name: Application Hosting and the Network
   description: The switches and routers in your network can do much more than just
     pass packets these days.  Edge or Fog computing is the next big thing, and in
@@ -354,7 +354,7 @@
   image: ''
   lessons:
   - lesson: intro
-    name: Cloud to Fogâ€¦ Why Host Apps in the Network
+    name: 'Cloud to Fog: Why Host Apps in the Network'
     description: Trying to understand why you might want to run code and applications
       on the network devices?  This lesson breaks it down.
     readme: https://raw.githubusercontent.com/CiscoDevNet/netprog_basics/master/application_hosting/intro/README.md
@@ -416,7 +416,7 @@
     completedPercentage: 0
     viewed: false
     duration: ''
-- module: netdevops
+- module: 05-netdevops
   name: NetDevOps
   description: NetDevOps is about bringing the culture, tools, and best practices
     from DevOps to networking.  Get started with configuration management for the
