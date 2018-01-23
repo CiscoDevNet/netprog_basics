@@ -16,6 +16,7 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
@@ -26,6 +27,7 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     interface: "{{ item.interface_type }}{{ item.interface_id }}"
     mode: layer3
     description: "{{ item.description }}"
@@ -38,6 +40,7 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     interface: "{{ item.interface_type }}{{ item.interface_id }}"
     version: v4
     addr: "{{ item.ip_address }}"

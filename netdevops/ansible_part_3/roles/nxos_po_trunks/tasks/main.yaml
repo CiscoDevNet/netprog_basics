@@ -16,6 +16,7 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
@@ -26,6 +27,7 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     group: "{{ item.port_channel_id }}"
     members: "{{ item.members }}"
     force: true
@@ -39,5 +41,6 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     interface: "po{{ item.port_channel_id }}"
     mode: trunk
