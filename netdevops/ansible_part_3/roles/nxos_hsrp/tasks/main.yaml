@@ -16,6 +16,7 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
@@ -26,6 +27,7 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     group: "{{ item.group }}"
     vip: "{{ item.vip }}"
     interface: "{{ item.interface }}"

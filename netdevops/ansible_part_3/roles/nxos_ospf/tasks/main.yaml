@@ -16,6 +16,7 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
@@ -25,6 +26,7 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     ospf: "{{ ospf.process_id }}"
     state: present
 
@@ -35,6 +37,7 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     interface: "{{ item.interface }}"
     ospf: "{{ ospf.process_id }}"
     area: "{{ item.area }}"

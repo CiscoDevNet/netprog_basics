@@ -22,5 +22,6 @@
   nxos_feature:
     provider:
       host: "{{inventory_hostname}}"
+      timeout: 15
     feature: nxapi
     state: enabled

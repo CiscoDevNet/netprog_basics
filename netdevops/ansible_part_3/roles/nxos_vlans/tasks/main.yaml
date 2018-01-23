@@ -15,5 +15,6 @@
     provider:
       host: "{{inventory_hostname}}"
       transport: nxapi
+      timeout: 15
     vlan_id: "{{ item.id }}"
     name: "{{ item.name }}"
