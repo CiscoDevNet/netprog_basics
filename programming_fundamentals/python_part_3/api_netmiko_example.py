@@ -1,4 +1,4 @@
-! /usr/bin/env python
+#! /usr/bin/env python
 """
 Learning Series: Network Programmability Basics
 Module: Programming Fundamentals
@@ -8,25 +8,23 @@ Author: Hank Preston <hapresto@cisco.com>
 api_netmiko_example.py
 Illustrate the following concepts:
 - Making CLI calls using netmiko library
-- Intended to be entered into an interactive 
+- Intended to be entered into an interactive
   interpreter
 """
 
 from netmiko import ConnectHandler
 from pprint import pprint
 
-router = {"device_type": "cisco_ios", 
-          "host": "10.10.20.21", 
-          "user": "root", 
-          "pass": "cisco123"}
-          
-net_connect = ConnectHandler(ip=router["host"], 
-                             username=router["user"], 
-                             password=router["pass"], 
+router = {"device_type": "cisco_ios",
+          "host": "10.10.20.48",
+          "user": "cisco",
+          "pass": "cisco_1234!"}
+
+net_connect = ConnectHandler(ip=router["host"],
+                             username=router["user"],
+                             password=router["pass"],
                              device_type=router["device_type"])
-                             
+
 interface_cli = net_connect.send_command("show run int Gig1")
 
 pprint(interface_cli)
-
-          

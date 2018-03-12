@@ -8,17 +8,17 @@ Author: Hank Preston <hapresto@cisco.com>
 api_requests_example.py
 Illustrate the following concepts:
 - Making REST API calls using requests library
-- Intended to be entered into an interactive 
+- Intended to be entered into an interactive
   interpreter
 """
 
 
 import requests
 from pprint import pprint
-router = {"ip": "10.10.20.21",
-	  "port": "443",
-	  "user": "root",
-	  "pass": "cisco123"}
+router = {"ip": "10.10.20.48",
+	      "port": "443",
+          "user": "cisco",
+          "pass": "cisco_1234!"}
 
 headers = {"Accept": "application/yang-data+json"}
 
