@@ -1,0 +1,216 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Application Centric Infrastructure and Ansible
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# Illustrate the following concepts:
+# - Managing Full ACI Tenenat Policy Configuration with Ansible
+# - aci_tenant module
+# - aci_vrf module
+# - aci_bd module
+# - aci_ap module
+# - aci_epg module
+# - aci_epg_to_domain module
+# - aci_epg_to_contract module
+# - aci_contract module
+# - aci_contract_subject module
+# - aci_contract_subject_to_filter module
+# - aci_filter module
+# - aci_filter_entry module
+##############################################################
+---
+- name: Example 3 - Full Tenant Policy
+  hosts: apic
+  connection: local
+  gather_facts: False
+  vars_prompt:
+    - name: "prefix"
+      prompt: "What are your initials?"
+      private: no
+  # include_vars:
+  #   dir: tenant_configs
+  vars_files:
+    - vars/example3_Tenant3_Policy.yaml
+
+  tasks:
+    - name: Task 01 - Ensure Applications Tenant Exists
+      aci_tenant:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "present"
+        validate_certs: False
+        tenant: "{{ tenant }}"
+        descr: "Tenant Created Using Ansible"
+      tags: tenant, vrf, bd, filter, contract, app, epg
+
+    - name: Task 02 - Ensure Tenant VRF Exists
+      aci_vrf:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "present"
+        validate_certs: False
+        tenant: "{{ tenant }}"
+        vrf: "{{ vrf }}"
+        descr: "VRF Created Using Ansible"
+      tags: vrf, bd
+
+    - name: Task 03 - Ensure Tenant Bridge Domains and Exist
+      aci_bd:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "present"
+        validate_certs: False
+        tenant: "{{ tenant }}"
+        bd: "{{ item.bd | default('prod_bd') }}"
+        vrf: "{{ vrf }}"
+      with_items: "{{ bridge_domains }}"
+      tags: bd
+
+    - name: Task 04 - Ensure Bridge Domains Have Subnets
+      aci_bd_subnet:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        state: "present"
+        tenant: "{{ tenant }}"
+        bd: "{{ item.bd }}"
+        gateway: "{{ item.gateway }}"
+        mask: "{{ item.mask }}"
+        scope: "{{ item.scope }}"
+      with_items: "{{ bridge_domains }}"
+
+    - name: Task 05 - Ensure Tenant Filters Exist
+      aci_filter:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        state: "present"
+        tenant: "{{ tenant }}"
+        filter: "{{ item.filter }}"
+        descr: "Filter Created Using Ansible"
+      with_items: "{{ filters }}"
+      tags: filter, contract
+
+    - name: Task 06 - Ensure Filters Have Filter Entries
+      aci_filter_entry:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "present"
+        validate_certs: False
+        tenant: "{{ tenant }}"
+        filter: "{{ item.filter }}"
+        entry: "{{ item.entry }}"
+        ether_type: "ip"
+        ip_protocol: "{{ item.protocol }}"
+        dst_port_start: "{{ item.port }}"
+        dst_port_end: "{{ item.port }}"
+      with_items: "{{ filters }}"
+      tags: filter, contract
+
+    - name: Task 07 - Ensure Tenant Contracts Exist
+      aci_contract:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        state: "present"
+        tenant: "{{ tenant }}"
+        contract: "{{ item.contract }}"
+        scope: "context"
+        description: "Contract Created Using Ansible"
+      with_items: "{{ contracts }}"
+      tags: contract
+
+    - name: Task 08 - Ensure Contracts Have Contract Subjects
+      aci_contract_subject:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        state: "present"
+        tenant: "{{ tenant }}"
+        contract: "{{ item.contract }}"
+        subject: "{{ item.subject }}"
+      with_items: "{{ contracts }}"
+      tags: contract
+
+    - name: Task 09 - Ensure Contract Subjects Have Filters
+      aci_contract_subject_to_filter:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        state: "present"
+        tenant: "{{ tenant }}"
+        contract: "{{ item.contract }}"
+        subject: "{{ item.subject }}"
+        filter: "{{ item.filter }}"
+      with_items: "{{ contracts }}"
+      tags: contract
+
+    - name: Task 10 - Ensure Application Exists
+      aci_ap:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        state: "present"
+        tenant: "{{ tenant }}"
+        ap: "{{ ap }}"
+        descr: "App Profile Created Using Ansible"
+      tags: app, epg
+
+    - name: Task 11 - Ensure Application EPGs Exists
+      aci_epg:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        state: "present"
+        tenant: "{{ tenant }}"
+        ap: "{{ ap }}"
+        epg: "{{ item.epg }}"
+        bd: "{{ item.bd }}"
+        descr: "EPG Created Using Ansible"
+      with_items: "{{ epgs }}"
+      tags: epg
+
+    - name: Task 12 - Ensure Domain Is Bound To EPG
+      aci_epg_to_domain:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        state: "present"
+        tenant: "{{ tenant }}"
+        ap: "{{ ap }}"
+        epg: "{{ item.epg }}"
+        domain: "aci_ansible_lab"
+        domain_type: "vmm"
+        vm_provider: "vmware"
+        encap_mode: "auto"
+        encap: "{{ item.encap }}"
+      with_items: "{{ epgs }}"
+      tags: epg
+
+    - name: Task 13 - Ensure EPGs Have Contracts
+      aci_epg_to_contract:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        state: "present"
+        tenant: "{{ tenant }}"
+        ap: "{{ ap }}"
+        epg: "{{ item.epg }}"
+        contract: "{{ item.contract }}"
+        contract_type: "{{ item.contract_type }}"
+      with_items: "{{ epg_contracts }}"
+      tags: epg

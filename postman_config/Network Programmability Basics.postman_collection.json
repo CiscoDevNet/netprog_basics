@@ -1,14 +1,13 @@
 {
 	"info": {
 		"name": "Network Programmability Basics",
-		"_postman_id": "f951e5b3-ce16-78cf-f92c-763d3d53ce05",
+		"_postman_id": "76af13d6-4e36-cbf7-1daf-c9a328d5fa99",
 		"description": "A collection of REST API calls used as part of the [Network Programmability Video Course](https://github.com/CiscoDevNet/netprog_basics).  ",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "ACI",
-			"description": "",
 			"item": [
 				{
 					"name": "APIC Login",
@@ -34,8 +33,7 @@
 								"api",
 								"aaaLogin.json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -44,7 +42,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/node/class/fvTenant.json",
 							"protocol": "https",
@@ -57,8 +58,7 @@
 								"class",
 								"fvTenant.json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -67,7 +67,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/node/class/fvTenant.json?query-target-filter=and(eq(fvTenant.name,\"Heroes\"))",
 							"protocol": "https",
@@ -87,8 +90,7 @@
 									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -99,13 +101,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://198.18.133.200/api/node/class/fvTenant.json?query-target-filter=and(ne(fvTenant.name,\"common\"),ne(fvTenant.name,\"infra\"),ne(fvTenant.name,\"mgmt\"))",
+							"raw": "https://{{apic}}/api/node/class/fvTenant.json?query-target-filter=and(ne(fvTenant.name,\"common\"),ne(fvTenant.name,\"infra\"),ne(fvTenant.name,\"mgmt\"))",
 							"protocol": "https",
 							"host": [
-								"198",
-								"18",
-								"133",
-								"200"
+								"{{apic}}"
 							],
 							"path": [
 								"api",
@@ -116,11 +115,11 @@
 							"query": [
 								{
 									"key": "query-target-filter",
-									"value": "and(ne(fvTenant.name,\"common\"),ne(fvTenant.name,\"infra\"),ne(fvTenant.name,\"mgmt\"))"
+									"value": "and(ne(fvTenant.name,\"common\"),ne(fvTenant.name,\"infra\"),ne(fvTenant.name,\"mgmt\"))",
+									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -131,13 +130,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://198.18.133.200/api/class/fvTenant.json?query-target-filter=eq(fvTenant.name,\"Heroes\")&rsp-subtree=full&rsp-prop-include=config-only",
+							"raw": "https://{{apic}}/api/class/fvTenant.json?query-target-filter=eq(fvTenant.name,\"Heroes\")&rsp-subtree=full&rsp-prop-include=config-only",
 							"protocol": "https",
 							"host": [
-								"198",
-								"18",
-								"133",
-								"200"
+								"{{apic}}"
 							],
 							"path": [
 								"api",
@@ -147,19 +143,21 @@
 							"query": [
 								{
 									"key": "query-target-filter",
-									"value": "eq(fvTenant.name,\"Heroes\")"
+									"value": "eq(fvTenant.name,\"Heroes\")",
+									"equals": true
 								},
 								{
 									"key": "rsp-subtree",
-									"value": "full"
+									"value": "full",
+									"equals": true
 								},
 								{
 									"key": "rsp-prop-include",
-									"value": "config-only"
+									"value": "config-only",
+									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -189,8 +187,7 @@
 								"mo",
 								"uni.json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -209,13 +206,10 @@
 							"raw": " {\n  \"fvTenant\": {\n    \"attributes\": {\n      \"name\": \"Villains\"\n    }, \n    \"children\": [\n\n{\n  \"vzFilter\": {\n    \"attributes\": {\n      \"name\": \"DNS_ZoneTransfer\", \n      \"status\": \"created,modified\"\n    }, \n    \"children\": [\n      {\n        \"vzEntry\": {\n          \"attributes\": {\n            \"dFromPort\": \"53\", \n            \"dToPort\": \"53\", \n            \"etherT\": \"ip\", \n            \"name\": \"tcp-53\", \n            \"prot\": \"tcp\", \n            \"status\": \"created,modified\"\n          }, \n          \"children\": []\n        }\n      }\n    ]\n  }\n},\n{\n  \"vzBrCP\": {\n    \"attributes\": {\n      \"name\": \"DNS\", \n      \"status\": \"modified\"\n    }, \n    \"children\": [\n      {\n        \"vzSubj\": {\n          \"attributes\": {\n            \"name\": \"DNS_ZoneTransfer\", \n            \"status\": \"created\"\n          }, \n          \"children\": [\n            {\n              \"vzRsSubjFiltAtt\": {\n                \"attributes\": {\n                  \"status\": \"created,modified\", \n                  \"tnVzFilterName\": \"DNS_ZoneTransfer\"\n                }, \n                \"children\": []\n              }\n            }\n          ]\n        }\n      }\n    ]\n  }\n}\n\n\n      \n    ]\n  }\n}"
 						},
 						"url": {
-							"raw": "https://198.18.133.200/api/node/mo/uni/tn-Villains.json",
+							"raw": "https://{{apic}}/api/node/mo/uni/tn-Villains.json",
 							"protocol": "https",
 							"host": [
-								"198",
-								"18",
-								"133",
-								"200"
+								"{{apic}}"
 							],
 							"path": [
 								"api",
@@ -224,8 +218,7 @@
 								"uni",
 								"tn-Villains.json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -236,13 +229,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://198.18.133.200/api/mo/uni/tn-Heroes.json?subscription=yes",
+							"raw": "https://{{apic}}/api/mo/uni/tn-Heroes.json?subscription=yes",
 							"protocol": "https",
 							"host": [
-								"198",
-								"18",
-								"133",
-								"200"
+								"{{apic}}"
 							],
 							"path": [
 								"api",
@@ -253,11 +243,11 @@
 							"query": [
 								{
 									"key": "subscription",
-									"value": "yes"
+									"value": "yes",
+									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -268,13 +258,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://198.18.133.200/api/subscriptionRefresh.json?id=72057662774444034",
+							"raw": "https://{{apic}}/api/subscriptionRefresh.json?id=72057662774444034",
 							"protocol": "https",
 							"host": [
-								"198",
-								"18",
-								"133",
-								"200"
+								"{{apic}}"
 							],
 							"path": [
 								"api",
@@ -283,11 +270,11 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "72057662774444034"
+									"value": "72057662774444034",
+									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -296,7 +283,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/node/class/fvCEp.json",
 							"protocol": "https",
@@ -309,8 +299,7 @@
 								"class",
 								"fvCEp.json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -319,7 +308,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/node/class/fabricNode.json",
 							"protocol": "https",
@@ -332,8 +324,7 @@
 								"class",
 								"fabricNode.json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -342,7 +333,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/mo/uni/tn-common.json",
 							"protocol": "https",
@@ -355,8 +349,7 @@
 								"uni",
 								"tn-common.json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -365,7 +358,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/mo/topology/pod-1/node-1.json",
 							"protocol": "https",
@@ -379,8 +375,7 @@
 								"pod-1",
 								"node-1.json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -407,8 +402,7 @@
 								"tn-Heroes",
 								"ap-Save_The_Planet.json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -416,7 +410,6 @@
 		},
 		{
 			"name": "APIC-EM",
-			"description": "",
 			"item": [
 				{
 					"name": "APIC-EM Login",
@@ -457,8 +450,7 @@
 								"v1",
 								"ticket"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -492,7 +484,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/interface",
 							"protocol": "https",
@@ -504,8 +499,7 @@
 								"v1",
 								"interface"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -539,7 +533,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/network-device",
 							"protocol": "https",
@@ -551,8 +548,7 @@
 								"v1",
 								"network-device"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -574,7 +570,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/network-device/{{network_device_id}}",
 							"protocol": "https",
@@ -587,8 +586,7 @@
 								"network-device",
 								"{{network_device_id}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -610,7 +608,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/network-device/ip-address/165.10.1.39",
 							"protocol": "https",
@@ -624,8 +625,7 @@
 								"ip-address",
 								"165.10.1.39"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -647,7 +647,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/network-device/serial-number/FOC1637Y3FJ",
 							"protocol": "https",
@@ -661,8 +664,7 @@
 								"serial-number",
 								"FOC1637Y3FJ"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -684,7 +686,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/network-device/location/e0c8c8c6-05ae-445f-80d8-f8cc225cbbd2",
 							"protocol": "https",
@@ -698,8 +703,7 @@
 								"location",
 								"e0c8c8c6-05ae-445f-80d8-f8cc225cbbd2"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -733,7 +737,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/interface/network-device/8dbd8068-1091-4cde-8cf5-d1b58dc5c9c7",
 							"protocol": "https",
@@ -747,8 +754,7 @@
 								"network-device",
 								"8dbd8068-1091-4cde-8cf5-d1b58dc5c9c7"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -770,7 +776,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/interface/network-device/8dbd8068-1091-4cde-8cf5-d1b58dc5c9c7/interface-name?name=FastEthernet0/2",
 							"protocol": "https",
@@ -792,8 +801,7 @@
 									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -827,7 +835,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/host",
 							"protocol": "https",
@@ -839,8 +850,7 @@
 								"v1",
 								"host"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -862,7 +872,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/host/{{host_id}}",
 							"protocol": "https",
@@ -875,8 +888,7 @@
 								"host",
 								"{{host_id}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -910,7 +922,10 @@
 								"value": "{{token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/host?hostIP=10.1.15.117",
 							"protocol": "https",
@@ -929,8 +944,7 @@
 									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -979,8 +993,7 @@
 								"v1",
 								"flow-analysis"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1018,8 +1031,7 @@
 								"flow-analysis",
 								"{{flowAnalysisId}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1057,8 +1069,7 @@
 								"flow-analysis",
 								"{{flowAnalysisId}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -1066,7 +1077,6 @@
 		},
 		{
 			"name": "NX-API CLI",
-			"description": "",
 			"item": [
 				{
 					"name": "JSON-RPC show vlans bri",
@@ -1120,8 +1130,7 @@
 							"path": [
 								"ins"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1177,8 +1186,7 @@
 							"path": [
 								"ins"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1234,8 +1242,7 @@
 							"path": [
 								"ins"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -1243,7 +1250,6 @@
 		},
 		{
 			"name": "NX-API REST",
-			"description": "",
 			"item": [
 				{
 					"name": "Login Request",
@@ -1264,8 +1270,7 @@
 								"api",
 								"aaaLogin.json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1274,7 +1279,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}:{{port}}/api/node/mo/sys/snmp.xml?query-target=subtree",
 							"protocol": "https",
@@ -1296,8 +1304,7 @@
 									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1323,8 +1330,7 @@
 								"mo",
 								"sys.xml"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1333,7 +1339,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/1].json",
 							"protocol": "https",
@@ -1349,8 +1358,7 @@
 								"phys-[eth1",
 								"1].json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1378,8 +1386,7 @@
 								"phys-[eth1",
 								"1].json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1388,7 +1395,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}/api/node/class/l2BD.json?query-target-filter=and(ne(l2BD.id,\"1\"))",
 							"protocol": "https",
@@ -1408,8 +1418,7 @@
 									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1418,7 +1427,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}/api/node/mo/sys/bd/bd-[vlan-1].json",
 							"protocol": "https",
@@ -1433,8 +1445,7 @@
 								"bd",
 								"bd-[vlan-1].json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1443,7 +1454,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}/api/node/mo/sys/bd/bd-[vlan-1].json",
 							"protocol": "https",
@@ -1458,8 +1472,7 @@
 								"bd",
 								"bd-[vlan-1].json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1486,8 +1499,7 @@
 								"bd",
 								"bd-[vlan-501].json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1514,8 +1526,7 @@
 								"bd",
 								"bd-[vlan-501].json"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1524,7 +1535,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}/api/node/mo/sys.json?query-target=subtree",
 							"protocol": "https",
@@ -1544,8 +1558,7 @@
 									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -1553,7 +1566,6 @@
 		},
 		{
 			"name": "RESTCONF",
-			"description": "",
 			"item": [
 				{
 					"name": "Read the top level REST resource",
@@ -1598,7 +1610,10 @@
 								"value": "Basic dmFncmFudDp2YWdyYW50"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}:{{port}}/.well-known/host-meta",
 							"protocol": "https",
@@ -1669,7 +1684,10 @@
 								"value": "Basic dmFncmFudDp2YWdyYW50"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}:{{port}}/restconf/data/netconf-state/capabilities",
 							"protocol": "https",
@@ -1744,7 +1762,10 @@
 								"value": "Basic dmFncmFudDp2YWdyYW50"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}:{{port}}/restconf/data/ietf-yang-library:modules-state",
 							"protocol": "https",
@@ -1805,7 +1826,10 @@
 								"value": "Basic dmFncmFudDp2YWdyYW50"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}:{{port}}/restconf/data/ietf-interfaces:interfaces",
 							"protocol": "https",
@@ -1866,7 +1890,10 @@
 								"value": "Basic dmFncmFudDp2YWdyYW50"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}:{{port}}/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet1",
 							"protocol": "https",
@@ -1945,8 +1972,7 @@
 								"ietf-interfaces:interfaces",
 								"interface=GigabitEthernet2"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1993,7 +2019,10 @@
 								"value": "Basic dmFncmFudDp2YWdyYW50"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}:{{port}}/restconf/data/Cisco-IOS-XE-native:native/interface/GigabitEthernet=2",
 							"protocol": "https",
@@ -2056,7 +2085,10 @@
 								"value": "Basic dmFncmFudDp2YWdyYW50"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}:{{port}}/restconf/data/ietf-interfaces:interfaces-state/",
 							"protocol": "https",
@@ -2070,8 +2102,7 @@
 								"ietf-interfaces:interfaces-state",
 								""
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2118,7 +2149,10 @@
 								"value": "application/yang-data+json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{host}}:{{port}}/restconf/data/Cisco-IOS-XE-native:native/hostname",
 							"protocol": "https",
@@ -2132,8 +2166,7 @@
 								"Cisco-IOS-XE-native:native",
 								"hostname"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
@@ -2141,7 +2174,6 @@
 		},
 		{
 			"name": "Meraki",
-			"description": "",
 			"item": [
 				{
 					"name": "GET Organizations",
@@ -2175,7 +2207,10 @@
 								"value": "{{X-Cisco-Meraki-API-Key}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://dashboard.meraki.com/api/v0/organizations",
 							"protocol": "https",
@@ -2189,8 +2224,7 @@
 								"v0",
 								"organizations"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2220,7 +2254,10 @@
 								"value": "{{X-Cisco-Meraki-API-Key}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://dashboard.meraki.com/api/v0/organizations/{{organizationId}}/inventory",
 							"protocol": "https",
@@ -2236,8 +2273,7 @@
 								"{{organizationId}}",
 								"inventory"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2251,7 +2287,10 @@
 								"value": "{{X-Cisco-Meraki-API-Key}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://dashboard.meraki.com/api/v0/networks/{{networkId}}",
 							"protocol": "https",
@@ -2266,8 +2305,7 @@
 								"networks",
 								"{{networkId}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2281,7 +2319,10 @@
 								"value": "{{X-Cisco-Meraki-API-Key}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://dashboard.meraki.com/api/v0/networks/{{networkId}}/ssids",
 							"protocol": "https",
@@ -2297,8 +2338,7 @@
 								"{{networkId}}",
 								"ssids"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2312,7 +2352,10 @@
 								"value": "{{X-Cisco-Meraki-API-Key}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://dashboard.meraki.com/api/v0/networks/{{networkId}}/devices/{{serial}}",
 							"protocol": "https",
@@ -2329,8 +2372,7 @@
 								"devices",
 								"{{serial}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2344,7 +2386,10 @@
 								"value": "{{X-Cisco-Meraki-API-Key}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://dashboard.meraki.com/api/v0/devices/{{serial}}/clients?timespan=86400",
 							"protocol": "https",
@@ -2367,8 +2412,7 @@
 									"equals": true
 								}
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -2404,7 +2448,10 @@
 								"value": "{{X-Cisco-Meraki-API-Key}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://dashboard.meraki.com/api/v0/organizations/{{organizationId}}/networks",
 							"protocol": "https",
@@ -2420,8 +2467,7 @@
 								"{{organizationId}}",
 								"networks"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
