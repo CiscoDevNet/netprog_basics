@@ -1,0 +1,37 @@
+##############################################################
+# Learning Series: Network Programmability Basics
+# Module: NetDevOps
+# Lesson: Application Centric Infrastructure and Ansible
+# Author: Hank Preston <hapresto@cisco.com>
+#
+# Illustrate the following concepts:
+# - Managing Tenants with Ansible
+# - aci_tenant module
+# - state: "absent"
+##############################################################
+---
+- name: Cleanup - Removing Tenants
+  hosts: apic
+  connection: local
+  gather_facts: False
+  vars_prompt:
+    - name: "prefix"
+      prompt: "What are your initials?"
+      private: no
+  vars:
+    tenants:
+      - "{{ prefix }}_Tenant1"
+      - "{{ prefix }}_Tenant2"
+      - "{{ prefix }}_Tenant3"
+      - "{{ prefix }}_Tenant4"
+
+  tasks:
+    - name: Delete Tenants
+      aci_tenant:
+        host: "{{ ansible_host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "absent"
+        validate_certs: False
+        tenant: "{{ item }}"
+      with_items: "{{ tenants }}"

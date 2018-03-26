@@ -1,0 +1,9 @@
+# Setup environment for ansible playbooks
+# Credentials for DevNet Always On ACI Sandbox
+#    https://devnetsandbox.cisco.com/
+
+# usage: source .ansible_env
+
+# Authentication for ansible network modules
+export ANSIBLE_NET_USERNAME=admin
+export ANSIBLE_NET_PASSWORD=ciscopsdt
