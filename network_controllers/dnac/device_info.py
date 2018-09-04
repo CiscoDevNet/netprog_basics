@@ -52,7 +52,7 @@ apic = {
          }
 
 # DevNet Always-On Sandbox DNA Center
-# https://devnetsandbox.cisco.com/RM/Diagram/Index/5a229a7c-95d5-4cfd-a651-5ee9bc1b30e2?diagramType=Topology
+# https://devnetsandbox.cisco.com/RM/Diagram/Index/c3c949dc-30af-498b-9d77-4f1c07d835f9?diagramType=Topology
 dnac = {
              "host": "sandboxdnac.cisco.com",
              "username": "devnetuser",
