@@ -34,5 +34,5 @@ r = requests.get(u,
 pprint(r.text)
 
 api_data = r.json()
-interface_name = api_data["ietf-interfaces:interface"]["name"]
+interface_name = api_data["Cisco-IOS-XE-interfaces-oper:interface"]["name"]
 interface_name
