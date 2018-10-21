@@ -1,4 +1,4 @@
-# Goodbye SNMP <hello> NETCONF!
+# Goodbye SNMP, hello NETCONF!
 
 ## "Gitting" the Code
 All of the code and examples for this lesson is located in the `netprog_basics/network_device_apis/netconf` directory.  Clone and access it with the following commands: 
