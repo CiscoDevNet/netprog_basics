@@ -20,6 +20,11 @@ __license__ = "MIT"
 from device_info import dnac
 import requests
 import json
+import urllib3
+
+# Silence the insecure warning due to SSL Certificate
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 
 headers = {
               'content-type': "application/json",
