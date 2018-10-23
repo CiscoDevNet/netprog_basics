@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
         print("")
         print("Interface Details:")
-        print("  Name: {}".format(intf_config["name"]))
+        print("  Name: {}".format(intf_config["name"]["#text"]))
         print("  Description: {}".format(intf_config["description"]))
         print("  Type: {}".format(intf_config["type"]["#text"]))
         print("  MAC Address: {}".format(intf_info["phys-address"]))
