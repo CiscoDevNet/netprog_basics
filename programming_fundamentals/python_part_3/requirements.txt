@@ -1,4 +1,4 @@
-ncclient==0.5.3
+ncclient==0.6.3
 netmiko==1.4.2
 PyYAML==3.12
 requests==2.18.2
