@@ -19,7 +19,7 @@ import requests
 import json
 
 # Switch Connection Info
-url = 'http://10.10.20.58/ins'
+url = 'https://10.10.20.58/ins'
 switchuser = 'admin'
 switchpassword = 'cisco123'
 myheaders = {'content-type': 'application/json'}
@@ -41,5 +41,6 @@ response = requests.post(
                           url,
                           data=json.dumps(payload),
                           headers=myheaders,
-                          auth=(switchuser, switchpassword)
+                          auth=(switchuser, switchpassword),
+                          verify=False
                          ).json()
