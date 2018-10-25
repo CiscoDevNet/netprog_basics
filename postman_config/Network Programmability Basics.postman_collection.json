@@ -1122,8 +1122,8 @@
 							"raw": "[\n  {\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"cli\",\n    \"params\": {\n      \"cmd\": \"show vlan bri\",\n      \"version\": 1\n    },\n    \"id\": 1\n  }\n]"
 						},
 						"url": {
-							"raw": "http://{{host}}/ins",
-							"protocol": "http",
+							"raw": "https://{{host}}/ins",
+							"protocol": "https",
 							"host": [
 								"{{host}}"
 							],
@@ -1178,8 +1178,8 @@
 							"raw": "<?xml version=\"1.0\"?>\n<ins_api>\n  <version>1.0</version>\n  <type>cli_show</type>\n  <chunk>0</chunk>\n  <sid>sid</sid>\n  <input>show vlan bri</input>\n  <output_format>xml</output_format>\n</ins_api>"
 						},
 						"url": {
-							"raw": "http://{{host}}/ins",
-							"protocol": "http",
+							"raw": "https://{{host}}/ins",
+							"protocol": "https",
 							"host": [
 								"{{host}}"
 							],
@@ -1234,8 +1234,8 @@
 							"raw": "{\n  \"ins_api\": {\n    \"version\": \"1.0\",\n    \"type\": \"cli_show\",\n    \"chunk\": \"0\",\n    \"sid\": \"1\",\n    \"input\": \"show vlan bri\",\n    \"output_format\": \"json\"\n  }\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/ins",
-							"protocol": "http",
+							"raw": "https://{{host}}/ins",
+							"protocol": "https",
 							"host": [
 								"{{host}}"
 							],
