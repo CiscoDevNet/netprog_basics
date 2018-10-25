@@ -23,7 +23,7 @@ import json
 """
 Modify these please
 """
-url='http://10.10.20.58/ins'
+url='https://10.10.20.58/ins'
 switchuser='admin'
 switchpassword='cisco123'
 
@@ -38,7 +38,7 @@ payload={
     "output_format": "json"
   }
 }
-response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(switchuser,switchpassword)).json()
+response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(switchuser,switchpassword),verify=False).json()
 
 # Extract interesting info from Response
 vlan_list = response["ins_api"]["outputs"]["output"]["body"]["TABLE_vlanbriefxbrief"]["ROW_vlanbriefxbrief"]
