@@ -18,10 +18,14 @@ __license__ = "MIT"
 import requests
 import json
 
+requests.packages.urllib3.disable_warnings(
+    requests.packages.urllib3.exceptions.InsecureRequestWarning
+)
+
 # Switch Connection Info
-url = 'http://10.10.20.58/ins'
-switchuser = 'admin'
-switchpassword = 'cisco123'
+url = "https://sbx-nxos-mgmt.cisco.com/ins"
+switchuser = "admin"
+switchpassword = "Admin_1234!"
 myheaders = {'content-type': 'application/json'}
 
 # Configuration Payload
@@ -31,7 +35,7 @@ payload = {
     "type": "cli_conf",
     "chunk": "0",
     "sid": "1",
-    "input": "vlan 101 ;name Web_VLAN ;vlan 102 ;name App_VLAN ;vlan 103 ;name Data_VLAN", # noqa
+    "input": "vlan 201 ;name Web_VLAN ;vlan 202 ;name App_VLAN ;vlan 203 ;name Data_VLAN", # noqa
     "output_format": "json"
   }
 }
@@ -41,5 +45,6 @@ response = requests.post(
                           url,
                           data=json.dumps(payload),
                           headers=myheaders,
-                          auth=(switchuser, switchpassword)
+                          auth=(switchuser, switchpassword),
+                          verify=False
                          ).json()
