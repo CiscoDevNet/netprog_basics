@@ -1,5 +1,5 @@
 ncclient==0.5.3
 netmiko==1.4.2
 pyyaml>=4.2b1
-requests==2.18.2
+requests>=2.20.0
 xmltodict==0.11.0
