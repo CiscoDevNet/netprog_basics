@@ -14,7 +14,7 @@ cd netprog_basics/network_device_apis/nxapi
 Be sure to complete the [General Workstation Setup](https://github.com/CiscoDevNet/netprog_basics/blob/master/readme_resources/workstation_setup.md) instructions before beginning this lesson.  
 
 ### Postman Setup
-During this lesson the Postman client for making REST API calls is used.  For convenience we have included a `postmane_collection.json` file that contains all the REST API calls leveraged in the different lessons, and `postman_environment.json` files for each of the DevNet Sandboxes leveraged across the lessons.  These files are all located in the [postman_config](https://github.com/CiscoDevNet/netprog_basics/postman_config) directory in the code repository.  
+During this lesson the Postman client for making REST API calls is used.  For convenience we have included a `postman_collection.json` file that contains all the REST API calls leveraged in the different lessons, and `postman_environment.json` files for each of the DevNet Sandboxes leveraged across the lessons.  These files are all located in the [postman_config](https://github.com/CiscoDevNet/netprog_basics/postman_config) directory in the code repository.  
 
 To leverage them, simply `Import` them into your Postman client.  
 
@@ -53,28 +53,4 @@ pip install -r requirements.txt
 ```
 
 ## DevNet Sandbox
-This lesson leverages the [Open NX-OS with Nexus 9K Standalone](https://devnetsandbox.cisco.com/RM/Diagram/Index/0e22761d-f813-415d-a557-24fa0e17ab50?diagramType=Topology) Sandbox.  
-
-You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
-
-### Post Reservation Setup
-Before beginning this lesson you need to complete 2 quick steps.  
-
-1. First connect to the switch with SSH and enable the NX-API feature.  Password is `cisco123`
-
-    ```bash
-    ssh admin@10.10.20.58
-
-    conf t
-    feature nxapi
-    end
-
-    copy run start
-    ```
-
-1. Next, run the `sbx_setup.py` script to add the baseline configuration to the switch.  
-    * ***Note: Run from the `netprog_basics/network_device_apis/nxapi` directory.***
-
-    ```bash
-    python sbx_setup.py
-    ```
+This lesson leverages the [Always On: Open NX-OS Programmability](https://devnetsandbox.cisco.com/RM/Diagram/Index/dae38dd8-e8ee-4d7c-a21c-6036bed7a804?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
