@@ -1,7 +1,7 @@
 {
 	"info": {
+		"_postman_id": "40ecd639-8af2-4542-be03-b9a483c467f8",
 		"name": "Network Programmability Basics",
-		"_postman_id": "76af13d6-4e36-cbf7-1daf-c9a328d5fa99",
 		"description": "A collection of REST API calls used as part of the [Network Programmability Video Course](https://github.com/CiscoDevNet/netprog_basics).  ",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -86,8 +86,7 @@
 							"query": [
 								{
 									"key": "query-target-filter",
-									"value": "and(eq(fvTenant.name,\"Heroes\"))",
-									"equals": true
+									"value": "and(eq(fvTenant.name,\"Heroes\"))"
 								}
 							]
 						}
@@ -99,7 +98,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/node/class/fvTenant.json?query-target-filter=and(ne(fvTenant.name,\"common\"),ne(fvTenant.name,\"infra\"),ne(fvTenant.name,\"mgmt\"))",
 							"protocol": "https",
@@ -115,8 +117,7 @@
 							"query": [
 								{
 									"key": "query-target-filter",
-									"value": "and(ne(fvTenant.name,\"common\"),ne(fvTenant.name,\"infra\"),ne(fvTenant.name,\"mgmt\"))",
-									"equals": true
+									"value": "and(ne(fvTenant.name,\"common\"),ne(fvTenant.name,\"infra\"),ne(fvTenant.name,\"mgmt\"))"
 								}
 							]
 						}
@@ -128,7 +129,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/class/fvTenant.json?query-target-filter=eq(fvTenant.name,\"Heroes\")&rsp-subtree=full&rsp-prop-include=config-only",
 							"protocol": "https",
@@ -143,18 +147,15 @@
 							"query": [
 								{
 									"key": "query-target-filter",
-									"value": "eq(fvTenant.name,\"Heroes\")",
-									"equals": true
+									"value": "eq(fvTenant.name,\"Heroes\")"
 								},
 								{
 									"key": "rsp-subtree",
-									"value": "full",
-									"equals": true
+									"value": "full"
 								},
 								{
 									"key": "rsp-prop-include",
-									"value": "config-only",
-									"equals": true
+									"value": "config-only"
 								}
 							]
 						}
@@ -173,7 +174,37 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"fvTenant\": {\n    \"attributes\": {\n      \"dn\": \"uni/tn-API_Test\", \n      \"name\": \"API_Test\", \n      \"rn\": \"tn-API_Test\", \n      \"status\": \"created\"\n    }, \n    \"children\": []\n  }\n}\n"
+							"raw": "{\n  \"fvTenant\": {\n    \"attributes\": {\n      \"dn\": \"uni/tn-Villains\", \n      \"name\": \"Villains\", \n      \"rn\": \"tn-Villains\", \n      \"status\": \"created,modified\"\n    }, \n    \"children\": []\n  }\n}\n"
+						},
+						"url": {
+							"raw": "https://{{apic}}/api/node/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Delete Tenant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fvTenant\": {\n    \"attributes\": {\n      \"dn\": \"uni/tn-Villains\", \n      \"name\": \"Villains\", \n      \"rn\": \"tn-Villains\", \n      \"status\": \"deleted\"\n    }, \n    \"children\": []\n  }\n}\n"
 						},
 						"url": {
 							"raw": "https://{{apic}}/api/node/mo/uni.json",
@@ -203,7 +234,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": " {\n  \"fvTenant\": {\n    \"attributes\": {\n      \"name\": \"Villains\"\n    }, \n    \"children\": [\n\n{\n  \"vzFilter\": {\n    \"attributes\": {\n      \"name\": \"DNS_ZoneTransfer\", \n      \"status\": \"created,modified\"\n    }, \n    \"children\": [\n      {\n        \"vzEntry\": {\n          \"attributes\": {\n            \"dFromPort\": \"53\", \n            \"dToPort\": \"53\", \n            \"etherT\": \"ip\", \n            \"name\": \"tcp-53\", \n            \"prot\": \"tcp\", \n            \"status\": \"created,modified\"\n          }, \n          \"children\": []\n        }\n      }\n    ]\n  }\n},\n{\n  \"vzBrCP\": {\n    \"attributes\": {\n      \"name\": \"DNS\", \n      \"status\": \"modified\"\n    }, \n    \"children\": [\n      {\n        \"vzSubj\": {\n          \"attributes\": {\n            \"name\": \"DNS_ZoneTransfer\", \n            \"status\": \"created\"\n          }, \n          \"children\": [\n            {\n              \"vzRsSubjFiltAtt\": {\n                \"attributes\": {\n                  \"status\": \"created,modified\", \n                  \"tnVzFilterName\": \"DNS_ZoneTransfer\"\n                }, \n                \"children\": []\n              }\n            }\n          ]\n        }\n      }\n    ]\n  }\n}\n\n\n      \n    ]\n  }\n}"
+							"raw": " {\n  \"fvTenant\": {\n    \"attributes\": {\n      \"name\": \"Villains\"\n    }, \n    \"children\": [\n\n{\n  \"vzFilter\": {\n    \"attributes\": {\n      \"name\": \"DNS_ZoneTransfer\", \n      \"status\": \"created,modified\"\n    }, \n    \"children\": [\n      {\n        \"vzEntry\": {\n          \"attributes\": {\n            \"dFromPort\": \"53\", \n            \"dToPort\": \"53\", \n            \"etherT\": \"ip\", \n            \"name\": \"tcp-53\", \n            \"prot\": \"tcp\", \n            \"status\": \"created,modified\"\n          }, \n          \"children\": []\n        }\n      }\n    ]\n  }\n},\n{\n  \"vzBrCP\": {\n    \"attributes\": {\n      \"name\": \"DNS\", \n      \"status\": \"created,modified\"\n    }, \n    \"children\": [\n      {\n        \"vzSubj\": {\n          \"attributes\": {\n            \"name\": \"DNS_ZoneTransfer\", \n            \"status\": \"created,modified\"\n          }, \n          \"children\": [\n            {\n              \"vzRsSubjFiltAtt\": {\n                \"attributes\": {\n                  \"status\": \"created,modified\", \n                  \"tnVzFilterName\": \"DNS_ZoneTransfer\"\n                }, \n                \"children\": []\n              }\n            }\n          ]\n        }\n      }\n    ]\n  }\n}\n\n\n      \n    ]\n  }\n}"
 						},
 						"url": {
 							"raw": "https://{{apic}}/api/node/mo/uni/tn-Villains.json",
@@ -227,7 +258,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/mo/uni/tn-Heroes.json?subscription=yes",
 							"protocol": "https",
@@ -243,8 +277,7 @@
 							"query": [
 								{
 									"key": "subscription",
-									"value": "yes",
-									"equals": true
+									"value": "yes"
 								}
 							]
 						}
@@ -256,7 +289,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://{{apic}}/api/subscriptionRefresh.json?id=72057662774444034",
 							"protocol": "https",
@@ -270,8 +306,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "72057662774444034",
-									"equals": true
+									"value": "72057662774444034"
 								}
 							]
 						}
@@ -797,8 +832,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "FastEthernet0/2",
-									"equals": true
+									"value": "FastEthernet0/2"
 								}
 							]
 						}
@@ -939,9 +973,8 @@
 							],
 							"query": [
 								{
-									"key": "hostIP",
-									"value": "10.1.15.117",
-									"equals": true
+									"key": "hostIp",
+									"value": "10.1.15.117"
 								}
 							]
 						}
@@ -1017,7 +1050,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"destIP\": \"10.1.15.117\", \n\t\"sourceIP\": \"10.2.1.22\"\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "https://{{apic}}/api/v1/flow-analysis/{{flowAnalysisId}}",
@@ -1076,6 +1109,729 @@
 			]
 		},
 		{
+			"name": "Cisco DNA Center",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ab38561d-a16c-4973-8b3e-2a53f97beb66",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.unset(\"token\");",
+									"pm.environment.set(\"token\", jsonData.Token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/system/api/v1/auth/token",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"system",
+								"api",
+								"v1",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Network Device List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4bb8f8f9-4f3a-48c4-825c-998c1720b6ea",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"network_device_id\", jsonData.response[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/intent/api/v1/network-device",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Network Device Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/intent/api/v1/network-device/{{network_device_id}}",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device",
+								"{{network_device_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Network Device by IP Address",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/intent/api/v1/network-device/ip-address/10.10.20.81",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device",
+								"ip-address",
+								"10.10.20.81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Network Device by Serial",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/intent/api/v1/network-device/serial-number/FCW2214L0VK",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device",
+								"serial-number",
+								"FCW2214L0VK"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Network Devices at a Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/intent/api/v1/network-device/location/e0c8c8c6-05ae-445f-80d8-f8cc225cbbd2",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"network-device",
+								"location",
+								"e0c8c8c6-05ae-445f-80d8-f8cc225cbbd2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Interface List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f8e9fe10-9080-4a05-950b-b52d398dd2c0",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/intent/api/v1/interface",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"interface"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Interface List by Device ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6271f15a-52ea-4503-8a0b-f52ed60e7e15",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"network_device_id\", jsonData.response[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/intent/api/v1/interface/network-device/{{network_device_id}}",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"interface",
+								"network-device",
+								"{{network_device_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Interface List by Device ID and Port Name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/intent/api/v1/interface/network-device/{{network_device_id}}/interface-name?name=GigabitEthernet0/0/3",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"interface",
+								"network-device",
+								"{{network_device_id}}",
+								"interface-name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "GigabitEthernet0/0/3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Begin New Flow Analysis",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32afb97a-600a-4ca0-a80a-9ea8abb5c346",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"flowAnalysisId\", jsonData.response.flowAnalysisId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"destIP\": \"10.10.20.83\", \n\t\"sourceIP\": \"10.10.20.84\"\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/intent/api/v1/flow-analysis",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"flow-analysis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flow Analysis Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/dna/intent/api/v1/flow-analysis/{{flowAnalysisId}}",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dna",
+								"intent",
+								"api",
+								"v1",
+								"flow-analysis",
+								"{{flowAnalysisId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Flow Analysis",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"destIP\": \"10.1.15.117\", \n\t\"sourceIP\": \"10.2.1.22\"\n}"
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/api/v1/flow-analysis/{{flowAnalysisId}}",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"flow-analysis",
+								"{{flowAnalysisId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hosts List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "368225df-5672-4832-bec7-7140c1e39c67",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"host_id\", jsonData.response[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/api/v1/host",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"host"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hosts Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/api/v1/host/{{host_id}}",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"host",
+								"{{host_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hosts by IP Address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "559beb59-a080-488b-a3ab-8c7721bc44a2",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"host_id\", jsonData.response[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{dnac}}:{{port}}/api/v1/host?hostIp=10.10.20.83",
+							"protocol": "https",
+							"host": [
+								"{{dnac}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"v1",
+								"host"
+							],
+							"query": [
+								{
+									"key": "hostIp",
+									"value": "10.10.20.83"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "NX-API CLI",
 			"item": [
 				{
@@ -1122,8 +1878,8 @@
 							"raw": "[\n  {\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"cli\",\n    \"params\": {\n      \"cmd\": \"show vlan bri\",\n      \"version\": 1\n    },\n    \"id\": 1\n  }\n]"
 						},
 						"url": {
-							"raw": "http://{{host}}/ins",
-							"protocol": "http",
+							"raw": "https://{{host}}/ins",
+							"protocol": "https",
 							"host": [
 								"{{host}}"
 							],
@@ -1178,8 +1934,8 @@
 							"raw": "<?xml version=\"1.0\"?>\n<ins_api>\n  <version>1.0</version>\n  <type>cli_show</type>\n  <chunk>0</chunk>\n  <sid>sid</sid>\n  <input>show vlan bri</input>\n  <output_format>xml</output_format>\n</ins_api>"
 						},
 						"url": {
-							"raw": "http://{{host}}/ins",
-							"protocol": "http",
+							"raw": "https://{{host}}/ins",
+							"protocol": "https",
 							"host": [
 								"{{host}}"
 							],
@@ -1234,8 +1990,8 @@
 							"raw": "{\n  \"ins_api\": {\n    \"version\": \"1.0\",\n    \"type\": \"cli_show\",\n    \"chunk\": \"0\",\n    \"sid\": \"1\",\n    \"input\": \"show vlan bri\",\n    \"output_format\": \"json\"\n  }\n}"
 						},
 						"url": {
-							"raw": "http://{{host}}/ins",
-							"protocol": "http",
+							"raw": "https://{{host}}/ins",
+							"protocol": "https",
 							"host": [
 								"{{host}}"
 							],
@@ -1300,8 +2056,7 @@
 							"query": [
 								{
 									"key": "query-target",
-									"value": "subtree",
-									"equals": true
+									"value": "subtree"
 								}
 							]
 						}
@@ -1414,8 +2169,7 @@
 							"query": [
 								{
 									"key": "query-target-filter",
-									"value": "and(ne(l2BD.id,\"1\"))",
-									"equals": true
+									"value": "and(ne(l2BD.id,\"1\"))"
 								}
 							]
 						}
@@ -1459,7 +2213,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{host}}/api/node/mo/sys/bd/bd-[vlan-1].json",
+							"raw": "https://{{host}}/api/node/mo/sys/bd/bd-[vlan-501].json",
 							"protocol": "https",
 							"host": [
 								"{{host}}"
@@ -1470,7 +2224,7 @@
 								"mo",
 								"sys",
 								"bd",
-								"bd-[vlan-1].json"
+								"bd-[vlan-501].json"
 							]
 						}
 					},
@@ -1554,8 +2308,7 @@
 							"query": [
 								{
 									"key": "query-target",
-									"value": "subtree",
-									"equals": true
+									"value": "subtree"
 								}
 							]
 						}
@@ -2408,8 +3161,7 @@
 							"query": [
 								{
 									"key": "timespan",
-									"value": "86400",
-									"equals": true
+									"value": "86400"
 								}
 							]
 						}
