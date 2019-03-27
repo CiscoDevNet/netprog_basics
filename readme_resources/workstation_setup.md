@@ -14,9 +14,9 @@ Features such as the Linux Subsystem that allow Ubuntu Bash to run natively on W
 **Incompatibility Note:** Ansible is a very popular configuration management tool for network programmability, and currently Windows is **not** supported as the control system for Ansible.  This means that you will need to leverage an option such as a Linux VM or the Ubuntu Bash with Linux Subsystem for working with Ansible from a Windows workstation.  
 
 ### Mac
-OS X and Mac laptops are becoming quite popular with network engineers, and it makes a great platform for network programmability.  Because of it's Linux roots, many of the same tools, utilities, and software that are popular in Linux development work exactly the same on OS X.  
+OS X and Mac laptops are becoming quite popular with network engineers, and it makes a great platform for network programmability.  Because of its Linux roots, many of the same tools, utilities, and software that are popular in Linux development work exactly the same on OS X.  
 
-One aspect of Linux distriubtions that is not included by default with OS X is an application package manager (ie yum or apt).  There are a few options that have been developed by the OpenSource community that fill this gap.  One very popular and useful one is [Homebrew](http://brew.sh).  The use of this tool can make installation and management of development tools very straightforward on a OS X.  You will find references to this tool in this course documentation.  
+One aspect of Linux distributions that is not included by default with OS X is an application package manager (ie yum or apt).  There are a few options that have been developed by the OpenSource community that fill this gap.  One very popular and useful one is [Homebrew](http://brew.sh).  The use of this tool can make installation and management of development tools very straightforward on a OS X.  You will find references to this tool in this course documentation.  
 
 ### Linux
 Linux, as well as the specific distributions like Ubuntu, CentOS, Red Hat, etc, are quite popular and powerful as a development environment owing to their popularity for the actual end systems and servers.  For example, nearly all network appliances are built on-top of a Linux kernel today.  
