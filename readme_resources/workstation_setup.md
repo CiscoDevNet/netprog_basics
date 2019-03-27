@@ -1,4 +1,4 @@
-# General Workstation Setup
+# Developer Workstation and Environment Setup
 Before you dive into the individual labs and modules, and their pre-reqs, take time to review this page for general setups steps and assumptions related to software to be installed, and any suggested configuration details.  This is not intended to be a comprehensive installation guide for these tools, or general workstation prep, but rather provide guidance and links to resources that are already available on DevNet and other locations.  
 
 In this guide you will find recommendations on tools and applications to use, however there are many ways to accomplish anything in IT.  If you are already familiar with another method, feel free to use that as long as the end result meets the fundamental requirement.  
@@ -21,6 +21,54 @@ One aspect of Linux distriubtions that is not included by default with OS X is a
 ### Linux
 Linux, as well as the specific distributions like Ubuntu, CentOS, Red Hat, etc, are quite popular and powerful as a development environment owing to their popularity for the actual end systems and servers.  For example, nearly all network appliances are built on-top of a Linux kernel today.  
 
+
+## Setting up your development environment
+A great first stop are the **Learning Labs on Developer Workstation and Environment Setup**.  The first lab discusses what goes into a dev workstation, and gives some suggested tools.  The following labs walk through installing the tools on different platforms.
+
+### What is a Development Environment, and why do you need one?
+What exactly goes into a development environment and why? What is the bare minimum you need to get started, and what choices do I need to make related to platforms and operating systems? We'll lay out the details in this quick overview.
+
+[![](dev-env.jpg)](https://youtu.be/TFZrSNd7jYo)
+
+**View the Video:** [Watch a video of the lesson.](https://youtu.be/TFZrSNd7jYo) 
+
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-what/step/1)
+
+### Setting up your Windows workstation as a development environment
+
+So you are a follower of Gates, Balmer and Nadella, excellent! Let's super charge that Windows workstation with everything you need to be a programability ninja!
+
+[![](dev-env-win.jpg)](https://youtu.be/qVdaPeGiHI8)
+
+**View the Video:** [Watch a video of the lesson.](https://youtu.be/qVdaPeGiHI8) 
+
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-win/step/1)
+
+### Setting up your macOS workstation as a development environment
+Are you a fan of black turtle necks and clean design lines? Perfect! Grab your Mac and let's get you ready to put that BSD base to work and slap some stickers all over the shiny case.
+
+[![](dev-env-mac.jpg)](https://youtu.be/VdkGPe3OIB4)
+
+**View the Video:** [Watch a video of the lesson.](https://youtu.be/VdkGPe3OIB4) 
+
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-mac/step/1)
+
+### Setting up your Linux workstation as a development environment
+Does Open Source speak to you on a personal level? That's great, grab your penguin and let's dive in and make Linus proud.
+
+[![](dev-env-centos.jpg)](https://youtu.be/RoXvVboVGkY)
+
+#### CentOS 
+**View the Video:** [Watch a video of the lesson.](https://youtu.be/RoXvVboVGkY) 
+
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-centos/step/1)
+
+#### Ubuntu 
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-ubuntu/step/1)
+
+
+
+<!--
 ## Setting up git
 
 Managing code repositories and source control is not a core topic of this course, however a basic working knowledge of how to clone code from a source, and the utilities to do the cloning are needed to obtain and keep updated the source code and examples for the exercises.  
@@ -124,3 +172,4 @@ Many of the lessons leverage a Reserved [DevNet Sandbox](http://developer.cisco.
 The most common VPN Client to use is Cisco AnyConnect which is available to [download from Cisco](https://software.cisco.com/download/release.html?mdfid=286281283&softwareid=282364313&release=4.5.02036&relind=AVAILABLE&rellifecycle=&reltype=latest).  
 
 You can also leverage the OpenSource Client [OpenConnect](http://www.infradead.org/openconnect/index.html).
+-->
