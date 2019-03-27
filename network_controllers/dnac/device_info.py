@@ -54,7 +54,7 @@ apic = {
 # DevNet Always-On Sandbox DNA Center
 # https://devnetsandbox.cisco.com/RM/Diagram/Index/c3c949dc-30af-498b-9d77-4f1c07d835f9?diagramType=Topology
 dnac = {
-             "host": "sandboxdnac.cisco.com",
+             "host": "sandboxdnac2.cisco.com",
              "username": "devnetuser",
              "password": "Cisco123!",
              "port": 443
