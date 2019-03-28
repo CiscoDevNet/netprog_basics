@@ -57,13 +57,13 @@ pip install -r requirements.txt
 ## DevNet Sandbox
 The majority of the exercises in this lab can be completed with the available Always On Cisco DNA Center Sandboxes:
 
-    * [Always On: Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/c3c949dc-30af-498b-9d77-4f1c07d835f9?diagramType=Topology)
-    * [Always On: Cisco DNA Center Lab 2](https://devnetsandbox.cisco.com/RM/Diagram/Index/471eb739-323e-4805-b2a6-d0ec813dc8fc?diagramType=Topology)
+* [Always On: Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/c3c949dc-30af-498b-9d77-4f1c07d835f9?diagramType=Topology)
+* [Always On: Cisco DNA Center Lab 2](https://devnetsandbox.cisco.com/RM/Diagram/Index/471eb739-323e-4805-b2a6-d0ec813dc8fc?diagramType=Topology)
 
 These sandboxes require no reservation **or** VPN connection.  
 
 To complete the exercises related to the Path Trace API, you'll need to leverage a reservable Cisco DNA Center Sandbox where you'll have administrative access.  
 
-    * [Reservable: Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/b8d7aa34-aa8f-4bf2-9c42-302aaa2daafb?diagramType=Topology)
-    * [Reservable: Cisco DNA Center Lab 2](https://devnetsandbox.cisco.com/RM/Diagram/Index/2db69bce-66ca-44cb-9b51-05c2d5b4868d?diagramType=Topology)
-    * [Reservable: Cisco DNA Center Lab 3](https://devnetsandbox.cisco.com/RM/Diagram/Index/8076fc05-a818-4bb4-aae1-477680bc2211?diagramType=Topology)
+* [Reservable: Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/b8d7aa34-aa8f-4bf2-9c42-302aaa2daafb?diagramType=Topology)
+* [Reservable: Cisco DNA Center Lab 2](https://devnetsandbox.cisco.com/RM/Diagram/Index/2db69bce-66ca-44cb-9b51-05c2d5b4868d?diagramType=Topology)
+* [Reservable: Cisco DNA Center Lab 3](https://devnetsandbox.cisco.com/RM/Diagram/Index/8076fc05-a818-4bb4-aae1-477680bc2211?diagramType=Topology)
