@@ -2090,7 +2090,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Interface Eth1/1",
+					"name": "GET Interface Eth1/4",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -2099,7 +2099,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/1].json",
+							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/4].json",
 							"protocol": "https",
 							"host": [
 								"{{host}}"
@@ -2118,7 +2118,7 @@
 					"response": []
 				},
 				{
-					"name": "PUT Interface Eth1/1 - Desc",
+					"name": "PUT Interface Eth1/4 - Desc",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -2127,7 +2127,7 @@
 							"raw": "{\n    \"l1PhysIf\": {\n        \"attributes\": {\n            \"descr\": \"Configured with NX-API REST\"\n        }\n    }\n}"
 						},
 						"url": {
-							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/1].json",
+							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/4].json",
 							"protocol": "https",
 							"host": [
 								"{{host}}"
