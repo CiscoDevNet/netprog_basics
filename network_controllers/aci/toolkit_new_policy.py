@@ -1,4 +1,4 @@
-! /usr/bin/env python
+#! /usr/bin/env python
 """
 Learning Series: Network Programmability Basics
 Module: Network Controllers
@@ -48,16 +48,16 @@ my_epg.add_bd(my_bd)
 filter_web = Filter("web", my_tenant)
 
 FilterEntry("tcp-80", filter_web,
-              etherT="ip", prot="tcp",
-              dFromPort="http", dToPort="http")
+            etherT="ip", prot="tcp",
+            dFromPort="http", dToPort="http")
 
 FilterEntry("tcp-443", filter_web,
-             etherT="ip", prot="tcp",
-             dFromPort="https", dToPort="https")
+            etherT="ip", prot="tcp",
+            dFromPort="https", dToPort="https")
 
 # Create New Contract
 contract_web = Contract("web", my_tenant)
-contract_subject_web= ContractSubject("web", contract_web)
+contract_subject_web = ContractSubject("web", contract_web)
 
 # Add Filter to Contract
 contract_subject_web.add_filter(filter_web)
@@ -69,10 +69,10 @@ my_epg.provide(contract_web)
 pprint(my_tenant.get_json())
 
 # Push configuration to APIC
-response =  session.push_to_apic(
-                     my_tenant.get_url(),
-                     data=my_tenant.get_json()
-                )
+response = session.push_to_apic(
+    my_tenant.get_url(),
+    data=my_tenant.get_json()
+)
 
 # View Status
 response.status_code
@@ -84,9 +84,9 @@ response.reason
 my_tenant.mark_as_deleted()
 pprint(my_tenant.get_json())
 
-response =  session.push_to_apic(
-                     my_tenant.get_url(),
-                     data=my_tenant.get_json()
-                )
+response = session.push_to_apic(
+    my_tenant.get_url(),
+    data=my_tenant.get_json()
+)
 
 # Check in APIC GUI
