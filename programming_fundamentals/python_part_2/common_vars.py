@@ -14,20 +14,20 @@ imported into other examples
 
 shapes = ["square", "triangle", "circle"]
 books = [
-            {
-                "title": "War and Peace",
-                "shelf": 3,
-                "available": True
-            },
-            {
-                "title": "Hamlet",
-                "shelf": 1,
-                "available": False
-            },
-            {
-                "title": "Harold and the Purple Crayon",
-                "shelf": 2,
-                "available": True
-            }
-        ]
+    {
+        "title": "War and Peace",
+        "shelf": 3,
+        "available": True
+    },
+    {
+        "title": "Hamlet",
+        "shelf": 1,
+        "available": False
+    },
+    {
+        "title": "Harold and the Purple Crayon",
+        "shelf": 2,
+        "available": True
+    }
+]
 colors = ["blue", "green", "red"]

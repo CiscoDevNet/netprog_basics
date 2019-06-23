@@ -40,3 +40,5 @@ m = manager.connect(host=router["ip"],
 interface_netconf = m.get_config("running", netconf_filter)
 interface_python = xmltodict.parse(interface_netconf.xml)["rpc-reply"]["data"]
 pprint(interface_python["interfaces"]["interface"]["name"]["#text"])
+pprint(interface_python['interfaces']['interface']['description'])
+pprint(interface_python['interfaces']['interface']['ipv4']['address']['ip'])

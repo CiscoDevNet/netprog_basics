@@ -35,16 +35,16 @@ payload = {
     "type": "cli_conf",
     "chunk": "0",
     "sid": "1",
-    "input": "vlan 201 ;name Web_VLAN ;vlan 202 ;name App_VLAN ;vlan 203 ;name Data_VLAN", # noqa
+    "input": "vlan 201 ;name Web_VLAN ;vlan 202 ;name App_VLAN ;vlan 203 ;name Data_VLAN",  # noqa
     "output_format": "json"
   }
 }
 
 # Send Configuration
 response = requests.post(
-                          url,
-                          data=json.dumps(payload),
-                          headers=myheaders,
-                          auth=(switchuser, switchpassword),
-                          verify=False
-                         ).json()
+    url,
+    data=json.dumps(payload),
+    headers=myheaders,
+    auth=(switchuser, switchpassword),
+    verify=False
+).json()

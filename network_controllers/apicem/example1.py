@@ -22,9 +22,10 @@ import requests
 import json
 
 headers = {
-              'content-type': "application/json",
-              'x-auth-token': ""
-          }
+    'content-type': "application/json",
+    'x-auth-token': ""
+}
+
 
 def apic_login(host, username, password):
     """
@@ -45,7 +46,7 @@ def network_device_list(host, ticket):
     """
     url = "https://{}/api/v1/network-device".format(host)
     headers["x-auth-token"] = ticket
-    
+
     # Make API request and return the response body
     response = requests.request("GET", url, headers=headers, verify=False)
     return response.json()["response"]

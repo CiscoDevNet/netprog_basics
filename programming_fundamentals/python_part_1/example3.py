@@ -26,15 +26,15 @@ colors = ["blue", "green", "red"]
 
 # A list of dictionaries
 favorite_colors = [
-                      {
-                          "student": "Mary",
-                          "color": "red"
-                      },
-                      {
-                          "student": "John",
-                          "color": "blue"
-                      }
-                  ]
+    {
+        "student": "Mary",
+        "color": "red"
+    },
+    {
+        "student": "John",
+        "color": "blue"
+    }
+]
 
 # Entry point for program
 if __name__ == '__main__':
@@ -61,5 +61,5 @@ if __name__ == '__main__':
         message = ("There are now {} colors in the list. ".format(len(colors)))
         message += "The color you added was {}.".format(colors[3])
         print(message)
-    else: 
+    else:
         pass

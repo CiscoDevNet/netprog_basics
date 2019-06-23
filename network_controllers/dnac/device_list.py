@@ -27,9 +27,10 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 headers = {
-              'content-type': "application/json",
-              'x-auth-token': ""
-          }
+    'content-type': "application/json",
+    'x-auth-token': ""
+}
+
 
 def dnac_login(host, username, password):
     """
@@ -39,7 +40,7 @@ def dnac_login(host, username, password):
 
     # Make Login request and return the response body
     response = requests.request("POST", url,
-                                auth = (username, password),
+                                auth=(username, password),
                                 headers=headers, verify=False)
     return response.json()["Token"]
 

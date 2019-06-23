@@ -16,7 +16,7 @@ Illustrate the following concepts:
 import requests
 from pprint import pprint
 router = {"ip": "10.10.20.48",
-	      "port": "443",
+          "port": "443",
           "user": "cisco",
           "pass": "cisco_1234!"}
 
@@ -27,12 +27,15 @@ u = "https://{}:{}/restconf/data/interfaces/interface=GigabitEthernet1"
 u = u.format(router["ip"], router["port"])
 
 r = requests.get(u,
-		     headers = headers,
-		     auth=(router["user"], router["pass"]),
-		     verify=False)
+                 headers=headers,
+                 auth=(router["user"], router["pass"]),
+                 verify=False)
 
 pprint(r.text)
 
 api_data = r.json()
 interface_name = api_data["Cisco-IOS-XE-interfaces-oper:interface"]["name"]
-interface_name
+pprint(interface_name)
+interface_description = api_datainterface_name = api_data[
+    "Cisco-IOS-XE-interfaces-oper:interface"]["description"]
+pprint(interface_description)

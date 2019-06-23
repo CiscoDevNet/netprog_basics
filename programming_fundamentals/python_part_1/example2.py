@@ -8,7 +8,7 @@ Author: Hank Preston <hapresto@cisco.com>
 example2.py
 Illustrate the following concepts:
 - Reading from and writing to files
-- The "with" statement 
+- The "with" statement
 - Writing to command line
 - Requesting interactive user input
 """

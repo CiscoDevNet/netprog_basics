@@ -29,9 +29,9 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 headers = {
-              'content-type': "application/json",
-              'x-auth-token': ""
-          }
+    'content-type': "application/json",
+    'x-auth-token': ""
+}
 
 
 def apic_login(apic, username, password):
@@ -323,6 +323,7 @@ def print_flow_analysis_details(flow_analysis):
     # Print blank line at end
     print("")
 
+
 # Entry point for program
 if __name__ == '__main__':
     # Setup Arg Parse for Command Line parameters
@@ -330,8 +331,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Command Line Parameters for Source and Destination IP
-    parser.add_argument("source_ip", help = "Source IP Address")
-    parser.add_argument("destination_ip", help = "Destination IP Address")
+    parser.add_argument("source_ip", help="Source IP Address")
+    parser.add_argument("destination_ip", help="Destination IP Address")
     args = parser.parse_args()
 
     # Get Source and Destination IPs from Command Line

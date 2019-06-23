@@ -10,7 +10,7 @@ Illustrate the following concepts:
 - Script Structure and Format
 - Importing and using packages
 - Variable declaration and usage
-- Function creations and usage 
+- Function creations and usage
 - Basic Error Handling
 """
 
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     # Retrieve command line input
     try:
         input = float(sys.argv[1])
-    except (IndexError, ValueError) as e:
+    except (IndexError, ValueError):
         # Indicates no command line parameter was provided
         print("You must provide a number as a parameter to this script")
         print("Example: ")

@@ -19,7 +19,7 @@ __copyright__ = "Copyright (c) 2016 Cisco Systems, Inc."
 __license__ = "MIT"
 
 from device_info import apicem
-from time import sleep
+# from time import sleep
 import json
 import requests
 import sys
@@ -29,9 +29,9 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 headers = {
-              'content-type': "application/json",
-              'x-auth-token': ""
-          }
+    'content-type': "application/json",
+    'x-auth-token': ""
+}
 
 
 def apic_login(apic, username, password):
@@ -142,8 +142,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Command Line Parameters for Source and Destination IP
-    parser.add_argument("source_ip", help = "Source IP Address")
-    parser.add_argument("destination_ip", help = "Destination IP Address")
+    parser.add_argument("source_ip", help="Source IP Address")
+    parser.add_argument("destination_ip", help="Destination IP Address")
     args = parser.parse_args()
 
     # Get Source and Destination IPs from Command Line

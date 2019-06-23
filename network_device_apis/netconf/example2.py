@@ -44,5 +44,7 @@ if __name__ == '__main__':
         print("  Description: {}".format(intf_config["description"]))
         print("  Type: {}".format(intf_config["type"]["#text"]))
         print("  MAC Address: {}".format(intf_info["phys-address"]))
-        print("  Packets Input: {}".format(intf_info["statistics"]["in-unicast-pkts"]))
-        print("  Packets Output: {}".format(intf_info["statistics"]["out-unicast-pkts"]))
+        print("  Packets Input: {}".format(
+            intf_info["statistics"]["in-unicast-pkts"]))
+        print("  Packets Output: {}".format(
+            intf_info["statistics"]["out-unicast-pkts"]))

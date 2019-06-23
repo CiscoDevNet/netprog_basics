@@ -27,9 +27,10 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 headers = {
-              'content-type': "application/json",
-              'x-auth-token': ""
-          }
+    'content-type': "application/json",
+    'x-auth-token': ""
+}
+
 
 def dnac_login(dnac, port, username, password):
     """
@@ -39,7 +40,7 @@ def dnac_login(dnac, port, username, password):
 
     # Make Login request and return the response body
     response = requests.request("POST", url,
-                                auth = (username, password),
+                                auth=(username, password),
                                 headers=headers, verify=False)
     return response.json()["Token"]
 
@@ -59,7 +60,8 @@ def network_device_list(host, token):
 # Entry point for program
 if __name__ == '__main__':
     # Log into the DNA Center Controller to get Ticket
-    token = dnac_login(dnac["host"], dnac["port"], dnac["username"], dnac["password"])
+    token = dnac_login(dnac["host"], dnac["port"],
+                       dnac["username"], dnac["password"])
 
     # Get the list of devices
     devices = network_device_list(dnac["host"], token)

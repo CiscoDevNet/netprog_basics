@@ -13,7 +13,7 @@ Illustrate the following concepts:
 """
 
 from pysnmp.hlapi import *
-from pprint import pprint
+# from pprint import pprint
 
 router = {"ip": "10.10.20.48",
           "port": 161,
