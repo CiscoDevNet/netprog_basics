@@ -15,7 +15,7 @@ Illustrate the following concepts:
 """
 
 from device_info import apic
-from acitoolkit.acitoolkit import *
+from acitoolkit.acitoolkit import Session, Tenant
 
 session = Session(apic['host'],
                   apic['username'],
