@@ -11,9 +11,6 @@
 - name: Configure NETCONF
   tags: [api, netconf]
   ios_config:
-    provider:
-      host: "{{inventory_hostname}}"
-      timeout: 15      
     lines:
       - netconf-yang
       - netconf-yang cisco-odm polling-enable

@@ -10,24 +10,15 @@
 ---
 - name: Enable Features
   tags: [api, nxapi, hsrp]
-  with_items:
+  loop:
     - hsrp
-  nxos_feature:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
 - name: Configure HSRP
   tags: [api, nxapi, hsrp]
-  with_items: "{{ hsrp_interfaces }}"
+  loop: "{{ hsrp_interfaces }}"
   nxos_hsrp:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     group: "{{ item.group }}"
     vip: "{{ item.vip }}"
     interface: "{{ item.interface }}"

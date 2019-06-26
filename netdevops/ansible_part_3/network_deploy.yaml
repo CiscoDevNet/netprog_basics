@@ -10,7 +10,6 @@
 ---
 - name: Enable Model Driven Programmability (NETCONF) on IOS-XE
   hosts: iosxe
-  connection: local
   gather_facts: false
 
   roles:
@@ -18,7 +17,6 @@
 
 - name: Enable NX-API on NX-OS
   hosts: nxos
-  connection: local
   gather_facts: false
 
   roles:
@@ -26,7 +24,6 @@
 
 - name: Configure Network Core
   hosts: core
-  connection: local
   gather_facts: false
 
   roles:
@@ -35,7 +32,6 @@
 
 - name: Configure Distribution Switches
   hosts: distribution
-  connection: local
   gather_facts: false
 
   roles:
@@ -48,7 +44,6 @@
 
 - name: Configure Access Switches
   hosts: access
-  connection: local
   gather_facts: false
 
   roles:

@@ -10,25 +10,17 @@
 ---
 - name: Enable Features
   tags: [api, nxapi, vpc, vlan, trunks]
-  with_items:
+  loop:
     - vpc
     - lacp
   nxos_feature:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
 - name: Create Port Channels for Access Switches
   tags: [api, nxapi, vpc, vlan, trunks]
-  with_items: "{{ trunks }}"
+  loop: "{{ trunks }}"
   nxos_portchannel:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     group: "{{ item.port_channel_id }}"
     members: "{{ item.members }}"
     force: true
@@ -37,22 +29,14 @@
 
 - name: Configure Access Switch Port Channels as Trunk
   tags: [api, nxapi, vpc, vlan, trunks]
-  with_items: "{{ trunks }}"
+  loop: "{{ trunks }}"
   nxos_switchport:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     interface: "po{{ item.port_channel_id }}"
     mode: trunk
 
 - name: Configure VPC for Trunks
   tags: [api, nxapi, vpc, vlan, trunks]
-  with_items: "{{ trunks }}"
+  loop: "{{ trunks }}"
   nxos_vpc_interface:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     portchannel: "{{ item.port_channel_id }}"
     vpc: "{{ item.port_channel_id }}"

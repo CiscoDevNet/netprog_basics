@@ -3,10 +3,14 @@ ansible_python_interpreter="/usr/bin/env python"
 
 [iosxe:children]
 core
+ansible_network_os=ios
+ansible_connection=network_cli
 
 [nxos:children]
 distribution
 access
+ansible_network_os=nxos
+ansible_connection=httpapi
 
 [core]
 172.16.30.111

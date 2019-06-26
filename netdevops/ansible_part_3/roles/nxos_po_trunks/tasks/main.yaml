@@ -10,24 +10,16 @@
 ---
 - name: Enable Features
   tags: [api, nxapi, trunk, vlan]
-  with_items:
+  loop:
     - lacp
   nxos_feature:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
 - name: Create Uplink Port Channel to Distribution
   tags: [api, nxapi, trunk, vlan]
-  with_items: "{{ uplinks }}"
+  loop: "{{ uplinks }}"
   nxos_portchannel:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     group: "{{ item.port_channel_id }}"
     members: "{{ item.members }}"
     force: true
@@ -36,11 +28,7 @@
 
 - name: Configure Uplink Port Channels as Trunk
   tags: [api, nxapi, trunk, vlan]
-  with_items: "{{ uplinks }}"
+  loop: "{{ uplinks }}"
   nxos_switchport:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     interface: "po{{ item.port_channel_id }}"
     mode: trunk

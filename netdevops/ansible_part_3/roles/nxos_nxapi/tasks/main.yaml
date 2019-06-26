@@ -17,11 +17,9 @@
 # - name: "Print Facts"
 #   debug: msg="{{facts}}"
 
-- name: Enable NX-API
+- name: Enable NXAPI access with default configuration
+  vars:
+    ansible_connection: network_cli
   tags: [api, nxapi]
-  nxos_feature:
-    provider:
-      host: "{{inventory_hostname}}"
-      timeout: 15
-    feature: nxapi
-    state: enabled
+  nxos_nxapi:
+    state: present

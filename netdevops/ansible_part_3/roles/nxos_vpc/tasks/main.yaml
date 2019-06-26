@@ -10,24 +10,16 @@
 ---
 - name: Enable Features
   tags: [api, nxapi, vpc]
-  with_items:
+  loop:
     - vpc
     - lacp
   nxos_feature:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
 - name: Configure VPC
   tags: [api, nxapi, vpc]
   nxos_vpc:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     domain: "{{ vpc.domain }}"
     pkl_src: "{{ vpc_pkl_src }}"
     pkl_dest: "{{ vpc_pkl_dest }}"
@@ -38,10 +30,6 @@
 - name: Create Port Channel for VPC
   tags: [api, nxapi, vpc]
   nxos_portchannel:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     group: "{{ vpc.port_channel.id }}"
     members: "{{ vpc.port_channel.members }}"
     force: true
@@ -51,19 +39,10 @@
 - name: Configure VPC Port Channel Trunk
   tags: [api, nxapi, vpc]
   nxos_switchport:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     interface: "po{{ vpc.port_channel.id }}"
     mode: trunk
 
 - name: Enable VPC Peer Link on port_channel
   tags: [api, nxapi, vpc]
-  nxos_vpc_interface:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     portchannel: "{{ vpc.port_channel.id }}"
     peer_link: true

@@ -10,24 +10,16 @@
 ---
 - name: Enable Features
   tags: [api, nxapi, layer3]
-  with_items:
+  loop:
     - interface-vlan
   nxos_feature:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
 - name: Configure Layer 3 Interfaces
   tags: [api, nxapi, layer3]
-  with_items: "{{ l3_interfaces }}"
+  loop: "{{ l3_interfaces }}"
   nxos_interface:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     interface: "{{ item.interface_type }}{{ item.interface_id }}"
     mode: layer3
     description: "{{ item.description }}"
@@ -35,12 +27,8 @@
 
 - name: Configure IPv4 Address on Interface
   tags: [api, nxapi, layer3]
-  with_items: "{{ l3_interfaces }}"
+  loop: "{{ l3_interfaces }}"
   nxos_ip_interface:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     interface: "{{ item.interface_type }}{{ item.interface_id }}"
     version: v4
     addr: "{{ item.ip_address }}"
