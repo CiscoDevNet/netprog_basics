@@ -17,8 +17,8 @@ from pprint import pprint
 
 router = {"device_type": "cisco_ios",
           "host": "10.10.20.48",
-          "user": "cisco",
-          "pass": "cisco_1234!"}
+          "user": "developer",
+          "pass": "C1sco12345"}
 
 net_connect = ConnectHandler(ip=router["host"],
                              username=router["user"],
