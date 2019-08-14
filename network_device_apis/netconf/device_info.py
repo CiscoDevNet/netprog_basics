@@ -14,14 +14,24 @@ __author_email__ = "hapresto@cisco.com"
 __copyright__ = "Copyright (c) 2016 Cisco Systems, Inc."
 __license__ = "MIT"
 
-# DevNet Always-On NETCONF/YANG & RESTCONF Sandbox Device
+# DevNet Always-On IOS XE on CSR Recommended Code Sandbox Device
+# NEED TO UDPATE THE URL TO NEW TILE URL 
 # https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology
 ios_xe1 = {
              "address": "ios-xe-mgmt.cisco.com",
              "port": 10000,
-             "username": "root",
-             "password": "D_Vay!_10&"
-          }
+             "username": "developer",
+             "password": "C1sco12345"
+           }
+
+# DevNet Always-On IOS XE on CSR Latest Code Sandbox Device
+# https://devnetsandbox.cisco.com/RM/Diagram/Index/38ded1f0-16ce-43f2-8df5-43a40ebf752e?diagramType=Topology
+ios_xe_latest = {
+             "address": "ios-xe-mgmt-latest.cisco.com",
+             "port": 10000,
+             "username": "developer",
+             "password": "C1sco12345"
+          }          
 
 # DevNet IOS XE Programmability Sandbox Device
 # https://devnetsandbox.cisco.com/RM/Diagram/Index/7fd27b24-7034-477d-9ad2-e2c8096dd1a5?diagramType=Topology
