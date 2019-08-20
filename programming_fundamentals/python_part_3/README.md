@@ -45,6 +45,6 @@ pip install -r requirements.txt
 ***Note: During the lesson, there are instructions to `pip install` different libraries.  If you follow this setup, you will already have the libraries installed, but still run the commands to become familiar with using them***
 
 ## DevNet Sandbox
-This lesson leverages the [IOS XE Programmability](https://devnetsandbox.cisco.com/RM/Diagram/Index/1b83c4bf-f63e-4e4b-9119-9b385751f1b6?diagramType=Topology) Sandbox.  
+This lesson leverages the [IOS XE on CSR Recommended Code](https://devnetsandbox.cisco.com/RM/Diagram/Index/cae403c2-27af-4c7d-b1e1-99b7d42f1504?diagramType=Topology) Sandbox.  
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
