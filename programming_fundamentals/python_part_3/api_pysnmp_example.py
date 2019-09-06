@@ -17,8 +17,8 @@ from pprint import pprint
 
 router = {"ip": "10.10.20.48",
           "port": 161,
-          "user": "cisco",
-          "pass": "cisco_1234!"}
+          "user": "developer",
+          "pass": "C1sco12345"}
 
 iterator = getCmd(SnmpEngine(),
                   CommunityData('public'),

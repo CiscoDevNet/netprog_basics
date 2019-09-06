@@ -16,6 +16,6 @@ curl https://api.icndb.com/jokes/random?limitTo=nerdy
 
 # Example 3: Network Programmability with RESTCONF
 curl -vk \
-  -u root:D_Vay\!_10\& \
+  -u developer:C1sco12345 \
   -H 'accept: application/yang-data+json' \
   https://ios-xe-mgmt.cisco.com:9443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2

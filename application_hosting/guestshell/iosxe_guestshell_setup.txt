@@ -35,13 +35,21 @@ ip access-list standard NAT_ACL
   permit 192.168.0.0 0.0.255.255
   exit
 
-ip nat inside source list NAT_ACL \*  interface GigabitEthernet1 overload
+ip nat inside source list NAT_ACL interface GigabitEthernet1 overload
 
 ! ***** Step 4 *********
+! Configure Guest Shell
+conf t 
+app-hosting appid guestshell
+  app-vnic gateway1 virtualportgroup 0 guest-interface 0
+  guest-ipaddress 192.168.35.2 netmask 255.255.255.0
+  app-default-gateway 192.168.35.1 guest-interface 0
+  name-server0 208.67.222.222
+end
+
 ! Enable Guest Shell
 ! Entered from Enable Mode (not config)
-! All entered on single line
-guestshell enable VirtualPortGroup 0 guest-ip 192.168.35.2name-server 208.67.222.222
+guestshell enable 
 
 ! Verify Guest Shell Running
 show app-hosting list

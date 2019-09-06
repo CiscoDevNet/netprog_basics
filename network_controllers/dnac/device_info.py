@@ -5,7 +5,7 @@ Author: Hank Preston <hapresto@cisco.com>
 
 device_info.py
 Illustrate the following concepts:
-- Store device info for Sandbox Infrastructure used 
+- Store device info for Sandbox Infrastructure used
   in examples
 """
 
@@ -14,31 +14,22 @@ __author_email__ = "hapresto@cisco.com"
 __copyright__ = "Copyright (c) 2016 Cisco Systems, Inc."
 __license__ = "MIT"
 
-# DevNet Always-On IOS XE on CSR Recommended Code Sandbox Device
+# DevNet Always-On NETCONF/YANG & RESTCONF Sandbox Device
 # https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology
 ios_xe1 = {
              "address": "ios-xe-mgmt.cisco.com",
              "port": 10000,
-             "username": "developer",
-             "password": "C1sco12345"
-           }
-
-# DevNet Always-On IOS XE on CSR Latest Code Sandbox Device
-# https://devnetsandbox.cisco.com/RM/Diagram/Index/38ded1f0-16ce-43f2-8df5-43a40ebf752e?diagramType=Topology
-ios_xe_latest = {
-             "address": "ios-xe-mgmt-latest.cisco.com",
-             "port": 10000,
-             "username": "developer",
-             "password": "C1sco12345"
-          }          
+             "username": "root",
+             "password": "D_Vay!_10&"
+          }
 
 # DevNet IOS XE Programmability Sandbox Device
-# https://devnetsandbox.cisco.com/RM/Diagram/Index/cae403c2-27af-4c7d-b1e1-99b7d42f1504?diagramType=Topology
+# https://devnetsandbox.cisco.com/RM/Diagram/Index/7fd27b24-7034-477d-9ad2-e2c8096dd1a5?diagramType=Topology
 ios_xe2 = {
-             "address": "10.10.20.48",
+             "address": "10.10.20.21",
              "port": 830,
-             "username": "developer",
-             "password": "C1sco12345"
+             "username": "root",
+             "password": "cisco123"
           }
 
 
@@ -60,3 +51,11 @@ apic = {
              "port": 443
          }
 
+# DevNet Always-On Sandbox DNA Center
+# https://devnetsandbox.cisco.com/RM/Diagram/Index/471eb739-323e-4805-b2a6-d0ec813dc8fc?diagramType=Topology
+dnac = {
+             "host": "sandboxdnac2.cisco.com",
+             "username": "devnetuser",
+             "password": "Cisco123!",
+             "port": 443
+         }

@@ -43,6 +43,11 @@ pip install -r requirements.txt
 ```
 
 ## DevNet Sandbox
-This lesson leverages the [IOS XE Programmability](https://devnetsandbox.cisco.com/RM/Diagram/Index/1b83c4bf-f63e-4e4b-9119-9b385751f1b6?diagramType=Topology) Sandbox.  
+This lesson leverages the [IOS XE on CSR Recommended Code](https://devnetsandbox.cisco.com/RM/Diagram/Index/cae403c2-27af-4c7d-b1e1-99b7d42f1504?diagramType=Topology) Sandbox.  
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
+
+***Note: In the video, an older version of IOS XE was used.***
+
+The commands to enable GuestShell have changed slightly, be sure to refer to the [sample configuration in the code samples](https://github.com/CiscoDevNet/netprog_basics/blob/master/application_hosting/guestshell/iosxe_guestshell_setup.txt#L40) for the latest command syntax. 
+

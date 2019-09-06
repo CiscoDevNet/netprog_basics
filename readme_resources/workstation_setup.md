@@ -1,4 +1,4 @@
-# General Workstation Setup
+# Developer Workstation and Environment Setup
 Before you dive into the individual labs and modules, and their pre-reqs, take time to review this page for general setups steps and assumptions related to software to be installed, and any suggested configuration details.  This is not intended to be a comprehensive installation guide for these tools, or general workstation prep, but rather provide guidance and links to resources that are already available on DevNet and other locations.  
 
 In this guide you will find recommendations on tools and applications to use, however there are many ways to accomplish anything in IT.  If you are already familiar with another method, feel free to use that as long as the end result meets the fundamental requirement.  
@@ -14,113 +14,54 @@ Features such as the Linux Subsystem that allow Ubuntu Bash to run natively on W
 **Incompatibility Note:** Ansible is a very popular configuration management tool for network programmability, and currently Windows is **not** supported as the control system for Ansible.  This means that you will need to leverage an option such as a Linux VM or the Ubuntu Bash with Linux Subsystem for working with Ansible from a Windows workstation.  
 
 ### Mac
-OS X and Mac laptops are becoming quite popular with network engineers, and it makes a great platform for network programmability.  Because of it's Linux roots, many of the same tools, utilities, and software that are popular in Linux development work exactly the same on OS X.  
+OS X and Mac laptops are becoming quite popular with network engineers, and it makes a great platform for network programmability.  Because of its Linux roots, many of the same tools, utilities, and software that are popular in Linux development work exactly the same on OS X.  
 
-One aspect of Linux distriubtions that is not included by default with OS X is an application package manager (ie yum or apt).  There are a few options that have been developed by the OpenSource community that fill this gap.  One very popular and useful one is [Homebrew](http://brew.sh).  The use of this tool can make installation and management of development tools very straightforward on a OS X.  You will find references to this tool in this course documentation.  
+One aspect of Linux distributions that is not included by default with OS X is an application package manager (ie yum or apt).  There are a few options that have been developed by the OpenSource community that fill this gap.  One very popular and useful one is [Homebrew](http://brew.sh).  The use of this tool can make installation and management of development tools very straightforward on a OS X.  You will find references to this tool in this course documentation.  
 
 ### Linux
 Linux, as well as the specific distributions like Ubuntu, CentOS, Red Hat, etc, are quite popular and powerful as a development environment owing to their popularity for the actual end systems and servers.  For example, nearly all network appliances are built on-top of a Linux kernel today.  
 
-## Setting up git
 
-Managing code repositories and source control is not a core topic of this course, however a basic working knowledge of how to clone code from a source, and the utilities to do the cloning are needed to obtain and keep updated the source code and examples for the exercises.  
+## Setting up your development environment
+A great first stop are the **Learning Labs on Developer Workstation and Environment Setup**.  The first lab discusses what goes into a dev workstation, and gives some suggested tools.  The following labs walk through installing the tools on different platforms.
 
-You can download and find installation instructions for the latest version of git on the download site: [https://git-scm.com/downloads](https://git-scm.com/downloads).  
+### What is a Development Environment, and why do you need one?
+What exactly goes into a development environment and why? What is the bare minimum you need to get started, and what choices do I need to make related to platforms and operating systems? We'll lay out the details in this quick overview.
 
-### Mac OS X Note
-In addition to downloading from the site above, OS X also includes the command line utilities for git within the X-Code tools included in the operating system.  Simply executing `git` from the terminal on a Mac will prompt you to accept a license and then complete the setup.  
+[![](https://github.com/CiscoDevNet/netprog_basics/raw/master/readme_resources/dev-env.jpg)](https://developer.cisco.com/learning-labs/setup/#dev-why)
 
-## Setting Up Python
-Many of the exercises in the course will leverage Python so it is critical to setup and install it properly.  In addition, it is recommended to install the latest versions of both Python 2.7 and Python 3 as some of the tools and technologies discussed are version dependent.  
+**View the Video:** [Watch a video of the lesson.](https://developer.cisco.com/learning-labs/setup/#dev-why) 
 
-The main source of download information on Python is at [https://www.python.org/downloads/](https://www.python.org/downloads/).  
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-what/step/1)
 
-In addition, here are some notes and suggestions for Python installation on each of the main platforms.  
+### Setting up your Windows workstation as a development environment
 
-### Windows
-Download the installers for both Python 2.7 and 3.x from the above site and install them on your workstation with the following suggestions.  
+So you are a follower of Gates, Balmer and Nadella, excellent! Let's super charge that Windows workstation with everything you need to be a programability ninja!
 
-* Install Python 2.7 and then Python 3
-* During the installation of both, be sure review the settings and select the option to add Python to your path
-  * By default the installer does **not** do this, which means you would need to explicitly provide the full path to `python.exe` whenever running commands.  
+[![](https://github.com/CiscoDevNet/netprog_basics/raw/master/readme_resources/dev-env-win.jpg)](https://developer.cisco.com/learning-labs/setup/#dev-win)
 
-### Mac OS X
-OS X includes Python natively, however it is **not** the latest version.  Though the included version may work for most exercises, there are many bugs and fixes in later versions that you will want to have to use.  Though you can download installers from python.org at the link above, you can also leverage Homebrew to install and maintain Python.  The following commands will install the latest versions of Python 2.7 and Python3.  
+**View the Video:** [Watch a video of the lesson.](https://developer.cisco.com/learning-labs/setup/#dev-win) 
 
-```bash
-brew install python2
-brew install python3
-```
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-win/step/1)
 
-This will alias the command `python2` to the latest version of Python 2.7.  Likewise, `python3` will be the latest version of Python 3.  
+### Setting up your macOS workstation as a development environment
+Are you a fan of black turtle necks and clean design lines? Perfect! Grab your Mac and let's get you ready to put that BSD base to work and slap some stickers all over the shiny case.
 
-You can upgrade your installed versions of Python with
+[![](https://github.com/CiscoDevNet/netprog_basics/raw/master/readme_resources/dev-env-mac.jpg)](https://developer.cisco.com/learning-labs/setup/#dev-mac)
 
-```bash
-brew upgrade python2
-brew upgrade python3
-```
+**View the Video:** [Watch a video of the lesson.](https://developer.cisco.com/learning-labs/setup/#dev-mac) 
 
-### Linux
-Though all Linux distro's provide an application package manager, they often lack the latest versions of Python in the supported repos.  There are alternative repositories you can install and use, however it is often easier and better to download and install from source.  The following example shows how to download and install both Python 2.7.14 and Python 3.6.2 from source.  
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-mac/step/1)
 
-*May require sudo*
+### Setting up your Linux workstation as a development environment
+Does Open Source speak to you on a personal level? That's great, grab your penguin and let's dive in and make Linus proud.
 
-```bash
-# Python 2
-cd ~
-wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz
-tar xzf Python-2.7.14.tgz
-cd Python-2.7.14
-./configure
-make altinstall
+[![](https://github.com/CiscoDevNet/netprog_basics/raw/master/readme_resources/dev-env-centos.jpg)](https://developer.cisco.com/learning-labs/setup/#dev-centos)
 
-# Python 3
-cd ~
-wget https://www.python.org/ftp/python/3.6.3/Python-3.6.3.tgz
-tar xzf Python-3.6.3.tgz
-cd Python-3.6.3
-./configure
-make altinstall
-```
+#### CentOS 
+**View the Video:** [Watch a video of the lesson.](https://developer.cisco.com/learning-labs/setup/#dev-centos) 
 
-### Standard Python Utilities
-With Python installed, you'll also want to make sure two Python utilities are installed and working.  
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-centos/step/1)
 
-#### pip
-`pip` allows developers to install libraries and modules with Python for added capablities, such as making NETCONF requests with ncclient.  If you installed the latest versions of Python as suggested, you should have pip installed already.  Test with `pip --version`.  
-
-If it is not installed, you can do so by downloading [`get-pip.py`](https://bootstrap.pypa.io/get-pip.py) and then running the file with Python.  
-
-```bash
-# OS X or Linux
-python2 get-pip.py
-python3 get-pip.py
-```
-
-Windows installers will have installed pip by default.  
-
-#### virtualenv
-A Virtual Environment is an isolated Python instance (directory structure) that can be created with a specific version of Python and an independent set of libraries installed and available.  This allows developers to have different Virtual Environments for different projects or applications, where they could have conflicting settings.  `virtualenv` is the Python utility for creating virtual environments, and it is installed with `pip`
-
-```bash
-pip install virtualenv
-```
-
-On Mac or Linux it may require `sudo`
-
-```bash
-sudo pip install virtualenv
-```
-
-## Postman
-Working with REST APIs is an important skill for any developer today, including network programmability focused engineers.  Postman is an excellent tool for exploring, testing and working with REST APIs.  Download and install it from [https://www.getpostman.com](https://www.getpostman.com).  
-
-***Note:*** Postman was originally deployed as a Google Chrome Application, but is now available as a standalone application.  As Chrome apps are being phased out by Google, it is recommended to use the standalone application.  
-
-## DevNet Sandbox VPN Access
-Many of the lessons leverage a Reserved [DevNet Sandbox](http://developer.cisco.com/sandbox) as the target infrastructure.  To connect to your sandbox, you'll need to VPN in.  
-
-The most common VPN Client to use is Cisco AnyConnect which is available to [download from Cisco](https://software.cisco.com/download/release.html?mdfid=286281283&softwareid=282364313&release=4.5.02036&relind=AVAILABLE&rellifecycle=&reltype=latest).  
-
-You can also leverage the OpenSource Client [OpenConnect](http://www.infradead.org/openconnect/index.html).
+#### Ubuntu 
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-ubuntu/step/1)

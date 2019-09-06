@@ -18,8 +18,8 @@ import xmltodict
 
 router = {"ip": "10.10.20.48",
           "port": 830,
-          "user": "cisco",
-          "pass": "cisco_1234!"}
+          "user": "developer",
+          "pass": "C1sco12345"}
 
 netconf_filter = """
 <filter>

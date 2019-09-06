@@ -53,28 +53,4 @@ pip install -r requirements.txt
 ```
 
 ## DevNet Sandbox
-This lesson leverages the [Open NX-OS with Nexus 9K Standalone](https://devnetsandbox.cisco.com/RM/Diagram/Index/0e22761d-f813-415d-a557-24fa0e17ab50?diagramType=Topology) Sandbox.  
-
-You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
-
-### Post Reservation Setup
-Before beginning this lesson you need to complete 2 quick steps.  
-
-1. First connect to the switch with SSH and enable the NX-API feature.  Password is `cisco123`
-
-    ```bash
-    ssh admin@10.10.20.58
-
-    conf t
-    feature nxapi
-    end
-
-    copy run start
-    ```
-
-1. Next, run the `sbx_setup.py` script to add the baseline configuration to the switch.  
-    * ***Note: Run from the `netprog_basics/network_device_apis/nxapi` directory.***
-
-    ```bash
-    python sbx_setup.py
-    ```
+This lesson leverages the [Always On: Open NX-OS Programmability](https://devnetsandbox.cisco.com/RM/Diagram/Index/dae38dd8-e8ee-4d7c-a21c-6036bed7a804?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
