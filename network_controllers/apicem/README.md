@@ -23,6 +23,8 @@ To leverage them, simply `Import` them into your Postman client.
 1. Collections: Use the **Import** button in the upper left corner of the client. 
 2. Environments: Use the **Import** button from the `Manage Environments` interface of the client.  
 
+> Reminder: Many network devices leverage self-signed certificates for `https://` APIs.  Don't forget to turn **OFF** SSL certificate checking within Postman settings.
+
 ### Python Environment Setup 
 It is recommended that this lesson be completed using Python 3.6.  A recent version of Python 2.7 or Python 3.5 should also work.  
 
