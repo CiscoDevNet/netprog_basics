@@ -56,3 +56,10 @@ This lesson leverages a different [VIRL topology](virl_sbx_mgmt/ansible_part_3.v
 cd virl_sbx_mgmt/
 python virl_simulation_setup.py
 ```
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/d99f3609-6cd1-3a76-8a7f-ae17351ff466). 
+
+> *Suggestion: Right click, "Open in new tab"*

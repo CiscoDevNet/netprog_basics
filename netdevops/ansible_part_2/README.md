@@ -46,3 +46,10 @@ pip install -r requirements.txt
 This lesson leverages the [Open NX-OS with Nexus 9Kv On VIRL](https://devnetsandbox.cisco.com/RM/Diagram/Index/1e9b57ff-9e64-4c68-93e5-f0f0a8c6f22c?diagramType=Topology) Sandbox.  
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/c4892148-75c1-3771-9bfd-c7f9281ae509). 
+
+> *Suggestion: Right click, "Open in new tab"*
