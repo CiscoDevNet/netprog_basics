@@ -16,4 +16,4 @@ No Sandbox is required for this lesson.
 
 ## Download Slides
 
-You can download the slides for this lesson <a href='https://developer.cisco.com/fileMedia/download/2681d7c1-4cc3-3bc4-a1c8-a5881eb8dd58' target='_blank'>here</a>.
+You can download the slides for this lesson <a href='https://developer.cisco.com/fileMedia/download/2681d7c1-4cc3-3bc4-a1c8-a5881eb8dd58' target='_blank'>here</a>!
