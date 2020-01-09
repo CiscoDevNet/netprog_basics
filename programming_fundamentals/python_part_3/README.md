@@ -48,3 +48,10 @@ pip install -r requirements.txt
 This lesson leverages the [IOS XE on CSR Recommended Code](https://devnetsandbox.cisco.com/RM/Diagram/Index/cae403c2-27af-4c7d-b1e1-99b7d42f1504?diagramType=Topology) Sandbox.  
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/39d29167-4b3d-3086-b777-3dcfeaeb6a1e). 
+
+> *Suggestion: Right click, "Open in new tab"*

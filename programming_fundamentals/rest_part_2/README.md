@@ -54,3 +54,10 @@ pip install -r requirements.txt
 
 ## DevNet Sandbox
 This lesson leverages the [Always On: APIC-EM](https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/8b7d4271-87e4-3e7c-94be-ae06106fc0b2). 
+
+> *Suggestion: Right click, "Open in new tab"*

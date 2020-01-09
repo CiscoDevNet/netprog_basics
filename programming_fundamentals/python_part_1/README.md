@@ -18,3 +18,9 @@ It is recommended that this lesson be completed using Python 3.6.  A recent vers
 
 ## DevNet Sandbox
 No Sandbox is required for this lesson.
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/f41c131a-d809-3b9c-95eb-6f625ce3aa64). 
+
+> *Suggestion: Right click, "Open in new tab"*
