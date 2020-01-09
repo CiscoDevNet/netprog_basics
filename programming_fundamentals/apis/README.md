@@ -1,4 +1,5 @@
 # APIs are Everywhere... but what are they?
+## No Setup Needed
 This lesson has no setup requirements.
 
 ## Download Slides
