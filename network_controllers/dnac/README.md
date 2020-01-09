@@ -69,3 +69,14 @@ To complete the exercises related to the Path Trace API, you'll need to leverage
 * [Reservable: Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/b8d7aa34-aa8f-4bf2-9c42-302aaa2daafb?diagramType=Topology)
 * [Reservable: Cisco DNA Center Lab 2](https://devnetsandbox.cisco.com/RM/Diagram/Index/2db69bce-66ca-44cb-9b51-05c2d5b4868d?diagramType=Topology)
 * [Reservable: Cisco DNA Center Lab 3](https://devnetsandbox.cisco.com/RM/Diagram/Index/8076fc05-a818-4bb4-aae1-477680bc2211?diagramType=Topology)
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](). 
+
+* [**Introducing Cisco DNA Center Platform APIs and Programmability**](https://developer.cisco.com/fileMedia/download/166adb81-cb9b-37e3-964f-1fc1b09ad30b)
+* [**Cisco DNA Center Platform APIs Part 1: Exploring Apps and Tools**](https://developer.cisco.com/fileMedia/download/78f81422-0a8c-38c4-ae99-304334f48fbe)
+* [**Cisco DNA Center Platform APIs Part 2: Network Troubleshooting**](https://developer.cisco.com/fileMedia/download/1430c5d1-c770-3601-9aab-639ccce482f5)
+
+> *Suggestion: Right click, "Open in new tab"*

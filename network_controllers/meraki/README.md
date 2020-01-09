@@ -54,3 +54,10 @@ pip install -r requirements.txt
 
 ## DevNet Sandbox
 This lesson leverages the [Always On: Meraki](https://devnetsandbox.cisco.com/RM/Diagram/Index/a9487767-deef-4855-b3e3-880e7f39eadc?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/12c50842-e1c3-34aa-9d47-650b6a01502f). 
+
+> *Suggestion: Right click, "Open in new tab"*

@@ -113,3 +113,15 @@ pip install pygraphviz \
 
 ## DevNet Sandbox
 This lesson leverages the [Always On: ACI APIC](https://devnetsandbox.cisco.com/RM/Diagram/Index/5a229a7c-95d5-4cfd-a651-5ee9bc1b30e2?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](). 
+
+* [**Got SDN? Understanding the ACI Programmability Options**](https://developer.cisco.com/fileMedia/download/6901ba9f-d1a0-3c07-a390-ce694135e820)
+* [**ACI Programmability Part 1: The ACI Object Model**](https://developer.cisco.com/fileMedia/download/4fc2c770-7699-3ff0-abb3-84a22d86ea6e)
+* [**ACI Programmability Part 2: Using the ACI Toolkit**](https://developer.cisco.com/fileMedia/download/7e077dc8-c979-39f6-a53c-b39659413dab)
+
+
+> *Suggestion: Right click, "Open in new tab"*
