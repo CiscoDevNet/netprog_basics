@@ -51,3 +51,10 @@ You will need to reserve an instance of the sandbox, and establish a VPN connect
 
 The commands to enable GuestShell have changed slightly, be sure to refer to the [sample configuration in the code samples](https://github.com/CiscoDevNet/netprog_basics/blob/master/application_hosting/guestshell/iosxe_guestshell_setup.txt#L40) for the latest command syntax. 
 
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/587b59b9-6b7b-3b7b-bce4-ce3acf182e16). 
+
+> *Suggestion: Right click, "Open in new tab"*

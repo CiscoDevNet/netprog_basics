@@ -69,3 +69,10 @@ With Guest Shell setup, now clone the code for the labs into Guest Shell in your
 ! From Enable mode on your Sandbox Device
 guestshell run git clone https://github.com/CiscoDevNet/netprog_basics /flash/netprog_basics    
 ```
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/8a74f662-c44e-3344-b073-09deba415407). 
+
+> *Suggestion: Right click, "Open in new tab"*

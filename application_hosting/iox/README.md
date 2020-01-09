@@ -62,3 +62,10 @@ Save ioxclient into one of the following locations:
 This lesson leverages the [IOx](https://devnetsandbox.cisco.com/RM/Diagram/Index/864622c2-24bd-47ca-867d-015dbe44e185?diagramType=Topology) Sandbox.  
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/517a487c-4442-3408-a066-fe17c3795e07). 
+
+> *Suggestion: Right click, "Open in new tab"*
