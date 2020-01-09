@@ -25,3 +25,7 @@ This lesson leverages the [IOS XE on CSR Recommended Code Always On](https://dev
 ***Note: In the video, a different DevNet Sandbox is used***
 
 When running the `curl` for the RESTCONF example, leverage `https://ios-xe-mgmt.cisco.com:9443` as the URL instead of `https://10.10.20.21`.    
+
+## Download Slides
+
+You can download the slides for this lesson <a href='https://developer.cisco.com/fileMedia/download/c5942bff-3499-3e11-829a-fa90ebeb5fd1' target='_blank'>here</a>.
