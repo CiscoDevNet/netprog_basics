@@ -28,4 +28,6 @@ When running the `curl` for the RESTCONF example, leverage `https://ios-xe-mgmt.
 
 ## Download Slides
 
-You can download the slides for this lesson <a href='https://developer.cisco.com/fileMedia/download/c5942bff-3499-3e11-829a-fa90ebeb5fd1' target='_blank'>here</a>.
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/c5942bff-3499-3e11-829a-fa90ebeb5fd1). 
+
+> *Suggestion: Right click, "Open in new tab"*
