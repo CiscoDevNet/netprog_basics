@@ -56,3 +56,13 @@ pip install -r requirements.txt
 
 ## DevNet Sandbox
 This lesson leverages the [Always On: Open NX-OS Programmability](https://devnetsandbox.cisco.com/RM/Diagram/Index/dae38dd8-e8ee-4d7c-a21c-6036bed7a804?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
+
+
+## Download Slides
+
+You can download the slides for this lesson here.
+
+* [**NX-API Part 1: Get Started with APIs and Nexus**](https://developer.cisco.com/fileMedia/download/de3355ca-aa6e-398a-9c09-5eedb28a957e)
+* [**NX-API Part 2: Dive into the Nexus Object Model**](https://developer.cisco.com/fileMedia/download/baf5bda7-1337-330e-bcf6-a2b72cc6e65d)
+
+> *Suggestion: Right click, "Open in new tab"*

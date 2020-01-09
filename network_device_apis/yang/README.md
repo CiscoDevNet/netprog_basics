@@ -44,3 +44,9 @@ pip install -r requirements.txt
 
 ## DevNet Sandbox
 This lesson leverages the [IOS XE on CSR Recommended Code AlwaysOn](https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/65078461-ac9c-33ee-841e-f1c37c68e81d). 
+
+> *Suggestion: Right click, "Open in new tab"*

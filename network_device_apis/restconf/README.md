@@ -58,3 +58,10 @@ This lesson leverages the [IOS XE on CSR Recommended Code AlwaysOn](https://devn
 ***Note: In the video, a different DevNet Sandbox is used***
 
 Use host address of `ios-xe-mgmt.cisco.com` and port `9443` for all RESTCONF API connections rather than the address of `10.10.20.21` and port `443` that is used in the videos.
+
+
+## Download Slides
+
+You can download the slides for this lesson [here](https://developer.cisco.com/fileMedia/download/1f4bd879-b892-3b8a-bbe8-3279d7c13c55). 
+
+> *Suggestion: Right click, "Open in new tab"*
