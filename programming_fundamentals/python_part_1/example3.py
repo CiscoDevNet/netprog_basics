@@ -54,7 +54,7 @@ if __name__ == '__main__':
         print("")
 
     # See if this is a new color for the list
-    if new_color not in colors:
+    elif new_color not in colors:
         print("That's a new color, adding it to the list!")
         colors.append(new_color)
         # Print update message about the new colors list
