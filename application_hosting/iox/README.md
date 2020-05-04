@@ -50,7 +50,7 @@ Visit [www.docker.com/get-docker](https://www.docker.com/get-docker), download a
 ### IOx Client Installation
 IOx Client is an application you'll run use to package, deploy and install applications to IOx devices.  
 
-Download and install version 1.4 or higher from [Cisco Downloads](https://software.cisco.com/download/release.html?mdfid=286306005&softwareid=286306762&release=1.4.0&relind=AVAILABLE&rellifecycle=&reltype=latest).  
+Download and install version 1.4 or higher from [Cisco Downloads](https://software.cisco.com/download/home/286306005/type/286306762/release).  
 
 Save ioxclient into one of the following locations:
 
@@ -59,7 +59,7 @@ Save ioxclient into one of the following locations:
     * *Example: `/usr/local/bin` on OS X or Linux*
 
 ## DevNet Sandbox
-This lesson leverages the [IOx](https://devnetsandbox.cisco.com/RM/Diagram/Index/864622c2-24bd-47ca-867d-015dbe44e185?diagramType=Topology) Sandbox.  
+This lesson leverages the [IOx](https://devnetsandbox.cisco.com/RM/Diagram/Index/856d2943-eded-4f45-a76b-e50ee3dc9c02?diagramType=Topology) Sandbox.  
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
 
