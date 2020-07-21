@@ -26,7 +26,9 @@ To leverage them, simply `Import` them into your Postman client.
 > Reminder: Many network devices leverage self-signed certificates for `https://` APIs.  Don't forget to turn **OFF** SSL certificate checking within Postman settings.
 
 ### Python Environment Setup
-It is recommended that this lesson be completed using Python 2.7.  
+It is recommended that this lesson be completed using Python 3.*.
+
+> Note: In the video Python 2.7 maybe mentioned as required or preferred for ACI Toolkit and Cobra. With the end of life of Python 2.7 these libraries now support, and recommend, Python 3.x.
 
 It is highly recommended to leverage Python Virtual Environments for completing exercises in this course.  
 
@@ -38,14 +40,14 @@ Follow these steps to create and activate a venv.
 
 ```bash
 # OS X or Linux
-virtualenv venv --python=python2
+virtualenv venv --python=python3
 source venv/bin/activate
 ```
 
 ```bash
-# Windows (assumes default installation directory for Python 2.7)
-virtualenv venv --python=C:\Python27\python.exe
-venv/Scripts/activate
+# Windows (assumes Python 3 is default)
+virtualenv venv 
+venv/Scripts/activate 
 ```
 
 #### Install Python Requirements **NOT** Available on PyPi
@@ -64,8 +66,8 @@ python setup.py install
 The Python SDK for ACI is typically downloaded from the APIC Controller itself at `https://<APIC IP>/cobra/_downloads/`, however the SDK files are **not** included with the APIC Simulator used for this lesson.  Instead you can download them from DevNet directly using the following steps.  
 
 1. Visit [developer.cisco.com](https://developer.cisco.com) and log into the site.  
-2. Download [ACI Cobra](https://developer.cisco.com/fileMedia/download/39308f27-4956-4bd8-8127-d0fac29158c4) *Version 3.0-1k*
-3. Download [ACI Model](https://developer.cisco.com/fileMedia/download/928a762b-c2c7-4374-840a-9d3242aa8e27) *Version 3.0-1k*
+2. Download [ACI Cobra](https://d1nmyq4gcgsfi5.cloudfront.net/fileMedia/1f3d41ce-d154-44e3-74c1-d6cf3b525eaa/acicobra-4.2_3h-py2.py3-none-any.whl) *Version 4.2.3h*
+3. Download [ACI Model](https://d1nmyq4gcgsfi5.cloudfront.net/fileMedia/b3b69aa3-891b-41ff-46db-a73b4b215860/acimodel-4.2_3h-py2.py3-none-any.whl) *Version 4.2.3h*
 
 ***Note: If you click the links before logging into DevNet you will be prompted to login, but the file download will NOT start automatically***
 
@@ -73,8 +75,8 @@ Once downloaded install the Cobra SDK with the following commands.
 **Be sure to have the Python Virtual Environment Activated**
 
 ```bash
-easy_install -Z acicobra-3.0_1k-py2.7.egg
-easy_install -Z acimodel-3.0_1k-py2.7.egg
+pip install acicobra-4.2_3h-py2.py3-none-any.whl
+pip install acimodel-4.2_3h-py2.py3-none-any.whl
 ```
 
 #### Install Python Requirements for Lesson
