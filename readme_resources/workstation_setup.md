@@ -63,5 +63,3 @@ Does Open Source speak to you on a personal level? That's great, grab your pengu
 
 **Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-centos/step/1)
 
-#### Ubuntu 
-**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-ubuntu/step/1)
