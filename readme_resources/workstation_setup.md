@@ -27,6 +27,13 @@ One aspect of Linux distributions that is not included by default with OS X is a
 ### Linux
 Linux, as well as the specific distributions like Ubuntu, CentOS, Red Hat, etc, are quite popular and powerful as a development environment owing to their popularity for the actual end systems and servers.  For example, nearly all network appliances are built on-top of a Linux kernel today.  
 
+## Python
+
+All labs, demonstrations, and examples accompanying the videos in the course should be completed using Python 3.8.  Other versions of Python 3 should also work.  It is highly recommended to leverage a Python Virtual Environment for completing exercises in this course.
+
+> **Note about Python 2:** Python 2 was [sunset](https://www.python.org/doc/sunset-python-2/) by Python Software Foundation on January 1, 2020. This means that no more updates to Python 2 are being worked on, including security updates.  Python 3 is now the recommended version of Python for everyone to use. Most Python developers of software, packages, and scripts have migrated to Python 3 already, however you may find some older scripts and tools that are no longer maintained that only work with Python 2. 
+> 
+> You may see/hear references to Python 2 within the videos in this course from before January 2020, however all examples scripts and demos available in the GitHub repo to run have been updated to leverage Python 3.
 
 ## Setting up your development environment
 A great first stop are the [**Learning Labs on Developer Workstation and Environment Setup**](http://developer.cisco.com/learning/modules/dev-setup).  The first lab discusses what goes into a dev workstation, and gives some suggested tools.  The following labs walk through installing the tools on different platforms.

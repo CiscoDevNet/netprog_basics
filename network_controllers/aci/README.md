@@ -26,13 +26,15 @@ To leverage them, simply `Import` them into your Postman client.
 > Reminder: Many network devices leverage self-signed certificates for `https://` APIs.  Don't forget to turn **OFF** SSL certificate checking within Postman settings.
 
 ### Python Environment Setup
-It is recommended that this lesson be completed using Python 3.*.
+It is recommended that this lesson be completed using Python 3.8.  Other versions of Python 3 should also work.
 
-> Note: In the video Python 2.7 maybe mentioned as required or preferred for ACI Toolkit and Cobra. With the end of life of Python 2.7 these libraries now support, and recommend, Python 3.x.
+> **Note about Python 2:** Python 2 was [sunset](https://www.python.org/doc/sunset-python-2/) by Python Software Foundation on January 1, 2020. This means that no more updates to Python 2 are being worked on, including security updates.  Python 3 is now the recommended version of Python for everyone to use. Most Python developers of software, packages, and scripts have migrated to Python 3 already, however you may find some older scripts and tools that are no longer maintained that only work with Python 2. 
+> 
+> You may see/hear references to Python 2 within the videos in this course from before January 2020, however all examples scripts and demos available in the GitHub repo to run have been updated to leverage Python 3.
 
 It is highly recommended to leverage Python Virtual Environments for completing exercises in this course.  
 
-*There is no need to create independent venv for each lesson, but you can if you choose.  At a minimum you should create 2 venvs, one for Python 2 and one for Python 3.*  
+*There is no need to create independent venv for each lesson, but you can if you choose.*  
 
 Follow these steps to create and activate a venv.  
 
@@ -40,14 +42,14 @@ Follow these steps to create and activate a venv.
 
 ```bash
 # OS X or Linux
-virtualenv venv --python=python3
+python3 -m venv venv
 source venv/bin/activate
 ```
 
 ```bash
-# Windows (assumes Python 3 is default)
-virtualenv venv 
-venv/Scripts/activate 
+# Windows
+python -m venv venv
+venv/Scripts/activate
 ```
 
 #### Install Python Requirements **NOT** Available on PyPi
