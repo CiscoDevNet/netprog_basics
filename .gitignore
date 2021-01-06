@@ -1,4 +1,6 @@
 .DS_Store
+settings.json
+*.code-workspace
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
