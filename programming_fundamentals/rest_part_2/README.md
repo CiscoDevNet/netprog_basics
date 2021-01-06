@@ -56,7 +56,14 @@ pip install -r requirements.txt
 ```
 
 ## DevNet Sandbox
-This lesson leverages the [Always On: APIC-EM](https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
+The video and slides for this lab highlight the **Always On: APIC-EM** Sandbox. Cisco DNA Center is a superset of the capabilities of APIC-EM and has replaced it. It is recommended to leverage the Cisco DNA Center Sandbox instead.  The specifics of the API calls for Cisco DNA Center may differ slightly from APIC-EM, however the Postman Collection has the correct DNA Center examples available.
+
+The majority of the exercises in this lab can be completed with the available Always On Cisco DNA Center Sandboxes:
+
+* [Always On: Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/c3c949dc-30af-498b-9d77-4f1c07d835f9?diagramType=Topology)
+* [Always On: Cisco DNA Center Lab 2](https://devnetsandbox.cisco.com/RM/Diagram/Index/471eb739-323e-4805-b2a6-d0ec813dc8fc?diagramType=Topology)
+
+These sandboxes require no reservation **or** VPN connection.  
 
 
 ## Download Slides
