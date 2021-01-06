@@ -1,5 +1,5 @@
-ncclient==0.6.3
-netmiko==1.4.2
-pyyaml>=4.2b1
-requests>=2.20.0
-xmltodict==0.11.0
+ncclient>=0.6.9
+netmiko>=3.3.2
+pyyaml>=5.3.1
+requests>=2.25.1
+xmltodict>=0.12.0

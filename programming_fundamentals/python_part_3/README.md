@@ -11,6 +11,18 @@ cd netprog_basics/programming_fundamentals/python_part_3
 ## Local Workstation Setup
 Be sure to complete the [General Workstation Setup](https://github.com/CiscoDevNet/netprog_basics/blob/master/readme_resources/workstation_setup.md) instructions before beginning this lesson.  
 
+### Python YAML Loading Note
+In the video and slides you'll see the use of `yaml.load()` to process YAML data.  The `load` function of the pyyaml library is/was an unsafe method that could be exploited.  You can read about this at [https://msg.pyyaml.org/load](https://msg.pyyaml.org/load). 
+
+The `load()` method is now deprecated and will result in the following error message when used. 
+
+```python
+:1: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details
+```
+
+The function `yaml.safe_load()` is the recommended alternative to leverage. 
+
+
 ### Python Environment Setup
 It is recommended that this lesson be completed using Python 3.8.  Other versions of Python 3 should also work.
 
@@ -49,9 +61,11 @@ pip install -r requirements.txt
 ***Note: During the lesson, there are instructions to `pip install` different libraries.  If you follow this setup, you will already have the libraries installed, but still run the commands to become familiar with using them***
 
 ## DevNet Sandbox
-This lesson leverages the [IOS XE on CSR Recommended Code](https://devnetsandbox.cisco.com/RM/Diagram/Index/cae403c2-27af-4c7d-b1e1-99b7d42f1504?diagramType=Topology) Sandbox.  
+This lesson leverages the [IOS XE on CSR Recommended Code Always On](https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
 
-You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
+***Note: In the video, a different DevNet Sandbox is used***
+
+In the Python API Examples, the `router` dictionary will use `ios-xe-mgmt.cisco.com` for the address, and different ports than in the video.  The Python example files in the code repository have been updated to use the Always On Sandbox already.
 
 
 ## Download Slides
