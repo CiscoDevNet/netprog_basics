@@ -20,6 +20,21 @@ It is recommended that this lesson be completed using Python 3.8.  Other version
 
 ***Note: During this lesson you will learn about Python Virtual Environments and Libraries and practice using these tools.***
 
+### Creating Virtual Environments
+Python 3 includes a library called `venv` for creating virtual environments. This replaces the `virtualenv` library that was used with Python 2 and shown in the video and slides. The recommended way to create virtual environments in Python 3 is: 
+
+```python 
+python3 -m venv venv
+```
+
+The `-m` argument to the Python command is used to run a library module. In this case the `venv` library.  The second `venv` in the command above is the name of the virtual environment to create.  While any name could be used, `venv` is a common practice for naming the virtual enviornment with Python.
+
+Once created, the virtual environment is activated the same way: 
+
+```
+source venv/bin/activate
+```
+
 ## DevNet Sandbox
 No Sandbox is required for this lesson.
 
