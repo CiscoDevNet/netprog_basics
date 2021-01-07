@@ -2028,11 +2028,12 @@
 							"raw": "{\n  \"aaaUser\": {\n    \"attributes\": {\n      \"name\": \"{{username}}\",\n      \"pwd\": \"{{password}}\"\n    }\n  }\n}"
 						},
 						"url": {
-							"raw": "https://{{host}}/api/aaaLogin.json",
+							"raw": "https://{{host}}:{{port}}/api/aaaLogin.json",
 							"protocol": "https",
 							"host": [
 								"{{host}}"
 							],
+							"port": "{{port}}",
 							"path": [
 								"api",
 								"aaaLogin.json"
@@ -2097,12 +2098,12 @@
 					"response": []
 				},
 				{
-					"name": "GET Interface Eth1/1",
+					"name": "GET Interface Eth1/11",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/1].json",
+							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/11].json",
 							"protocol": "https",
 							"host": [
 								"{{host}}"
@@ -2114,14 +2115,14 @@
 								"sys",
 								"intf",
 								"phys-[eth1",
-								"1].json"
+								"11].json"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "PUT Interface Eth1/1 - Desc",
+					"name": "PUT Interface Eth1/11 - Desc",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -2130,7 +2131,7 @@
 							"raw": "{\n    \"l1PhysIf\": {\n        \"attributes\": {\n            \"descr\": \"Configured with NX-API REST\"\n        }\n    }\n}"
 						},
 						"url": {
-							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/1].json",
+							"raw": "https://{{host}}/api/node/mo/sys/intf/phys-[eth1/11].json",
 							"protocol": "https",
 							"host": [
 								"{{host}}"
@@ -2142,7 +2143,7 @@
 								"sys",
 								"intf",
 								"phys-[eth1",
-								"1].json"
+								"11].json"
 							]
 						}
 					},
@@ -2199,7 +2200,7 @@
 					"response": []
 				},
 				{
-					"name": "PUT VLAN 501",
+					"name": "GET VLAN 501",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -2255,7 +2256,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"l2BD\": {\n        \"attributes\": {\n            \"fabEncap\": \"vlan-501\",\n            \"name\": \"NX-API-REST1\"\n        }\n    }\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "https://{{host}}/api/node/mo/sys/bd/bd-[vlan-501].json",
