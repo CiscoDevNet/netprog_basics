@@ -64,7 +64,7 @@ Save ioxclient into one of the following locations:
     * *Example: `/usr/local/bin` on OS X or Linux*
 
 ## DevNet Sandbox
-This lesson leverages the [IOx](https://devnetsandbox.cisco.com/RM/Diagram/Index/856d2943-eded-4f45-a76b-e50ee3dc9c02?diagramType=Topology) Sandbox.  
+This lesson leverages the [IOx v1.11](https://devnetsandbox.cisco.com/RM/Diagram/Index/5f411c0e-b387-4ae6-9ee7-ff793d925cff?diagramType=Topology) Sandbox.  
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
 
