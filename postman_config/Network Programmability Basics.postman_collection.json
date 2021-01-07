@@ -2924,6 +2924,57 @@
 					"response": []
 				},
 				{
+					"name": "GET Networks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Store the Network Id as Environment Variable ",
+									"// Requires the name of the Network to already be ",
+									"// set as an environment variable",
+									"var jsonData = JSON.parse(responseBody);",
+									"var netName = pm.environment.get(\"Network Name\");",
+									"for (var i in jsonData) {",
+									"    if (jsonData[i].name === netName) {",
+									"        postman.setEnvironmentVariable(\"networkId\", ",
+									"                               jsonData[i].id);",
+									"    }",
+									"}",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cisco-Meraki-API-Key",
+								"value": "{{X-Cisco-Meraki-API-Key}}"
+							}
+						],
+						"url": {
+							"raw": "https://dashboard.meraki.com/api/v0/organizations/{{organizationId}}/networks",
+							"protocol": "https",
+							"host": [
+								"dashboard",
+								"meraki",
+								"com"
+							],
+							"path": [
+								"api",
+								"v0",
+								"organizations",
+								"{{organizationId}}",
+								"networks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GET Inventory",
 					"event": [
 						{
@@ -3085,57 +3136,6 @@
 									"key": "timespan",
 									"value": "86400"
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET Networks",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"// Store the Network Id as Environment Variable ",
-									"// Requires the name of the Network to already be ",
-									"// set as an environment variable",
-									"var jsonData = JSON.parse(responseBody);",
-									"var netName = pm.environment.get(\"Network Name\");",
-									"for (var i in jsonData) {",
-									"    if (jsonData[i].name === netName) {",
-									"        postman.setEnvironmentVariable(\"networkId\", ",
-									"                               jsonData[i].id);",
-									"    }",
-									"}",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-Cisco-Meraki-API-Key",
-								"value": "{{X-Cisco-Meraki-API-Key}}"
-							}
-						],
-						"url": {
-							"raw": "https://dashboard.meraki.com/api/v0/organizations/{{organizationId}}/networks",
-							"protocol": "https",
-							"host": [
-								"dashboard",
-								"meraki",
-								"com"
-							],
-							"path": [
-								"api",
-								"v0",
-								"organizations",
-								"{{organizationId}}",
-								"networks"
 							]
 						}
 					},
