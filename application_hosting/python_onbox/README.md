@@ -64,7 +64,7 @@ This lesson assumes the following about the Sandbox:
 
 If you have already completed the exercises within the **Linux at the Edge: Introduction to Guest Shell** lesson using your Sandbox instance then you are all set and ready to go.  If not, you will need to complete the following additional steps.  
 
-1. Enable Guest Shell: Use the commands and information from [iosxe\_guestshell\_setup.txt](iosxe_guestshell_setup.txt).  
+1. Enable Guest Shell: Use the commands and information from [iosxe\_guestshell\_setup.txt](https://github.com/CiscoDevNet/netprog_basics/blob/master/application_hosting/python_onbox/iosxe_guestshell_setup.txt).  
 
 **Clone Code Repo to Guest Shell**
 
