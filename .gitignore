@@ -1,6 +1,7 @@
 .DS_Store
 settings.json
 *.code-workspace
+acitoolkit/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
