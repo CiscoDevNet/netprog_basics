@@ -11,6 +11,15 @@ cd netprog_basics/netdevops/ansible_part_1
 ## Local Workstation Setup
 Be sure to complete the [General Workstation Setup](https://github.com/CiscoDevNet/netprog_basics/blob/master/readme_resources/workstation_setup.md) instructions before beginning this lesson.  
 
+### Ansible Version Information
+Like many automation tools, Ansible is a rapidly evolving and updating tool. With each release some key parts of Ansible have evolved. Elements such as inventory management, device connections, and playbook/module structure evolve.
+
+The videos, slides, and labs in this module were created using the version of Ansible that was current at the time, but much has changed since then. The examples included in the repository have been tested with the version of Ansible listed in the [requirements.txt](https://github.com/CiscoDevNet/netprog_basics/blob/master/netdevops/ansible_part_2/requirements.txt) files that accompany each lab. 
+
+> You may find slight differences in the playbooks, variables files, configuration, etc from the video. These differences reflect updates to Ansible since the video was recorded. 
+
+***It is highly recommended you leverage the listed version of Ansible initially.  If you wish to explore and test newer versions of Ansible, be aware you may run into problems.*** 
+
 ### Python Environment Setup
 It is recommended that this lesson be completed using Python 3.8.  Other versions of Python 3 should also work.
 
@@ -51,6 +60,8 @@ pip install -r requirements.txt
 This lesson leverages the [Open NX-OS with Nexus 9Kv On VIRL](https://devnetsandbox.cisco.com/RM/Diagram/Index/1e9b57ff-9e64-4c68-93e5-f0f0a8c6f22c?diagramType=Topology) Sandbox.  
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
+
+> **Note:** In the video and slides, the username of `root` is used for interacting with the DevBox. The credentials on the sandbox have changed, the user is now `developer`. The full details on credentials for the lab are available in the Sandbox details. 
 
 
 ## Download Slides
