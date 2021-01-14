@@ -2,6 +2,7 @@
 settings.json
 *.code-workspace
 *acitoolkit/
+.virl/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
