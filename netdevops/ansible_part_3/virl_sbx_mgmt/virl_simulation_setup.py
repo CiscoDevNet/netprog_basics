@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     # See if a simulation is active
     if len(nx_os_simulation) > 0:
-        nx_os_simulation_name = nx_os_simulation.keys()[0]
+        nx_os_simulation_name = list(nx_os_simulation.keys())[0]
 
         print("Current VIRL Simulation Name: {}\n".format(nx_os_simulation_name))
         print("Killing VIRL Simulation")
