@@ -10,7 +10,12 @@
 ---
 - name: Enable Model Driven Programmability (NETCONF) on IOS-XE
   hosts: iosxe
-  connection: local
+
+  # Ansible added new connection options for networking devices
+  # to replace connection: local
+  # Now connection: network_cli or httpapi are recommended
+  #   Doc: https://docs.ansible.com/ansible/2.9/network/user_guide/platform_nxos.html 
+  connection: network_cli
   gather_facts: false
 
   roles:
@@ -18,7 +23,7 @@
 
 - name: Enable NX-API on NX-OS
   hosts: nxos
-  connection: local
+  connection: network_cli
   gather_facts: false
 
   roles:
@@ -26,7 +31,7 @@
 
 - name: Configure Network Core
   hosts: core
-  connection: local
+  connection: netconf
   gather_facts: false
 
   roles:
@@ -35,7 +40,7 @@
 
 - name: Configure Distribution Switches
   hosts: distribution
-  connection: local
+  connection: network_cli
   gather_facts: false
 
   roles:
@@ -48,7 +53,7 @@
 
 - name: Configure Access Switches
   hosts: access
-  connection: local
+  connection: network_cli
   gather_facts: false
 
   roles:

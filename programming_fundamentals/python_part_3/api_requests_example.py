@@ -15,8 +15,8 @@ Illustrate the following concepts:
 
 import requests
 from pprint import pprint
-router = {"ip": "10.10.20.48",
-	      "port": "443",
+router = {"ip": "ios-xe-mgmt.cisco.com",
+	      "port": "9443",
           "user": "developer",
           "pass": "C1sco12345"}
 

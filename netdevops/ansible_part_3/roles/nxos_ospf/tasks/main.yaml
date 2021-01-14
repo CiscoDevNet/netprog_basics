@@ -10,34 +10,22 @@
 ---
 - name: Enable Features
   tags: [api, nxapi, ospf]
-  with_items:
+  loop:
     - ospf
   nxos_feature:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
 - name: Configure OSPF
   tags: [api, nxapi, ospf]
   nxos_ospf:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     ospf: "{{ ospf.process_id }}"
     state: present
 
 - name: Configure OSPF Interfaces
   tags: [api, nxapi, ospf]
-  with_items: "{{ ospf.networks }}"
+  loop: "{{ ospf.networks }}"
   nxos_interface_ospf:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     interface: "{{ item.interface }}"
     ospf: "{{ ospf.process_id }}"
     area: "{{ item.area }}"

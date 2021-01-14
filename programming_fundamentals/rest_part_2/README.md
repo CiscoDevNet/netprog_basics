@@ -21,29 +21,32 @@ To leverage them, simply `Import` them into your Postman client.
 
 > Reminder: Many network devices leverage self-signed certificates for `https://` APIs.  Don't forget to turn **OFF** SSL certificate checking within Postman settings.
 
-### Python Environment Setup 
-It is recommended that this lesson be completed using Python 3.6.  A recent version of Python 2.7 or Python 3.5 should also work.  
+### Python Environment Setup
+It is recommended that this lesson be completed using Python 3.8.  Other versions of Python 3 should also work.
+
+> **Note about Python 2:** Python 2 was [sunset](https://www.python.org/doc/sunset-python-2/) by Python Software Foundation on January 1, 2020. This means that no more updates to Python 2 are being worked on, including security updates.  Python 3 is now the recommended version of Python for everyone to use. Most Python developers of software, packages, and scripts have migrated to Python 3 already, however you may find some older scripts and tools that are no longer maintained that only work with Python 2. 
+> 
+> You may see/hear references to Python 2 within the videos in this course from before January 2020, however all examples scripts and demos available in the GitHub repo to run have been updated to leverage Python 3.
 
 It is highly recommended to leverage Python Virtual Environments for completing exercises in this course.  
 
-*There is no need to create independent venv for each lesson, but you can if you choose.  At a minimum you should create 2 venvs, one for Python 2 and one for Python 3.*  
+*There is no need to create independent venv for each lesson, but you can if you choose.*  
 
 Follow these steps to create and activate a venv.  
 
 ***Note: If you are leveraging a shared venv across all lessons simply activate it.***
 
 ```bash
-# OS X or Linux 
-virtualenv venv --python=python3
+# OS X or Linux
+python3 -m venv venv
 source venv/bin/activate
 ```
 
 ```bash
-# Windows (assumes Python 3 is default)
-virtualenv venv 
-venv/Scripts/activate 
+# Windows
+python -m venv venv
+venv/Scripts/activate
 ```
-
 #### Install Python Requirements for Lesson 
 With the Virtual Environment activated, use pip to install the necessary requirements.  
 
@@ -53,7 +56,14 @@ pip install -r requirements.txt
 ```
 
 ## DevNet Sandbox
-This lesson leverages the [Always On: APIC-EM](https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
+The video and slides for this lab highlight the **Always On: APIC-EM** Sandbox. Cisco DNA Center is a superset of the capabilities of APIC-EM and has replaced it. It is recommended to leverage the Cisco DNA Center Sandbox instead.  The specifics of the API calls for Cisco DNA Center may differ slightly from APIC-EM, however the Postman Collection has the correct DNA Center examples available.
+
+The majority of the exercises in this lab can be completed with the available Always On Cisco DNA Center Sandboxes:
+
+* [Always On: Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/c3c949dc-30af-498b-9d77-4f1c07d835f9?diagramType=Topology)
+* [Always On: Cisco DNA Center Lab 2](https://devnetsandbox.cisco.com/RM/Diagram/Index/471eb739-323e-4805-b2a6-d0ec813dc8fc?diagramType=Topology)
+
+These sandboxes require no reservation **or** VPN connection.  
 
 
 ## Download Slides

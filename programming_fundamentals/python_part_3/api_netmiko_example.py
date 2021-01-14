@@ -16,11 +16,13 @@ from netmiko import ConnectHandler
 from pprint import pprint
 
 router = {"device_type": "cisco_ios",
-          "host": "10.10.20.48",
+          "host": "ios-xe-mgmt.cisco.com",
+          "port": 8181,
           "user": "developer",
           "pass": "C1sco12345"}
 
 net_connect = ConnectHandler(ip=router["host"],
+                             port=router["port"], 
                              username=router["user"],
                              password=router["pass"],
                              device_type=router["device_type"])

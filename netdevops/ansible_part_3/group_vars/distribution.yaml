@@ -32,7 +32,7 @@ vpc:
   domain: 100
   pkl_vrf: management
   port_channel:
-    id: 1
+    id: "1"
     members:
       - Ethernet1/3
       - Ethernet1/4

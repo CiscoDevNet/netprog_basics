@@ -1,7 +1,7 @@
 <config>
-  <native xmlns="http://cisco.com/ns/yang/ned/ios">
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
     <router>
-      <ospf>
+      <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
         <id>{{ ospf.process_id }}</id>
         <router-id>{{ ospf_router_id }}</router-id>
         {% for network in ospf_networks %}

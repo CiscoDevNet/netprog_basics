@@ -12,9 +12,28 @@ cd netprog_basics/programming_fundamentals/python_part_2
 Be sure to complete the [General Workstation Setup](https://github.com/CiscoDevNet/netprog_basics/blob/master/readme_resources/workstation_setup.md) instructions before beginning this lesson.  
 
 ### Python Environment Setup 
-It is recommended that this lesson be completed using Python 3.6.  A recent version of Python 2.7 or Python 3.5 should also work.  
+It is recommended that this lesson be completed using Python 3.8.  Other versions of Python 3 should also work.
+
+> **Note about Python 2:** Python 2 was [sunset](https://www.python.org/doc/sunset-python-2/) by Python Software Foundation on January 1, 2020. This means that no more updates to Python 2 are being worked on, including security updates.  Python 3 is now the recommended version of Python for everyone to use. Most Python developers of software, packages, and scripts have migrated to Python 3 already, however you may find some older scripts and tools that are no longer maintained that only work with Python 2. 
+> 
+> You may see/hear references to Python 2 within the videos in this course from before January 2020, however all examples scripts and demos available in the GitHub repo to run have been updated to leverage Python 3.
 
 ***Note: During this lesson you will learn about Python Virtual Environments and Libraries and practice using these tools.***
+
+### Creating Virtual Environments
+Python 3 includes a library called `venv` for creating virtual environments. This replaces the `virtualenv` library that was used with Python 2 and shown in the video and slides. The recommended way to create virtual environments in Python 3 is: 
+
+```python 
+python3 -m venv venv
+```
+
+The `-m` argument to the Python command is used to run a library module. In this case the `venv` library.  The second `venv` in the command above is the name of the virtual environment to create.  While any name could be used, `venv` is a common practice for naming the virtual enviornment with Python.
+
+Once created, the virtual environment is activated the same way: 
+
+```
+source venv/bin/activate
+```
 
 ## DevNet Sandbox
 No Sandbox is required for this lesson.

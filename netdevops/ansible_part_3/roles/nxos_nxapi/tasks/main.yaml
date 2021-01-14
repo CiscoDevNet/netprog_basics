@@ -8,20 +8,8 @@
 # -
 ##############################################################
 ---
-# - name: "Retrieving NX-OS Facts"
-#   nxos_facts:
-#     provider:
-#       host: "{{inventory_hostname}}"
-#   register: facts
-#
-# - name: "Print Facts"
-#   debug: msg="{{facts}}"
-
 - name: Enable NX-API
   tags: [api, nxapi]
   nxos_feature:
-    provider:
-      host: "{{inventory_hostname}}"
-      timeout: 15
     feature: nxapi
     state: enabled

@@ -16,8 +16,8 @@ from ncclient import manager
 from pprint import pprint
 import xmltodict
 
-router = {"ip": "10.10.20.48",
-          "port": 830,
+router = {"ip": "ios-xe-mgmt.cisco.com",
+          "port": 10000,
           "user": "developer",
           "pass": "C1sco12345"}
 
