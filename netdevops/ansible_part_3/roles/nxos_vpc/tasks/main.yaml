@@ -10,24 +10,16 @@
 ---
 - name: Enable Features
   tags: [api, nxapi, vpc]
-  with_items:
+  loop:
     - vpc
     - lacp
   nxos_feature:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     feature: "{{ item }}"
     state: enabled
 
 - name: Configure VPC
   tags: [api, nxapi, vpc]
   nxos_vpc:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     domain: "{{ vpc.domain }}"
     pkl_src: "{{ vpc_pkl_src }}"
     pkl_dest: "{{ vpc_pkl_dest }}"
@@ -37,33 +29,52 @@
 
 - name: Create Port Channel for VPC
   tags: [api, nxapi, vpc]
-  nxos_portchannel:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
-    group: "{{ vpc.port_channel.id }}"
-    members: "{{ vpc.port_channel.members }}"
-    force: true
-    mode: on
-    state: present
+  nxos_lag_interfaces:
+    config: 
+      - name: "port-channel{{ vpc.port_channel.id }}"
+        members: 
+          - member: "{{ vpc.port_channel.members.0 }}"
+            mode: active
+          - member: "{{ vpc.port_channel.members.1 }}"
+            mode: active 
 
+- name: Make VPC Port Channel Layer 2
+  tags: [api, nxapi, vpc]
+  nxos_interfaces:
+    config: 
+      - name: "port-channel{{ vpc.port_channel.id }}"
+        description: "VPC PortChannel"
+        enabled: true 
+        mode: layer2 
+
+
+# BUG: The nxos_l2_interfaces module should be able to configure 
+#  an interface as a trunk. However testing showed it isn't working 
+#  in the current version of Ansible. Therefore the nxos_config module 
+#  is used here to configure correctly.
 - name: Configure VPC Port Channel Trunk
   tags: [api, nxapi, vpc]
-  nxos_switchport:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
-    interface: "po{{ vpc.port_channel.id }}"
-    mode: trunk
+  nxos_config: 
+    lines: 
+      - switchport mode trunk 
+    parents: interface port-channel{{ vpc.port_channel.id }}
+
+
+# BUG: This module SHOULD configure the interface as a trunk, 
+#   however it is NOT working. Therefore the above nxos_config 
+#   is used. This is left in the role for reference and possible
+#   future updates. 
+# - name: Configure VPC Port Channel Trunk
+#   tags: [api, nxapi, vpc]
+#   nxos_l2_interfaces:
+#     config: 
+#       - name: "portchannel{{ vpc.port_channel.id }}"
+#         trunk: 
+#           native_vlan: 1
+
 
 - name: Enable VPC Peer Link on port_channel
   tags: [api, nxapi, vpc]
   nxos_vpc_interface:
-    provider:
-      host: "{{inventory_hostname}}"
-      transport: nxapi
-      timeout: 15
     portchannel: "{{ vpc.port_channel.id }}"
     peer_link: true

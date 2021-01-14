@@ -10,17 +10,17 @@
 ---
 - name: "Generate NETCONF Interface config"
   tags: [api, netconf, layer3]
-  with_items: "{{l3_interfaces}}"
+  loop: "{{l3_interfaces}}"
   template:
     src: "files/ietf_interface_template.j2"
     dest: "./configs/{{inventory_hostname}}-{{item.interface_type}}{{item.interface_id}}.xml"
 
 - name: Configure Interfaces with NETCONF
   tags: [api, netconf, layer3]
-  with_items: "{{l3_interfaces}}"
+  loop: "{{l3_interfaces}}"
+  loop_control: 
+    pause: 2
   netconf_config:
     host: "{{inventory_hostname}}"
     hostkey_verify: false
-    username: "{{lookup('env','ANSIBLE_NET_USERNAME')}}"
-    password: "{{lookup('env','ANSIBLE_NET_PASSWORD')}}"
     src: "./configs/{{inventory_hostname}}-{{item.interface_type}}{{item.interface_id}}.xml"

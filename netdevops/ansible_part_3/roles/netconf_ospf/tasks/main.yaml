@@ -19,6 +19,4 @@
   netconf_config:
     host: "{{inventory_hostname}}"
     hostkey_verify: false
-    username: "{{lookup('env','ANSIBLE_NET_USERNAME')}}"
-    password: "{{lookup('env','ANSIBLE_NET_PASSWORD')}}"
     src: "./configs/{{inventory_hostname}}-ospf.xml"
