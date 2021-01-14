@@ -30,12 +30,14 @@ jobs:
       run: |
         cd programming_fundamentals/python_part_1
         pip install -r requirements.txt
-        echo "Anne Marie Janeene Anastasia Eileen" > names.txt
-        cat names.txt | while read -r line; do echo "$line" | grep -oP '(\S+)' | shuf -n $((RANDOM%2+1)) | paste -s -d' '; done < file.txt
-        cat file.txt
         python example2.py Anne
     - name: Test Programming Fundamentals Python Part 1 - ex3
       run: |
         cd programming_fundamentals/python_part_1
         pip install -r requirements.txt
         python example3.py
+    - name: Test getting a name 
+      run: |
+        echo "Anne Marie Janeene Anastasia Eileen" > names.txt
+        cat names.txt | while read -r line; do echo "$line" | grep -oP '(\S+)' | shuf -n $((RANDOM%2+1)) | paste -s -d' '; done < file.txt
+        cat file.txt
