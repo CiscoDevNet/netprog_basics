@@ -23,13 +23,14 @@
       
 - name: Report Network Details of Servers
   hosts: servers
+  become: yes
   
   tasks: 
     - name: "Default IPv4 Interface"
       debug: msg="{{ansible_default_ipv4.interface}}"
       
     - name: "Retrieve network routes"
-      command: "netstat -rn"
+      command: "ip route list"
       register: routes
       
     - name: "Network routes installed"
