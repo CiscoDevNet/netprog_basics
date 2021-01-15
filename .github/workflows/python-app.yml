@@ -26,11 +26,6 @@ jobs:
         pip install -r requirements.txt
         VALUE=$(echo $((1 + RANDOM % 10)))
         python example1.py $VALUE
-    - name: Test Programming Fundamentals Python Part 1 - ex3
-      run: |
-        cd programming_fundamentals/python_part_1
-        pip install -r requirements.txt
-        python example3.py
     - name: Test getting a name 
       run: |
         echo "Anne Marie Janeene Anastasia Eileen" > names.txt
