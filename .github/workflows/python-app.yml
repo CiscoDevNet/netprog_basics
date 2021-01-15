@@ -31,3 +31,29 @@ jobs:
         cd programming_fundamentals/python_part_2
         pip install -r requirements.txt
         python example1.py
+    - name: Test Programming Fundamentals Python Part 3 - ncclient
+      run: |
+        cd programming_fundamentals/python_part_3
+        pip install -r requirements.txt
+        python api_ncclient_example.py
+    - name: Test Programming Fundamentals Python Part 3 - netmiko
+      run: |
+        cd programming_fundamentals/python_part_3
+        pip install -r requirements.txt
+        python api_netmiko_example.py
+    - name: Test Programming Fundamentals Python Part 3 - pysnmp
+      run: |
+        cd programming_fundamentals/python_part_3
+        pip install -r requirements.txt
+        python api_pysnmp_example.py
+    - name: Test Programming Fundamentals Python Part 3 - requests
+      run: |
+        cd programming_fundamentals/python_part_3
+        pip install -r requirements.txt
+        python api_requests_example.py
+    - name: Test Programming Fundamentals Python Part 3 - data_library_exercises
+      run: |
+        cd programming_fundamentals/python_part_3 
+        pip install -r requirements.txt
+        python data_library_exercises.py
+        
