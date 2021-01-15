@@ -3,3 +3,4 @@ netmiko>=3.3.2
 pyyaml>=5.3.1
 requests>=2.25.1
 xmltodict>=0.12.0
+pysnmp>=4.4.12

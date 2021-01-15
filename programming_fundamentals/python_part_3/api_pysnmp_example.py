@@ -34,6 +34,7 @@ errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
 
 if errorIndication:  # SNMP engine errors
     print(errorIndication)
+    print("Check to be sure you're connected to the VPN for the DevNet Sandbox.")
 else:
     if errorStatus:  # SNMP agent errors
         print('%s at %s' % (errorStatus.prettyPrint(),
