@@ -68,6 +68,8 @@ The majority of the exercises in this lab can be completed with the available Al
 
 These sandboxes require no reservation **or** VPN connection.  
 
+> Note: Access to the Platform section of the GUI is restricted to Admin users. The Always On Sandbox users are limited to operator role to allow shared access.  To view this part of the GUI, use a reservable Sandbox.
+
 To complete the exercises related to the Path Trace API, you'll need to leverage a reservable Cisco DNA Center Sandbox where you'll have administrative access.  
 
 * [Reservable: Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/b8d7aa34-aa8f-4bf2-9c42-302aaa2daafb?diagramType=Topology)
