@@ -63,6 +63,7 @@ You will need to reserve an instance of the sandbox, and establish a VPN connect
 
 > **Note:** In the video and slides, the username of `root` is used for interacting with the DevBox. The credentials on the sandbox have changed, the user is now `developer`. The full details on credentials for the lab are available in the Sandbox details. 
 
+> Note: While this Sandbox includes a devbox (developer workstation), the example code and playbooks should be executed from your own local development workstation. Leverage the "General Workstation Setup" and "Local Workstation Setup" instructions to prepare your system for this lab.
 
 ## Download Slides
 

@@ -61,6 +61,8 @@ This lesson leverages the [Open NX-OS with Nexus 9Kv On VIRL](https://devnetsand
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
 
+> Note: While this Sandbox includes a devbox (developer workstation), the example code and playbooks should be executed from your own local development workstation. Leverage the "General Workstation Setup" and "Local Workstation Setup" instructions to prepare your system for this lab.
+
 ### Post Reservation Setup
 This lesson leverages a different [VIRL topology](virl_sbx_mgmt/ansible_part_3.virl) than **Ansible Part 1** and **Part 2** use.  Before beginning this lesson run the following command to reconfigure the Sandbox with the proper topology.  
 

@@ -61,6 +61,8 @@ This lesson leverages the [Open NX-OS with Nexus 9Kv On VIRL](https://devnetsand
 
 You will need to reserve an instance of the sandbox, and establish a VPN connection to your individual Sandbox to complete this lab.
 
+> Note: While this Sandbox includes a devbox (developer workstation), the example code and playbooks should be executed from your own local development workstation. Leverage the "General Workstation Setup" and "Local Workstation Setup" instructions to prepare your system for this lab.
+
 
 ## Download Slides
 
