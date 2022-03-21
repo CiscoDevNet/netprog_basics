@@ -1,4 +1,0 @@
-ansible==2.9.16
-ncclient>=0.6.9
-paramiko==2.7.2
-requests>=2.25.1

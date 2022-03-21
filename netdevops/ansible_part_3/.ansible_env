@@ -1,9 +1,0 @@
-# Setup environment for ansible playbooks
-# Credentials for DevNet Open NX-OS Sandbox
-#    https://devnetsandbox.cisco.com/
-
-# usage: source .ansible_env
-
-# Authentication for ansible network modules
-export ANSIBLE_NET_USERNAME=cisco
-export ANSIBLE_NET_PASSWORD=cisco

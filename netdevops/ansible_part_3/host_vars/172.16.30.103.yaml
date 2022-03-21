@@ -1,8 +1,0 @@
-l3_interfaces:
-  - interface_type: Loopback
-    interface_id: 0
-    description: Default Loopback
-    ip_address: 192.168.0.2
-    subnet_mask: 255.255.255.255
-    prefix: 32
-    area: 0

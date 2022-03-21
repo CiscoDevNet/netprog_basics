@@ -1,8 +1,0 @@
-[servers]
-10.10.20.20 ansible_python_interpreter="/usr/bin/env python" ansible_ssh_user=developer
-
-[switches]
-172.16.30.101 ansible_python_interpreter="/usr/bin/env python"
-172.16.30.102 ansible_python_interpreter="/usr/bin/env python"
-172.16.30.103 ansible_python_interpreter="/usr/bin/env python"
-172.16.30.104 ansible_python_interpreter="/usr/bin/env python"
