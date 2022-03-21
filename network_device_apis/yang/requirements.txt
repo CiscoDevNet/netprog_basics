@@ -1,3 +1,0 @@
-ncclient>=0.6.9
-pyang>=2.4
-xmltodict>=0.12.0

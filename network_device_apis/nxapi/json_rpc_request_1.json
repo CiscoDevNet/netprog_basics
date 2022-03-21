@@ -1,9 +1,0 @@
-{
-  "jsonrpc": "2.0",
-  "method": "colormix",
-  "params": {
-    "basecolor": "red",
-    "addcolor": "yellow"
-  },
-  "id": 1
-}
