@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 """
 Learning Series: Network Programmability Basics
 Module: Programming Fundamentals
