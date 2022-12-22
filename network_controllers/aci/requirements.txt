@@ -1,4 +1,3 @@
-acicobra
 acitoolkit
 graphviz>=0.16
 requests>=2.25.1
