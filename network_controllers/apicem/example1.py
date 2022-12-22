@@ -66,3 +66,10 @@ if __name__ == '__main__':
         print("  Platform Type: {}".format(device["platformId"]))
         print("  Software Version: {}".format(device["softwareVersion"]))
         print("")
+        
+        
+        
+"""
+I'm afraid this example will no longer work as the DevNet Always-On Sandbox APIC-EM sandbox listed in device_info.py no longer exists in the catalog.
+I'm not sure of a suitable replacement.
+""
