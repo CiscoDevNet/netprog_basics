@@ -19,3 +19,9 @@ curl -vk \
   -u developer:C1sco12345 \
   -H 'accept: application/yang-data+json' \
   https://ios-xe-mgmt.cisco.com:9443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2
+  
+  
+  
+"""
+see Pull Request for details
+"""
