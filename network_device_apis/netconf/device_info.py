@@ -17,8 +17,8 @@ __license__ = "MIT"
 # DevNet Always-On IOS XE on CSR Recommended Code Sandbox Device
 # https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology
 ios_xe1 = {
-             "address": "ios-xe-mgmt.cisco.com",
-             "port": 10000,
+             "address": "sandbox-iosxe-recomm-1.cisco.com",
+             "port": 830,
              "username": "developer",
              "password": "C1sco12345"
            }
@@ -26,8 +26,8 @@ ios_xe1 = {
 # DevNet Always-On IOS XE on CSR Latest Code Sandbox Device
 # https://devnetsandbox.cisco.com/RM/Diagram/Index/38ded1f0-16ce-43f2-8df5-43a40ebf752e?diagramType=Topology
 ios_xe_latest = {
-             "address": "ios-xe-mgmt-latest.cisco.com",
-             "port": 10000,
+             "address": "sandbox-iosxe-latest-1.cisco.com",
+             "port": 830,
              "username": "developer",
              "password": "C1sco12345"
           }          
