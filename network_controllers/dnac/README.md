@@ -73,8 +73,8 @@ These sandboxes require no reservation **or** VPN connection.
 To complete the exercises related to the Path Trace API, you'll need to leverage a reservable Cisco DNA Center Sandbox where you'll have administrative access.  
 
 * [Reservable: Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/b8d7aa34-aa8f-4bf2-9c42-302aaa2daafb?diagramType=Topology)
-* [Reservable: Cisco DNA Center Lab 2](https://devnetsandbox.cisco.com/RM/Diagram/Index/2db69bce-66ca-44cb-9b51-05c2d5b4868d?diagramType=Topology)
-* [Reservable: Cisco DNA Center Lab 3](https://devnetsandbox.cisco.com/RM/Diagram/Index/8076fc05-a818-4bb4-aae1-477680bc2211?diagramType=Topology)
+* [Reservable: Cisco DNA Center Lab 2](https://devnetsandbox.cisco.com/RM/Diagram/Index/1d94a25e-51bb-48eb-a9c7-dd8eac577953?diagramType=Topology)
+* [Reservable: Cisco DNA Center Lab 3](https://devnetsandbox.cisco.com/RM/Diagram/Index/07f8c79c-a484-4260-a286-9cc5a7fff765?diagramType=Topology)
 
 
 ## Download Slides
