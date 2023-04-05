@@ -410,3 +410,7 @@ if __name__ == '__main__':
 
     # Print Out Details
     print_flow_analysis_details(flow_analysis)
+    
+    """
+    It seems that none of the examples or steps in this module will run because apicem (DevNet Always-On Sandbox APIC-EM) is no longer in the sandbox catalog
+    """
