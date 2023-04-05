@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/env python3
 """
 Learning Series: Network Programmability Basics
 Author: Hank Preston <hapresto@cisco.com>
@@ -14,40 +14,21 @@ __author_email__ = "hapresto@cisco.com"
 __copyright__ = "Copyright (c) 2016 Cisco Systems, Inc."
 __license__ = "MIT"
 
-# DevNet Always-On NETCONF/YANG & RESTCONF Sandbox Device
-# https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology
+# # IOS XE on CSR Recommended Code AlwaysOn
+# # https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology
 ios_xe1 = {
-             "address": "ios-xe-mgmt.cisco.com",
-             "port": 10000,
-             "username": "root",
-             "password": "D_Vay!_10&"
-          }
-
-# DevNet IOS XE Programmability Sandbox Device
-# https://devnetsandbox.cisco.com/RM/Diagram/Index/7fd27b24-7034-477d-9ad2-e2c8096dd1a5?diagramType=Topology
-ios_xe2 = {
-             "address": "10.10.20.21",
+             "address": "sandbox-iosxe-recomm-1",
              "port": 830,
-             "username": "root",
-             "password": "cisco123"
+             "username": "developer",
+             "password": "C1sco12345"
           }
-
-
-# DevNet Always-On Sandbox APIC-EM
-# https://devnetsandbox.cisco.com/RM/Diagram/Index/2e0f9525-5f46-4f46-973e-0f0c1bf934fa?diagramType=Topology
-apicem = {
-             "host": "sandboxapicem.cisco.com",
-             "username": "devnetuser",
-             "password": "Cisco123!",
-             "port": 443
-         }
 
 # DevNet Always-On Sandbox ACI APIC
-# https://devnetsandbox.cisco.com/RM/Diagram/Index/5a229a7c-95d5-4cfd-a651-5ee9bc1b30e2?diagramType=Topology
+# https://devnetsandbox.cisco.com/RM/Diagram/Index/18a514e8-21d4-4c29-96b2-e3c16b1ee62e?diagramType=Topology
 apic = {
              "host": "https://sandboxapicdc.cisco.com",
              "username": "admin",
-             "password": "ciscopsdt",
+             "password": "!v3G@!4@Y",
              "port": 443
          }
 
