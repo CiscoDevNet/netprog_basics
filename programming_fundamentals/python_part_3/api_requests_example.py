@@ -15,6 +15,11 @@ Illustrate the following concepts:
 
 import requests
 from pprint import pprint
+import urllib3
+
+# Disable SSL Warnings
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 router = {"ip": "ios-xe-mgmt.cisco.com",
 	      "port": "443",
           "user": "developer",
