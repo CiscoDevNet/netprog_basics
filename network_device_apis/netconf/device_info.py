@@ -20,7 +20,7 @@ ios_xe1 = {
              "address": "sandbox-iosxe-recomm-1.cisco.com",
              "port": 830,
              "username": "developer",
-             "password": "C1sco12345"
+             "password": "lastorangerestoreball8876"
            }
 
 # DevNet Always-On IOS XE on CSR Latest Code Sandbox Device
@@ -28,7 +28,7 @@ ios_xe1 = {
 ios_xe_latest = {
              "address": "sandbox-iosxe-latest-1.cisco.com",
              "port": 830,
-             "username": "developer",
+             "username": "admin",
              "password": "C1sco12345"
           }          
 
