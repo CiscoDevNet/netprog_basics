@@ -41,19 +41,15 @@ A great first stop are the [**Learning Labs on Developer Workstation and Environ
 ### What is a Development Environment, and why do you need one?
 What exactly goes into a development environment and why? What is the bare minimum you need to get started, and what choices do I need to make related to platforms and operating systems? We'll lay out the details in this quick overview.
 
-[![](https://github.com/CiscoDevNet/netprog_basics/raw/master/readme_resources/dev-env.jpg)](https://developer.cisco.com/learning-labs/setup/#dev-why)
+[![](https://github.com/CiscoDevNet/netprog_basics/raw/master/readme_resources/dev-env.jpg)](https://developer.cisco.com/learning/modules/dev-setup/dev-what/introduction/)
 
-**View the Video:** [Watch a video of the lesson.](https://developer.cisco.com/learning-labs/setup/#dev-why) 
-
-**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-what/step/1)
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-what/introduction/)
 
 ### Setting up your Windows workstation as a development environment
 
 So you are a follower of Gates, Balmer, and Nadella, excellent! Let's super charge that Windows workstation with everything you need to be a programability ninja!
 
 [![](https://github.com/CiscoDevNet/netprog_basics/raw/master/readme_resources/dev-env-win.jpg)](https://developer.cisco.com/learning/modules/dev-setup/dev-win/introduction/)
-
-**View the Video:** [Watch a video of the lesson.](https://developer.cisco.com/learning/modules/dev-setup/dev-win/introduction/) 
 
 **Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-win/introduction/)
 
@@ -62,19 +58,10 @@ Are you a fan of black turtle necks and clean design lines? Perfect! Grab your M
 
 [![](https://github.com/CiscoDevNet/netprog_basics/raw/master/readme_resources/dev-env-mac.jpg)](https://developer.cisco.com/learning/modules/dev-setup/dev-mac/introduction/)
 
-**View the Video:** [Watch a video of the lesson.](https://developer.cisco.com/learning-labs/setup/#dev-mac) 
-
 **Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-mac/step/1)
 
 ### Setting up your Linux workstation as a development environment
 Does Open Source speak to you on a personal level? That's great, grab your penguin and let's dive in and make Linus proud.
 
-[![](https://github.com/CiscoDevNet/netprog_basics/raw/master/readme_resources/dev-env-centos.jpg)](https://developer.cisco.com/learning-labs/setup/#dev-centos)
-
-#### CentOS 
-**View the Video:** [Watch a video of the lesson.](https://developer.cisco.com/learning-labs/setup/#dev-centos) 
-
-**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-centos/step/1)
-
 #### Ubuntu 
-**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-ubuntu/step/1)
+**Take the Lab:** [Complete the Learning Lab on DevNet](https://developer.cisco.com/learning/modules/dev-setup/dev-ubuntu/introduction/)
