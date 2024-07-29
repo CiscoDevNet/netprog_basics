@@ -49,3 +49,7 @@ pip install -r requirements.txt
 
 ## DevNet Sandbox
 This lesson leverages the [Always On: ACI APIC](https://devnetsandbox.cisco.com/RM/Diagram/Index/5a229a7c-95d5-4cfd-a651-5ee9bc1b30e2?diagramType=Topology) Sandbox.  This sandbox requires no reservation **or** VPN connection.  
+
+"""
+The ACI APIC Sandbox is not longer in the catalog
+"""
